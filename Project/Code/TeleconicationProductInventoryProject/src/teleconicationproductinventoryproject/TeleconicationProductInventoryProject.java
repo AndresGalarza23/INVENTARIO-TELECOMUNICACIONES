@@ -18,7 +18,7 @@ public class TeleconicationProductInventoryProject {
        
                 
         System.out.println("PROGRAMACION ORIENTADA A OBJETOS");
-        
+        System.out.println("hola");
         
     }
     
