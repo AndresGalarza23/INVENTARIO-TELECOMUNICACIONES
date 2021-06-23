@@ -15,7 +15,11 @@ public class TeleconicationProductInventoryProject {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       
+                
+        System.out.println("PROGRAMACION ORIENTADA A OBJETOS");
+        System.out.println("hola");
+        
     }
     
 }
