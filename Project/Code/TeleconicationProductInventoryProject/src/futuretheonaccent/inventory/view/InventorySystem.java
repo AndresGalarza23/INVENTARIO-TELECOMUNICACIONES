@@ -20,11 +20,12 @@ public class InventorySystem {
                float price;
                int amount;
                String brand;
+               int id;
                String jsonProduct = "";
                Product product []= new Product[10];
               
                
-               
+           
              for(int i=0; i<2; i++){  
                  
         Scanner sc= new Scanner(System.in);
@@ -32,13 +33,15 @@ public class InventorySystem {
         productName= sc.next();
         System.out.println("Enter price:");
         price= sc.nextFloat();
-        System.out.println("Enter amount");
+        System.out.println("Enter amount:");
         amount= sc.nextInt();
-        System.out.println(" Enter brand");
+        System.out.println(" Enter brand:");
         brand= sc.next();
+        System.out.println("Enter Id:");
+        id= sc.nextInt();
         sc.nextLine();
         
-        product[i] = new Product(productName,price,amount,brand); 
+        product[i] = new Product(productName,price,amount,brand,id); 
         
              }
     
@@ -49,18 +52,31 @@ public class InventorySystem {
             
             Product product1; 
             product1 = gson.fromJson(jsonProduct, Product.class);
-           
-            
-            
-            
-            
+                                                                                                                                                                                                                                                                                                                                                         
             System.out.println("jsonProduct ->" + jsonProduct);
             System.out.println("product object productName ->" + product1.getProductName());
             System.out.println("product object price ->" + product1.getPrice());
             System.out.println("product object amount ->" + product1.getAmount());
             System.out.println("product object brand ->" + product1.getBrand());
+            System.out.println("product object id ->" + product1.getId());
    
-            System.out.println("\n ");
+            System.out.println("\n  ");
+    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
           }
         

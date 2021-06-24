@@ -14,27 +14,23 @@ public class Product {
    private Float price;
    private  int amount;
    private String brand;
+   private int id;
 
-    public Product(String productName, Float price, int amount, String brand) {
+    public Product(String productName, Float price, int amount, String brand, int id) {
         this.productName = productName;
         this.price = price;
         this.amount = amount;
         this.brand = brand;
+        this.id = id;
     }
-
-
 
     @Override
     public String toString() {
-        return "Product{" + "productName=" + productName + ", price=" + price + ", amount=" + amount + ", brand=" + brand + '}';
+        return "Product{" + "productName=" + getProductName() + ", price=" + getPrice() + ", amount=" + getAmount() + ", brand=" + getBrand() + ", id=" + getId() + '}';
     }
-    
-    
-    public static String giveSupplier(String  Supplier )
-    {
-       return Supplier;
-    }
-
+ 
+ public void enterdate(){
+ }
     /**
      * @return the productName
      */
@@ -91,9 +87,18 @@ public class Product {
         this.brand = brand;
     }
 
-    private void Supplier() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
     }
-    
-   
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }
