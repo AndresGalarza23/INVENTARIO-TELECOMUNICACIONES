@@ -137,7 +137,7 @@ public class SystemInventory{
             //System.out.println("product object product ->" + product9);
             //System.out.println("product object product ->" + product10);
         
-            
+    }   
         
         public static void searchJson() throws IOException{
         
@@ -163,7 +163,28 @@ public class SystemInventory{
                                
         FileWriter file = new FileWriter("./files/TelecommunicationsInventory.json");
               
-        
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter Product 1 Information:");
+        Product product1 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 2 Information:");
+        //Product product2 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 3 Information:");
+        //Product product3 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 3 Information:");
+        //Product product4 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 3 Information:");
+        //Product product5 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 3 Information:");
+        //Product product6 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 3 Information:");
+        //Product product7 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 3 Information:");
+        //Product product8 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 3 Information:");
+        //Product product9 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 3 Information:");
+        //Product product10 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 3 Information:");
             
         }  
         
