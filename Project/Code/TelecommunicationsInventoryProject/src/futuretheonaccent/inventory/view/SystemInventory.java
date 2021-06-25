@@ -185,6 +185,42 @@ public class SystemInventory{
         //System.out.println("Enter Product 3 Information:");
         //Product product10 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
         //System.out.println("Enter Product 3 Information:");
+        
+        
+         productList.add(product1);
+        //productList.add(product2);
+        //productList.add(product3);   
+        //productList.add(product4);
+        //productList.add(product5);
+        //productList.add(product6);
+        //productList.add(product7);
+        //productList.add(product8);
+        //productList.add(product9);
+        //productList.add(product10);
+    
+           GsonBuilder gsonBuilder = new  GsonBuilder();
+           Gson gson = gsonBuilder.create();
+           jsonProduct1 = gson.toJson(product1);
+           System.out.println("jsonProduct ->" + jsonProduct1);
+            //jsonProduct2 = gson.toJson(product2);
+            //System.out.println("jsonProduct ->" + jsonProduct2);
+            //jsonProduct3 = gson.toJson(product3);
+            //System.out.println("jsonProduct ->" + jsonProduct3);
+            //jsonProduct4 = gson.toJson(product4);
+            //System.out.println("jsonProduct ->" + jsonProduct4);
+            //jsonProduct5 = gson.toJson(product5);
+            //System.out.println("jsonProduct ->" + jsonProduct5);
+            //jsonProduct6 = gson.toJson(product6);
+            //System.out.println("jsonProduct ->" + jsonProduct6);
+            //jsonProduct7 = gson.toJson(product7);
+            //System.out.println("jsonProduct ->" + jsonProduct7);
+            //jsonProduct8 = gson.toJson(product8);
+            //System.out.println("jsonProduct ->" + jsonProduct8);
+            //jsonProduct9 = gson.toJson(product9);
+            //System.out.println("jsonProduct ->" + jsonProduct9);
+            //jsonProduct10 = gson.toJson(product10);
+            //System.out.println("jsonProduct ->" + jsonProduct10);
+            
             
         }  
         
