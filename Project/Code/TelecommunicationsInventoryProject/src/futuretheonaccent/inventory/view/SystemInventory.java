@@ -5,6 +5,8 @@
  */
 package futuretheonaccent.inventory.view;
 
+import futuretheonaccent.inventory.model.Product;
+
 /**
  *
  * @author Stefany Guerrero AccentOnTheFuture ESPE-DCC0
@@ -12,7 +14,14 @@ package futuretheonaccent.inventory.view;
 public class SystemInventory {
     public static void main(String[] args) {
         
-        
+          String productName;
+               float price;
+               int amount;
+               String brand;
+               int id;
+               String jsonProduct = "";
+               Product product []= new Product[10];
+              
         
     }
 }
