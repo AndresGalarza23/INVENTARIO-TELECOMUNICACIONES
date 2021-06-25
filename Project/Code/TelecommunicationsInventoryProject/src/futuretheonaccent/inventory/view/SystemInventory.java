@@ -59,8 +59,14 @@ public class SystemInventory {
             System.out.println("product object productName ->" + product1.getProductName());
             System.out.println("product object price ->" + product1.getPrice());
              
-            
-            
+             System.out.println("product object amount ->" + product1.getAmount());
+            System.out.println("product object brand ->" + product1.getBrand());
+            System.out.println("product object id ->" + product1.getId());
+   
+            System.out.println("\n  ");
+    
+
+           
             
             
             }
