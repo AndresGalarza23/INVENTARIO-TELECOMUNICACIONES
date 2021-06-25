@@ -5,6 +5,8 @@
  */
 package futuretheonaccent.inventory.view;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import futuretheonaccent.inventory.model.Product;
 import java.util.Scanner;
 
@@ -43,7 +45,19 @@ public class SystemInventory {
         
     }
             
+       
+            for(int i=0; i<2; i++){
+            GsonBuilder gsonBuilder = new  GsonBuilder();
+            Gson gson = gsonBuilder.create();
+            jsonProduct = gson.toJson(product[i]);
             
+            
+            
+            
+            
+            
+            
+            }
 
     }
 }
