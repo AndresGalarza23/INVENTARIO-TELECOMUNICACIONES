@@ -11,4 +11,92 @@ package futuretheonaccent.inventory.model;
  */
 public class Product {
     
+     private String productName;
+   private Float price;
+   private  int amount;
+   private String brand;
+   private int id;
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    public void enterdate(){
+ }
+    /**
+     * @return the productName
+     */
+    public String getProductName() {
+        return productName;
+    }
+
+    /**
+     * @param productName the productName to set
+     */
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    /**
+     * @return the price
+     */
+    public Float getPrice() {
+        return price;
+    }
+
+    /**
+     * @param price the price to set
+     */
+    public void setPrice(Float price) {
+        this.price = price;
+    }
+
+    /**
+     * @return the amount
+     */
+    public int getAmount() {
+        return amount;
+    }
+
+    /**
+     * @param amount the amount to set
+     */
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    /**
+     * @return the brand
+     */
+    public String getBrand() {
+        return brand;
+    }
+
+    /**
+     * @param brand the brand to set
+     */
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }
+    
+
