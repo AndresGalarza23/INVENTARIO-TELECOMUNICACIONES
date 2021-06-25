@@ -222,6 +222,38 @@ public class SystemInventory{
             //System.out.println("jsonProduct ->" + jsonProduct10);
             
             
+              try {
+                      file.append(jsonProduct1);
+                     
+                        //file.append(jsonProduct2);
+                        
+                        //file.append(jsonProduct3);                       
+                                                
+                        //file.append(jsonProduct4);
+                        
+                        //file.append(jsonProduct5);
+                                                
+                        //file.append(jsonProduct6);
+                                                                        
+                        //file.append(jsonProduct7);
+                                                                                                
+                        //file.append(jsonProduct8);
+                        
+                       // file.append(jsonProduct9);
+                        
+                        //file.append(jsonProduct10);
+                        
+                        
+                        
+                       
+                       file.flush();
+                       file.close();
+
+                    } catch (IOException e){
+                        
+                    }
+                    
+            
         }  
         
     }
