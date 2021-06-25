@@ -3,7 +3,11 @@
     <type>org.netbeans.modules.java.j2seproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
+<<<<<<< HEAD:Project/Code/TeleconicationProductInventoryProject/nbproject/project.xml
             <name>TeleconicationProductInventoryProjectComplete</name>
+=======
+            <name>TelecommunicationsInventoryProject</name>
+>>>>>>> 18cb6328ea2a18ff932b7b31d65bdd18f1662dbe:Project/Code/TelecommunicationsInventoryProject/nbproject/project.xml
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>
