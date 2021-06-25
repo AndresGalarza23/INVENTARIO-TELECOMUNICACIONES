@@ -34,6 +34,11 @@ public class SystemInventory {
         amount= sc.nextInt();
         System.out.println(" Enter brand:");
         brand= sc.next();
+        System.out.println("Enter Id:");
+        id= sc.nextInt();
+        sc.nextLine();
+        
+        product[i] = new Product(productName,price,amount,brand,id); 
    
         
     }
