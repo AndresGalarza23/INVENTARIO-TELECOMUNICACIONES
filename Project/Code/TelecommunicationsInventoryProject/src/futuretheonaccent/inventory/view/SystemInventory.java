@@ -252,6 +252,26 @@ public class SystemInventory{
                     } catch (IOException e){
                         
                     }
+              
+                System.out.println("Enter Id Product");
+        
+         
+            int idBus = sc.nextInt();
+            int pos= -1;
+            for (int i=0 ; i<productList.size();i++){
+                if(productList.get(i).getId() == idBus){
+                    pos = i;
+                   
+                }
+                             
+            }
+                if(pos!=-1){
+                System.out.println("Product Is:" + pos + "-" + productList.get(pos));
+            }
+            else{
+                System.out.println("no identify Product");
+                
+            }
                     
             
         }  
