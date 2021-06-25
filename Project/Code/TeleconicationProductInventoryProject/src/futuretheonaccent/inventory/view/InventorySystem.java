@@ -1,4 +1,3 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,12 +19,10 @@ import java.util.Scanner;
  *
  * @author Stefany Guerrero AccentOnTheFuture ESPE-DCC0
  */
-
-public class SystemInventory{
-    
-     public static void main(String[] args) throws IOException {
-        SystemInventory bus =  new SystemInventory();
-       
+public class InventorySystem {
+    public static void main(String[] args) throws IOException {
+        InventorySystem bus =  new InventorySystem();
+        
         Scanner enter = new Scanner(System.in);
         
         boolean out = false;
@@ -38,7 +35,7 @@ public class SystemInventory{
             
             
          
-            System.out.println("1. Producto Information Json");
+            System.out.println("1. Product Information Json");
             System.out.println("2. Product Information and Search");
             System.out.println("3. Exit");
             
@@ -74,8 +71,9 @@ public class SystemInventory{
                 enter.next();
             }
         }
-    }
-    public static void searchAndEnter() throws IOException{
+     }
+        
+        public static void searchAndEnter() throws IOException{
             
             
                String productName;
@@ -113,7 +111,7 @@ public class SystemInventory{
         //Product product9 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
         //System.out.println("Enter Product 10 Information:");
         //Product product10 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
-       
+        //System.out.println("Enter Product 3 Information:");
         
         productList.add(product1);
         //productList.add(product2);
@@ -137,11 +135,17 @@ public class SystemInventory{
             //System.out.println("product object product ->" + product9);
             //System.out.println("product object product ->" + product10);
         
-    }   
+            
         
-        public static void searchJson() throws IOException{
         
-                   String productName;
+        
+            
+        }
+        
+        
+         public static void searchJson() throws IOException{
+        
+               String productName;
                float price;
                int amount;
                int id;
@@ -163,6 +167,8 @@ public class SystemInventory{
                                
         FileWriter file = new FileWriter("./files/TelecommunicationsInventory.json");
               
+             
+                 
         Scanner sc= new Scanner(System.in);
         System.out.println("Enter Product 1 Information:");
         Product product1 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
@@ -186,8 +192,7 @@ public class SystemInventory{
         //Product product10 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
         //System.out.println("Enter Product 3 Information:");
         
-        
-         productList.add(product1);
+        productList.add(product1);
         //productList.add(product2);
         //productList.add(product3);   
         //productList.add(product4);
@@ -222,6 +227,11 @@ public class SystemInventory{
             //System.out.println("jsonProduct ->" + jsonProduct10);
             
             
+            
+            
+            
+            
+            
               try {
                       file.append(jsonProduct1);
                      
@@ -252,8 +262,11 @@ public class SystemInventory{
                     } catch (IOException e){
                         
                     }
-              
-                System.out.println("Enter Id Product");
+                    
+             
+        
+        
+         System.out.println("Enter Id Product");
         
          
             int idBus = sc.nextInt();
@@ -272,8 +285,9 @@ public class SystemInventory{
                 System.out.println("no identify Product");
                 
             }
-                    
             
-        }  
-        
+        }
+             
     }
+    
+

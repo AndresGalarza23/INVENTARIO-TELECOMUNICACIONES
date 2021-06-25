@@ -5,37 +5,45 @@
  */
 package futuretheonaccent.inventory.model;
 
+//import com.google.gson.GsonBuilder;
+//import java.io.FileWriter;
+//import java.io.IOException;
+//import java.util.ArrayList;
+//import java.util.List;
+//import java.util.Scanner;
+
 /**
  *
  * @author Stefany Guerrero AccentOnTheFuture ESPE-DCC0
  */
 public class Product {
-    
-     private String productName;
+   private String productName;
    private Float price;
    private  int amount;
    private String brand;
-   private int id;
-   
-   
-      public Product(String productName, Float price, int amount, String brand, int id) {
+   private int Id;
+
+    public Product(String productName, Float price, int amount, String brand, int Id) {
         this.productName = productName;
         this.price = price;
         this.amount = amount;
         this.brand = brand;
-        this.id = id;
+        this.Id = Id;
     }
+
+  
 
     @Override
     public String toString() {
-        return "Product{" + "productName=" + getProductName() + ", price=" + getPrice() + ", amount=" + getAmount() + ", brand=" + getBrand() + ", id=" + getId() + '}';
+        return "Product{" + "productName=" + getProductName() + ", price=" + getPrice() + ", amount=" + getAmount() + ", brand=" + getBrand() + ", Id=" + getId() + '}';
     }
- 
+
   
-   
-   
-    public void enterdate(){
- }
+ 
+    
+    
+       
+
     /**
      * @return the productName
      */
@@ -93,21 +101,22 @@ public class Product {
     }
 
     /**
-     * @return the id
+     * @return the Id
      */
     public int getId() {
-        return id;
+        return Id;
     }
 
-
-   
     /**
-     * @param id the id to set
+     * @param Id the Id to set
      */
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int Id) {
+        this.Id = Id;
     }
-
-}
+        
+   
     
-
+   
+    
+   
+}
