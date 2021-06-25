@@ -139,7 +139,30 @@ public class SystemInventory{
         
             
         
+        public static void searchJson() throws IOException{
         
+                   String productName;
+               float price;
+               int amount;
+               int id;
+               String brand;
+               String jsonProduct1 = "";
+               String jsonProduct2 = "";
+               String jsonProduct3 = "";
+               String jsonProduct4 = "";
+               String jsonProduct5 = "";
+               String jsonProduct6 = "";
+               String jsonProduct7 = "";
+               String jsonProduct8 = "";
+               String jsonProduct9 = "";
+               String jsonProduct10 = "";
+               
+               
+               
+               List<Product> productList = new ArrayList<Product>();
+                               
+        FileWriter file = new FileWriter("./files/TelecommunicationsInventory.json");
+              
         
             
         }  
