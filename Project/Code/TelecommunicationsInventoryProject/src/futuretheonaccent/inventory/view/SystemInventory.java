@@ -6,6 +6,7 @@
 package futuretheonaccent.inventory.view;
 
 import futuretheonaccent.inventory.model.Product;
+import java.util.Scanner;
 
 /**
  *
@@ -22,6 +23,22 @@ public class SystemInventory {
                String jsonProduct = "";
                Product product []= new Product[10];
               
+            for(int i=0; i<2; i++){  
+                 
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter Product name:");
+        productName= sc.next();
+        System.out.println("Enter price:");
+        price= sc.nextFloat();
+        System.out.println("Enter amount:");
+        amount= sc.nextInt();
+        System.out.println(" Enter brand:");
+        brand= sc.next();
+   
         
+    }
+            
+            
+
     }
 }
