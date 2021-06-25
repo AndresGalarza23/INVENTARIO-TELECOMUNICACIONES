@@ -51,8 +51,14 @@ public class SystemInventory {
             Gson gson = gsonBuilder.create();
             jsonProduct = gson.toJson(product[i]);
             
-            
-            
+               
+            Product product1; 
+            product1 = gson.fromJson(jsonProduct, Product.class);
+                                                                                                                                                                                                                                                                                                                                                         
+            System.out.println("jsonProduct ->" + jsonProduct);
+            System.out.println("product object productName ->" + product1.getProductName());
+            System.out.println("product object price ->" + product1.getPrice());
+             
             
             
             
