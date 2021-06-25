@@ -12,21 +12,21 @@ package futuretheonaccent.inventory.model;
 public class Buy {
    private String productNameBuy;
    private Float priceBuy;
-   private  int amountBuy;
-   private String brandSale;
-   private int IdSale;
+   private int amountBuy;
+   private String brandBuy;
+   private int IdBuy;
 
-    public Buy(String productNameBuy, Float priceBuy, int amountBuy, String brandSale, int IdSale) {
+    public Buy(String productNameBuy, Float priceBuy, int amountBuy, String brandBuy, int IdBuy) {
         this.productNameBuy = productNameBuy;
         this.priceBuy = priceBuy;
         this.amountBuy = amountBuy;
-        this.brandSale = brandSale;
-        this.IdSale = IdSale;
+        this.brandBuy = brandBuy;
+        this.IdBuy = IdBuy;
     }
 
     @Override
     public String toString() {
-        return "Buy{" + "productNameBuy=" + productNameBuy + ", priceBuy=" + priceBuy + ", amountBuy=" + amountBuy + ", brandSale=" + brandSale + ", IdSale=" + IdSale + '}';
+        return "Buy{" + "productNameBuy=" + productNameBuy + ", priceBuy=" + priceBuy + ", amountBuy=" + amountBuy + ", brandBuy=" + brandBuy + ", IdBuy=" + IdBuy + '}';
     }
 
     /**
@@ -72,31 +72,34 @@ public class Buy {
     }
 
     /**
-     * @return the brandSale
+     * @return the brandBuy
      */
-    public String getBrandSale() {
-        return brandSale;
+    public String getBrandBuy() {
+        return brandBuy;
     }
 
     /**
-     * @param brandSale the brandSale to set
+     * @param brandBuy the brandBuy to set
      */
-    public void setBrandSale(String brandSale) {
-        this.brandSale = brandSale;
+    public void setBrandBuy(String brandBuy) {
+        this.brandBuy = brandBuy;
     }
 
     /**
-     * @return the IdSale
+     * @return the IdBuy
      */
-    public int getIdSale() {
-        return IdSale;
+    public int getIdBuy() {
+        return IdBuy;
     }
 
     /**
-     * @param IdSale the IdSale to set
+     * @param IdBuy the IdBuy to set
      */
-    public void setIdSale(int IdSale) {
-        this.IdSale = IdSale;
+    public void setIdBuy(int IdBuy) {
+        this.IdBuy = IdBuy;
     }
+
+
+
    
 }
