@@ -99,6 +99,10 @@ public class Product {
         return id;
     }
 
+<<<<<<< HEAD:Project/Code/TeleconicationProductInventoryProject/src/futuretheonaccent/inventory/model/Product.java
+
+   
+=======
     /**
      * @param id the id to set
      */
@@ -106,6 +110,7 @@ public class Product {
         this.id = id;
     }
 
+>>>>>>> 18cb6328ea2a18ff932b7b31d65bdd18f1662dbe:Project/Code/TelecommunicationsInventoryProject/src/futuretheonaccent/inventory/model/Product.java
 }
     
 
