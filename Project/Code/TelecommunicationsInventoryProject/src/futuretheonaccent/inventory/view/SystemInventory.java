@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,19 +9,22 @@ package futuretheonaccent.inventory.view;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import futuretheonaccent.inventory.model.Product;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
  *
  * @author Stefany Guerrero AccentOnTheFuture ESPE-DCC0
  */
-<<<<<<< HEAD:Project/Code/TeleconicationProductInventoryProject/src/futuretheonaccent/inventory/view/InventorySystem.java
-public class InventorySystem {
+
+public class SystemInventory{
     
      public static void main(String[] args) throws IOException {
-        InventorySystem bus =  new InventorySystem();
+        SystemInventory bus =  new SystemInventory();
        
         Scanner enter = new Scanner(System.in);
         
@@ -73,70 +75,73 @@ public class InventorySystem {
             }
         }
     }
-      
-        
-    }
-    
-
-=======
-public class SystemInventory {
-    public static void main(String[] args) {
-        
-          String productName;
+    public static void searchAndEnter() throws IOException{
+            
+            
+               String productName;
                float price;
                int amount;
-               String brand;
                int id;
-               String jsonProduct = "";
-               Product product []= new Product[10];
+               String brand;
+                              
+               
+               
+               List<Product> productList = new ArrayList<Product>();
+                               
+        FileWriter file = new FileWriter("./files/TelecommunicationsInventory.json");
               
-            for(int i=0; i<2; i++){  
+             
                  
         Scanner sc= new Scanner(System.in);
-        System.out.println("Enter Product name:");
-        productName= sc.next();
-        System.out.println("Enter price:");
-        price= sc.nextFloat();
-        System.out.println("Enter amount:");
-        amount= sc.nextInt();
-        System.out.println(" Enter brand:");
-        brand= sc.next();
-        System.out.println("Enter Id:");
-        id= sc.nextInt();
-        sc.nextLine();
-        
-        product[i] = new Product(productName,price,amount,brand,id); 
-   
-        
-    }
-            
+        System.out.println("Enter Product 1 Information:");
+        Product product1 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 2 Information:");
+        //Product product2 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 3 Information:");
+        //Product product3 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 4 Information:");
+        //Product product4 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 5 Information:");
+        //Product product5 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 6 Information:");
+        //Product product6 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 7 Information:");
+        //Product product7 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 8 Information:");
+        //Product product8 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 9 Information:");
+        //Product product9 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        //System.out.println("Enter Product 10 Information:");
+        //Product product10 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
        
-            for(int i=0; i<2; i++){
-            GsonBuilder gsonBuilder = new  GsonBuilder();
-            Gson gson = gsonBuilder.create();
-            jsonProduct = gson.toJson(product[i]);
+        
+        productList.add(product1);
+        //productList.add(product2);
+        //productList.add(product3);   
+        //productList.add(product4);
+        //productList.add(product5);
+        //productList.add(product6);
+        //productList.add(product7);
+        //productList.add(product8);
+        //productList.add(product9);
+        //productList.add(product10);      
+      
+            System.out.println("product object product ->" + product1);
+           // System.out.println("product object product ->" + product2);
+            //System.out.println("product object product ->" + product3);
+            //System.out.println("product object product ->" + product4);
+            //System.out.println("product object product ->" + product5);
+            //System.out.println("product object product ->" + product6);
+            //System.out.println("product object product ->" + product7);
+            //System.out.println("product object product ->" + product8);
+            //System.out.println("product object product ->" + product9);
+            //System.out.println("product object product ->" + product10);
+        
             
-               
-            Product product1; 
-            product1 = gson.fromJson(jsonProduct, Product.class);
-                                                                                                                                                                                                                                                                                                                                                         
-            System.out.println("jsonProduct ->" + jsonProduct);
-            System.out.println("product object productName ->" + product1.getProductName());
-            System.out.println("product object price ->" + product1.getPrice());
-             
-             System.out.println("product object amount ->" + product1.getAmount());
-            System.out.println("product object brand ->" + product1.getBrand());
-            System.out.println("product object id ->" + product1.getId());
-   
-            System.out.println("\n  ");
-    
-
-           
+        
+        
+        
             
-            
-            }
-
+        }  
+        
     }
-}
->>>>>>> 18cb6328ea2a18ff932b7b31d65bdd18f1662dbe:Project/Code/TelecommunicationsInventoryProject/src/futuretheonaccent/inventory/view/SystemInventory.java
->>>>>>> 735b6525a2d320e21f38adf1bf8a0b3b41c51d94
