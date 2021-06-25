@@ -18,11 +18,20 @@ public class Product {
    private int id;
    
    
-   
-   
-   
-   
-   
+      public Product(String productName, Float price, int amount, String brand, int id) {
+        this.productName = productName;
+        this.price = price;
+        this.amount = amount;
+        this.brand = brand;
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" + "productName=" + getProductName() + ", price=" + getPrice() + ", amount=" + getAmount() + ", brand=" + getBrand() + ", id=" + getId() + '}';
+    }
+ 
+  
    
    
     public void enterdate(){
