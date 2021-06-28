@@ -7,7 +7,7 @@ package futuretheonaccent.inventory.view;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import futuretheonaccent.inventory.model.Product;
+import futuretheonaccent.inventory.model.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -157,6 +157,8 @@ public class InventorySystem {
         int amount;
         int id;
         String brand;
+        String nameSuplier ;
+        int RUC ;
         String jsonProduct1 = "";
         String jsonProduct2 = "";
         String jsonProduct3 = "";
@@ -167,11 +169,12 @@ public class InventorySystem {
         String jsonProduct8 = "";
         String jsonProduct9 = "";
         String jsonProduct10 = "";
+        String jsonSuplier = "";
 
         List<Product> productList = new ArrayList<Product>();
 
         FileWriter file = new FileWriter("./files/TelecommunicationsInventory.json");
-
+       
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Product 1 Information:");
         Product product1 = new Product(productName = sc.next(), price = sc.nextFloat(), amount = sc.nextInt(), brand = sc.next(), id = sc.nextInt());
@@ -179,22 +182,27 @@ public class InventorySystem {
         //Product product2 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
         //System.out.println("Enter Product 3 Information:");
         //Product product3 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
-        //System.out.println("Enter Product 3 Information:");
+        //System.out.println("Enter Product 4 Information:");
         //Product product4 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
-        //System.out.println("Enter Product 3 Information:");
+        //System.out.println("Enter Product 5 Information:");
         //Product product5 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
-        //System.out.println("Enter Product 3 Information:");
+        //System.out.println("Enter Product 6 Information:");
         //Product product6 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
-        //System.out.println("Enter Product 3 Information:");
+        //System.out.println("Enter Product 7 Information:");
         //Product product7 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
-        //System.out.println("Enter Product 3 Information:");
+        //System.out.println("Enter Product 8 Information:");
         //Product product8 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
-        //System.out.println("Enter Product 3 Information:");
+        //System.out.println("Enter Product 9 Information:");
         //Product product9 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
-        //System.out.println("Enter Product 3 Information:");
+        //System.out.println("Enter Product 10 Information:");
         //Product product10 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
         //System.out.println("Enter Product 3 Information:");
-
+         System.out.println("Enter Name Suplier");
+         nameSuplier = sc.next();
+         System.out.println("Enter Suplier RUC");
+         RUC = sc.nextInt();
+        
+        
         productList.add(product1);
         //productList.add(product2);
         //productList.add(product3);   
@@ -209,7 +217,7 @@ public class InventorySystem {
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
         jsonProduct1 = gson.toJson(product1);
-        System.out.println("jsonProduct ->" + jsonProduct1);
+         System.out.println("jsonProduct ->" + jsonProduct1);
         //jsonProduct2 = gson.toJson(product2);
         //System.out.println("jsonProduct ->" + jsonProduct2);
         //jsonProduct3 = gson.toJson(product3);
@@ -228,11 +236,13 @@ public class InventorySystem {
         //System.out.println("jsonProduct ->" + jsonProduct9);
         //jsonProduct10 = gson.toJson(product10);
         //System.out.println("jsonProduct ->" + jsonProduct10);
+        
+        
 
         try {
             file.append(jsonProduct1);
 
-                        //file.append(jsonProduct2);
+            //file.append(jsonProduct2);
             //file.append(jsonProduct3);                       
             //file.append(jsonProduct4);
             //file.append(jsonProduct5);
@@ -241,7 +251,9 @@ public class InventorySystem {
             //file.append(jsonProduct8);
             // file.append(jsonProduct9);
             //file.append(jsonProduct10);
+           
             file.flush();
+           
             file.close();
 
         } catch (IOException e) {
@@ -357,5 +369,9 @@ public class InventorySystem {
         //System.out.println("product object product ->" + productBuy8);
         //System.out.println("product object product ->" + productBuy9);
         //System.out.println("product object product ->" + productBuy10);
+    }
+
+    private static Suplier Suplier() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
