@@ -9,7 +9,7 @@ package futuretheonaccent.inventory.model;
  *
  * @author Andres Galarza AccentOnTheFuture ESPE-DCCO
  */
-public class Buy { // this classdoes not exist in the diagram
+public class Buy {
    private String productNameBuy;
    private Float priceBuy;
    private int amountBuy;

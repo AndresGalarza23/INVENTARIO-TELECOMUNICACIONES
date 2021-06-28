@@ -19,7 +19,7 @@ import java.util.Scanner;
  *
  * @author Stefany Guerrero AccentOnTheFuture ESPE-DCC0
  */
-public class InventorySystem { // not exist the class ptchases and class supile
+public class InventorySystem {
 
     public static void main(String[] args) throws IOException {
         InventorySystem bus = new InventorySystem();
@@ -86,7 +86,7 @@ public class InventorySystem { // not exist the class ptchases and class supile
 
         List<Product> productList = new ArrayList<Product>();
 
-        Scanner sc = new Scanner(System.in); // unnecesary command lines
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter Product 1 Information:");
         Product product1 = new Product(productName = sc.next(), price = sc.nextFloat(), amount = sc.nextInt(), brand = sc.next(), id = sc.nextInt());
         //System.out.println("Enter Product 2 Information:");
@@ -113,7 +113,7 @@ public class InventorySystem { // not exist the class ptchases and class supile
         //productList.add(product3);   
         //productList.add(product4);
         //productList.add(product5);
-        //productList.add(product6);  // unnecesary command lines
+        //productList.add(product6);
         //productList.add(product7);
         //productList.add(product8);
         //productList.add(product9);
@@ -193,13 +193,13 @@ public class InventorySystem { // not exist the class ptchases and class supile
         //Product product9 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
         //System.out.println("Enter Product 3 Information:");
         //Product product10 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
-        //System.out.println("Enter Product 3 Information:"); // unnecesary command lines
+        //System.out.println("Enter Product 3 Information:");
 
         productList.add(product1);
         //productList.add(product2);
         //productList.add(product3);   
         //productList.add(product4);
-        //productList.add(product5); // unnecesary command lines
+        //productList.add(product5);
         //productList.add(product6);
         //productList.add(product7);
         //productList.add(product8);
