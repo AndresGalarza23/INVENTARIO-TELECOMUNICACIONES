@@ -89,8 +89,8 @@ public class InventorySystem {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Product 1 Information:");
         Product product1 = new Product(productName = sc.next(), price = sc.nextFloat(), amount = sc.nextInt(), brand = sc.next(), id = sc.nextInt());
-        //System.out.println("Enter Product 2 Information:");
-        //Product product2 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
+        System.out.println("Enter Product 2 Information:");
+        Product product2 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
         //System.out.println("Enter Product 3 Information:");
         //Product product3 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
         //System.out.println("Enter Product 4 Information:");
@@ -109,7 +109,7 @@ public class InventorySystem {
         //Product product10 = new Product(productName=sc.next(), price=sc.nextFloat(), amount=sc.nextInt(), brand=sc.next(), id=sc.nextInt());
 
         productList.add(product1);
-        //productList.add(product2);
+        productList.add(product2);
         //productList.add(product3);   
         //productList.add(product4);
         //productList.add(product5);
@@ -120,7 +120,7 @@ public class InventorySystem {
         //productList.add(product10);      
 
         System.out.println("product object product ->" + product1);
-        // System.out.println("product object product ->" + product2);
+        System.out.println("product object product ->" + product2);
         //System.out.println("product object product ->" + product3);
         //System.out.println("product object product ->" + product4);
         //System.out.println("product object product ->" + product5);
@@ -142,7 +142,7 @@ public class InventorySystem {
 
         }
         if (pos != -1) {
-            System.out.println("Product Is:" + pos + "-" + productList.get(pos));
+            System.out.println("Product Is:" + "-" + productList.get(pos));
         } else {
             System.out.println("no identify Product");
 
