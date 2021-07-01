@@ -5,10 +5,49 @@
  */
 package futuretheonaccent.inventory.model;
 
+
+
 /**
  *
  * @author Andres Galarza AccentOnTheFuture ESPE-DCCO
  */
 public class Read {
+    public static String fact() {
+     
+        String sfact = null;
+        
+        try {
+            BufferedReader enter = new BufferedReader(new InputStreamReader(System.in));       
+            sfact = enter.readLine();
+            
+        } catch (IOException e){
+
+            System.out.println("Error: " + e.getMessage());
+        }
+         return sfact;
+    }
+    
+    public static int factInt() {
+        
+      try{
+          return (Integer.parseInt(fact()));
+          
+      }  catch(NumberFormatException error){
+         return (Integer.MIN_VALUE);
+      }
+        
+    }
+    
+    public static float factFloat() {
+        try{
+            Float f = new Float(fact());
+            return (f.floatValue());
+            
+        }catch(NumberFormatException error){
+         return (Float.NaN);
+        }
+    }
+    
     
 }
+
