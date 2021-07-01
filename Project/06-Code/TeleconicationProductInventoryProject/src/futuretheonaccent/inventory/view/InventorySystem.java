@@ -59,7 +59,30 @@ public class InventorySystem {
         }
 
     private static void enterProduct() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        String productName = "" ;
+          String brand = "";
+          float pvp = 0;
+          int amount = 0;
+          int id = 0 ;
+        
+          System.out.print("Enter Products Facts\n");
+          System.out.print("--------------------\n");
+          System.out.print("Id: ");
+          id = Read.factInt();
+          System.out.print("Product Name: ");
+          productName = Read.fact();
+          System.out.print("P.V.P: ");
+          pvp = Read.factFloat();
+          System.out.print("Amount: ");
+          amount = Read.factInt();
+          System.out.print("Brand: ");
+          brand = Read.fact();
+          
+          product[cont] = new Product(productName, pvp, amount, brand, id);
+          cont++;
+          System.out.println("Product in List" + cont);
+           
     }
 
     private static void searchProduct() {
