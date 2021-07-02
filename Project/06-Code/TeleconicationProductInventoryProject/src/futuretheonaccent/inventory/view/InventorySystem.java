@@ -5,7 +5,10 @@
  */
 package futuretheonaccent.inventory.view;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import futuretheonaccent.inventory.model.Product;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /**
@@ -17,7 +20,7 @@ public class InventorySystem {
     static Product product[]= null;
     static int cont = 0;
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         product = new Product[10];
         
@@ -25,7 +28,7 @@ public class InventorySystem {
         
         do{
             System.out.println("--MENU--");
-            System.out.println("1. Enter Product");
+            System.out.println("1. Enter Product and json file");
             System.out.println("2. Search Product");
             System.out.println("3. List Products");
             System.out.println("4. Out");
@@ -59,14 +62,16 @@ public class InventorySystem {
         
         }
 
-    private static void enterProduct() {
+    private static void enterProduct() throws IOException {
         
         String productName = "" ;
           String brand = "";
           float pvp = 0;
           int amount = 0;
           int id = 0 ;
-        
+          String jsonProduct;
+          FileWriter file = new FileWriter("./files/Product Telecomunication.json");
+          
           System.out.print("Enter Products Facts\n");
           System.out.print("--------------------\n");
           System.out.print("Id: ");
@@ -83,7 +88,22 @@ public class InventorySystem {
           product[cont] = new Product(productName, pvp, amount, brand, id);
           cont++;
           System.out.println("Product in List" + cont);
-           
+          GsonBuilder gsonBuilder = new GsonBuilder();
+            Gson gson = gsonBuilder.create();
+            jsonProduct = gson.toJson(product[cont]);
+
+            Product product1;
+            product1 = gson.fromJson(jsonProduct,Product.class);
+            jsonProduct = gson.toJson(product);
+
+            System.out.println("jsonGame ->" + jsonProduct); 
+            try {
+            file.append(jsonProduct);
+            file.flush();
+            file.close();
+
+        } catch (IOException e) {
+        }
     }
 
     private static void searchProduct() {
@@ -138,7 +158,7 @@ public class InventorySystem {
         
         }
         
-        
+      
         
       
 }
