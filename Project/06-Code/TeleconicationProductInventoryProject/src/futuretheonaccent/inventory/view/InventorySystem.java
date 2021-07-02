@@ -6,6 +6,7 @@
 package futuretheonaccent.inventory.view;
 
 import futuretheonaccent.inventory.model.Product;
+import java.io.IOException;
 
 /**
  *
@@ -86,12 +87,44 @@ public class InventorySystem {
     }
 
     private static void searchProduct() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+    
+            int id ;
+            int pos= -1;
+            int action = 0;
+                  System.out.println("Enter Id Product");
+                  id = Read.factInt();
+                  pos = search(id);
+                  
+                  if (pos >=0){
+                      System.out.println("Product: " + product[pos].toString());
+                  
+                  }
+    
+    
     }
 
     private static void listProducts() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    private static int search(int id) {
+        
+            int pos=-1;
+        
+        for(int i = 0; i <cont; i++){
+        
+            if (product[i].getId() == id){
+                System.out.println("Product Found ");
+                pos = i;
+                
+        }else{
+                System.out.println("Product Not Found");            }
+    
+        }
+        return pos;
+        
+        }
         
         
         
