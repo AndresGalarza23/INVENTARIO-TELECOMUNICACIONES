@@ -18,31 +18,19 @@ package futuretheonaccent.inventory.model;
  */
 public class Product {
    private String productName;
-   private Float price;
+   private Float pvp;
    private  int amount;
    private String brand;
    private int Id;
 
     public Product(String productName, Float price, int amount, String brand, int Id) {
         this.productName = productName;
-        this.price = price;
+        this.pvp = price;
         this.amount = amount;
         this.brand = brand;
         this.Id = Id;
     }
 
-  
-
-    @Override
-    public String toString() {
-        return "Product{" + "productName=" + getProductName() + ", price=" + getPrice() + ", amount=" + getAmount() + ", brand=" + getBrand() + ", Id=" + getId() + '}';
-    }
-
-  
- 
-    
-    
-       
 
     /**
      * @return the productName
@@ -62,14 +50,14 @@ public class Product {
      * @return the price
      */
     public Float getPrice() {
-        return price;
+        return pvp;
     }
 
     /**
      * @param price the price to set
      */
     public void setPrice(Float price) {
-        this.price = price;
+        this.pvp = price;
     }
 
     /**
@@ -115,6 +103,16 @@ public class Product {
     }
         
    
+       @Override
+    public String toString() {
+        return "Product" 
+                + "\n Product Name:" + productName 
+                + "\n P.V.P:" + pvp 
+                + "\n Amount:" + amount 
+                + "\n Brand:" + brand 
+                + "\n Id:" + Id;
+    }
+
     
    
     

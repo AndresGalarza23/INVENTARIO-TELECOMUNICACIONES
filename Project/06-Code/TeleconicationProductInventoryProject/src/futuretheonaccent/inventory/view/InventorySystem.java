@@ -105,7 +105,19 @@ public class InventorySystem {
     }
 
     private static void listProducts() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
+         int id ;
+            int pos= -1;
+            int action = 0;
+                  System.out.println("Enter Id Product");
+                  id = Read.factInt();
+                  pos = search(id);
+                  
+                  if (pos >=0){
+                      System.out.println("Product: " + product[pos].toString());
+                  
+                  }
+        
     }
 
     private static int search(int id) {
