@@ -64,7 +64,8 @@ public class InventorySystem {
 
     private static void enterProduct() throws IOException {
         
-        String productName = "" ;
+          
+          String productName = "" ;
           String brand = "";
           float pvp = 0;
           int amount = 0;
@@ -96,7 +97,7 @@ public class InventorySystem {
             product1 = gson.fromJson(jsonProduct,Product.class);
             jsonProduct = gson.toJson(product);
 
-            System.out.println("jsonGame ->" + jsonProduct); 
+            System.out.println("jsonProduct ->" + jsonProduct); 
             try {
             file.append(jsonProduct);
             file.flush();
@@ -126,18 +127,16 @@ public class InventorySystem {
 
     private static void listProducts() {
       
-         int id ;
-            int pos= -1;
-            int action = 0;
-                  System.out.println("Enter Id Product");
-                  id = Read.factInt();
-                  pos = search(id);
-                  
-                  if (pos >=0){
-                      System.out.println("Product: " + product[pos].toString());
-                  
-                  }
+          for (int i = 0; i < cont; i++){
+         System.out.println("\n\n Product List");
+         System.out.println("------------------");
+         System.out.println(product[i].toString());
         
+          }
+        
+        
+                  
+                         
     }
 
     private static int search(int id) {
