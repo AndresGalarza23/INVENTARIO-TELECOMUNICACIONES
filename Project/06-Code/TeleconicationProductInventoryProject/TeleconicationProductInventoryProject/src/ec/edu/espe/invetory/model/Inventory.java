@@ -11,4 +11,38 @@ package ec.edu.espe.invetory.model;
  */
 public class Inventory {
     
+    private String id;
+    private String name;
+    private String description;
+    private double purchasePrice;
+    private double salePrice;
+    private int quantity;
+    private int quantityMinimumStock;
+    private int idProvider;
+
+    public Inventory() {
+    }
+    
+    public Inventory (String id, String name, String description, double purchasePrice, double salePrice, int quantity, int quantityMinimaStock, int idProvider) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.purchasePrice = purchasePrice;
+        this.salePrice = salePrice;
+        this.quantity = quantity;
+        this.quantityMinimumStock = quantityMinimaStock;
+        this.idProvider = idProvider;
+    }
+    
+    public String getId() {
+        return id;
+    }
+    
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    
+    
 }
