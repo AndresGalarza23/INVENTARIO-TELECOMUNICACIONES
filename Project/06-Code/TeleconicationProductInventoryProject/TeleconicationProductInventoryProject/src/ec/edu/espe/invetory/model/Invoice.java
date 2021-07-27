@@ -32,5 +32,30 @@ public class Invoice {
         return id;
     }
     
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    public String getDate() {
+        return date;
+    }
+    
+    public void setDate(String date) {
+        this.date = date;
+    }
+    
+    public String getCedulaClient() {
+        return cedulaClient;
+    }
+    
+    public void setCedulaClient(String cedulaClient) {
+        this.cedulaClient = cedulaClient;
+    }
+    
+    public double getTax() {
+        return tax;
+    }
+    
+    
     
 }
