@@ -50,5 +50,12 @@ public class Provider {
         this.phoneNumber = phoneNumber;
     }
      
+     public String getAddress() {
+        return address;
+    }
+     
+     public void setAddress(String address) {
+        this.address = address;
+    }
     
 }
