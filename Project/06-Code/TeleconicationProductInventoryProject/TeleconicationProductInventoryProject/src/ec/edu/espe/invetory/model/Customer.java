@@ -11,4 +11,25 @@ package ec.edu.espe.invetory.model;
  */
 public class Customer {
     
+    private String cedula;
+    private String names;
+    private String lastName;
+    private String address;
+    private String phone;
+
+    public Customer() {
+    }
+    
+    public Customer(String cedula, String names, String lastName, String address, String phone) {
+        this.cedula = cedula;
+        this.names = names;
+        this.lastName = lastName;
+        this.address = address;
+        this.phone = phone;
+    }
+    
+    public String getCedula() {
+        return cedula;
+    }
+   
 }
