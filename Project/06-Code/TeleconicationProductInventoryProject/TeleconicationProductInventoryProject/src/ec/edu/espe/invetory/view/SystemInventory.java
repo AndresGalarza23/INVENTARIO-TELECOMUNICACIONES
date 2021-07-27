@@ -5,10 +5,28 @@
  */
 package ec.edu.espe.invetory.view;
 
+import ec.edu.espe.invetory.controller.InventoryManagement;
+import ec.edu.espe.invetory.controller.InvoiceManagement;
+import ec.edu.espe.invetory.controller.ProviderManagement;
+import ec.edu.espe.invetory.controller.SaleManagement;
+import java.io.IOException;
+import java.util.Scanner;
+
 /**
  *
  * @author Luis Haro LAMESTech ESPE-DCC0
  */
 public class SystemInventory {
+    
+    public static void main(String[] args) throws IOException, ParseException, java.text.ParseException {
+        InventoryManagement inventory = new InventoryManagement();
+        ProviderManagement provider = new ProviderManagement();
+        InvoiceManagement invoice = new InvoiceManagement();
+        SaleManagement saleManagement = new SaleManagement();
+        Scanner sn = new Scanner(System.in);
+        boolean exit = false;
+        int option;
+        
+        
     
 }
