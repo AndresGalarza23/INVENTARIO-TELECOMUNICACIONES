@@ -11,4 +11,26 @@ package ec.edu.espe.invetory.model;
  */
 public class Invoice {
     
+    private static int counterIds = 1;
+    private String id;
+    private String date;
+    private String cedulaClient;
+    private double tax;
+    private double total;
+
+    public Invoice() {
+    }
+    
+    public Invoice(String cedulaClient, double tax) {
+        this();
+      
+        this.cedulaClient = cedulaClient;
+        this.tax = tax;
+    }
+    
+    public String getId() {
+        return id;
+    }
+    
+    
 }
