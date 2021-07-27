@@ -56,6 +56,16 @@ public class Invoice {
         return tax;
     }
     
-    
+     public void setTax(double tax) {
+        this.tax = tax;
+    }
+     
+     public double getTotal() {
+        return total;
+    }
+     
+     public void setTotal(double total) {
+        this.total = total;
+    }
     
 }
