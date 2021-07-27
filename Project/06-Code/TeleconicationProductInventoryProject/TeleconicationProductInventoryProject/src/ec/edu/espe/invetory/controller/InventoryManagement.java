@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.invetory.model;
+package ec.edu.espe.invetory.controller;
 
 /**
  *
- * @author Liliana
+ * @author Luis Haro LAMESTech ESPE-DCC0
  */
-public class Customer {
+public class InventoryManagement {
     
 }

@@ -7,8 +7,8 @@ package ec.edu.espe.invetory.model;
 
 /**
  *
- * @author Liliana
+ * @author Luis Haro LAMESTech ESPE-DCC0
  */
-public class Invoice {
+public class Customer {
     
 }
