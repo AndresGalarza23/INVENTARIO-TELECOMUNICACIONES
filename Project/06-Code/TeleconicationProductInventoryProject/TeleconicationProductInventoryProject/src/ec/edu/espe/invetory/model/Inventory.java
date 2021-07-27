@@ -83,6 +83,20 @@ public class Inventory {
         this.quantity = quantity;
     }
     
+    public int getQuantityMinimumStock() {
+        return quantityMinimumStock;
+    }
     
+    public void setQuantityMinimumStock(int quantityMinimaStock) {
+        this.quantityMinimumStock = quantityMinimaStock;
+    }
+    
+    public int getIdProvider() {
+        return idProvider;
+    }
+    
+    public void setIdProvider(int idProvider) {
+        this.idProvider = idProvider;
+    }
     
 }
