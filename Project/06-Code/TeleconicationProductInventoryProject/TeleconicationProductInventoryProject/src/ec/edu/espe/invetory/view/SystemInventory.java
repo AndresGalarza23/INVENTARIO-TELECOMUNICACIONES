@@ -35,8 +35,26 @@ public class SystemInventory {
             System.out.println("Write a correct option");
             option = sn.nextInt();
             
-            
+            switch (option) {
+                case 1:
+                    inventory.inputInventory();
+                    break;
+                case 2:
+                    provider.inputProvider();
+                    break;
+                case 3:
+                    saleManagement.sale();
+                    break;
+                case 4:
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Only numbers");
+                    
+            }
+              
         }
-        
+    
     }
+    
 }
