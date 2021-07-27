@@ -11,4 +11,21 @@ package ec.edu.espe.invetory.model;
  */
 public class Provider {
     
+    private String id;
+    private String name;
+    private String phoneNumber;
+    private String address;
+
+    public Provider() {
+    }
+    
+     public Provider(String id, String name, String phone, String direction) {
+        this.id = id;
+        this.name = name;
+        this.phoneNumber = phone;
+        this.address = direction;
+    }
+     
+     
+    
 }
