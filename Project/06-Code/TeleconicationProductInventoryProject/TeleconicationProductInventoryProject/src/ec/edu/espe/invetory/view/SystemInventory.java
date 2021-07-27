@@ -27,6 +27,16 @@ public class SystemInventory {
         boolean exit = false;
         int option;
         
+        while (!exit) {
+            System.out.println("1. Add to Inventory");
+            System.out.println("2. Add Provider");
+            System.out.println("3. Sale");
+            System.out.println("4. Exit");
+            System.out.println("Write a correct option");
+            option = sn.nextInt();
+            
+            
+        }
         
-    
+    }
 }
