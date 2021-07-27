@@ -32,4 +32,45 @@ public class Customer {
         return cedula;
     }
    
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+    
+    public String getNames() {
+        return names;
+    }
+    
+    public void setNames(String names) {
+        this.names = names;
+    }
+    
+    public String getLastName() {
+        return lastName;
+    }
+    
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    
+    public String getAddress() {
+        return address;
+    }
+    
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
+     public String getPhone() {
+        return phone;
+    }
+     
+     public void setPhone(String phone) {
+        this.phone = phone;
+    }
+     
+     @Override
+    public String toString() {
+        return "Customer{" + "cedula=" + cedula + ", names=" + names + ", lastName=" + lastName + ", address=" + address + ", phone=" + phone + '}';
+    }
+    
 }
