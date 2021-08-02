@@ -10,6 +10,7 @@ import ec.edu.espe.invetory.controller.InvoiceManagement;
 import ec.edu.espe.invetory.controller.ProviderManagement;
 import ec.edu.espe.invetory.controller.SaleManagement;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 
 /**
