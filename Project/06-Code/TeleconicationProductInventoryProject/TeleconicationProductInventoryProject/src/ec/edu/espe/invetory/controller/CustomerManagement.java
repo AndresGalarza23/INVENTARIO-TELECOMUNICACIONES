@@ -1,12 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ec.edu.espe.invetory.controller;
 
+import ec.edu.espe.filemanagerlibrary.FileManager;
+import ec.edu.espe.invetory.model.Customer;
 import java.io.IOException;
-import java.text.ParseException;
+import java.util.Scanner;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 
 /**
  *
@@ -41,10 +44,24 @@ public class CustomerManagement {
         System.out.println("Enter Phone");
         String phone = sc.nextLine();
         customer.setPhone(phone); 
+        
+         JSONObject client = new JSONObject();
+        client.put("Id", customer.getCedula());
+        client.put("Name", customer.getNames());
+        client.put("Last Name", customer.getLastName());
+        client.put("Adress", customer.getAddress());
+        client.put("Phone", customer.getPhone());
+        array.add(client);
+        return array;
      }
      
      
      
      
      
+    public void saveClient() throws IOException, ParseException {
+        FileManager.writeRecord("client.json", inputCustomer().toJSONString());
+    }
 }
+
+
