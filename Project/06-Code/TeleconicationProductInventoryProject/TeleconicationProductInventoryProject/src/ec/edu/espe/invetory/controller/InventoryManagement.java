@@ -19,6 +19,8 @@ import org.json.simple.parser.JSONParser;
  * @author Andres Galarza AccentOnTheFuture ESPE-DCCO
  */
 public class InventoryManagement {
+    public void inputInventory() throws IOException, ParseException, org.json.simple.parser.ParseException { 
+        
    boolean flag = false;
         String data = FileManager.read("data/Inventory.json");
         String dataProviders = FileManager.read("data/Provider.json");
@@ -57,4 +59,5 @@ public class InventoryManagement {
 
     
     
+}
 }
