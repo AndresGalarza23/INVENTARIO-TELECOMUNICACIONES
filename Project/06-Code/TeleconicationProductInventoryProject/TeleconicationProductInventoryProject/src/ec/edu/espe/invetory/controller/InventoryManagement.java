@@ -26,7 +26,35 @@ public class InventoryManagement {
         JSONArray array = (JSONArray) new JSONParser().parse(data);
         JSONArray arrayProviders = (JSONArray) new JSONParser().parse(dataProviders);
         JSONObject jsonObject = new JSONObject();
-    
+    Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Product ID");
+        String id = sc.nextLine();
+        inventory.setId(id);
+
+        System.out.println("Enter Product Name");
+        String product = sc.nextLine();
+        inventory.setName(product);
+
+        System.out.println("Enter Description");
+        String description = sc.nextLine();
+        inventory.setDescription(description);
+
+        System.out.println("Enter Purchase Price");
+        double purchasePrice = sc.nextDouble();
+        inventory.setPurchasePrice(purchasePrice);
+
+        System.out.println("Enter Sale Price");
+        double salePrice = sc.nextDouble();
+        inventory.setSalePrice(salePrice);
+
+        System.out.println("Enter Quantity");
+        int quantity = sc.nextInt();
+        inventory.setQuantity(quantity);
+
+        System.out.println("Enter Quantity Minimum Stock");
+        int quantityMinimumStock = sc.nextInt();
+        inventory.setQuantityMinimumStock(quantityMinimumStock);
+
     
     
 }
