@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.invetory.controller;
 
+import java.util.Date;
+
 
 
 /**
@@ -18,9 +20,18 @@ public class ProviderManagement {
         Provider provider = new Provider();
         JSONArray array = (JSONArray) new JSONParser().parse(data);
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter ID Invoice");
+        String id = sc.nextLine();
+        invoice.setId(id);
+
+        Date date = new Date();
+        System.out.println(date);
+        invoice.setDate(date.toString());
     
-    
-    
+        System.out.println("Enter Cedula Customer");
+        String cedulaCustomer = sc.nextLine();
+        invoice.setCedulaClient(cedulaCustomer);
+        
     
     
     
