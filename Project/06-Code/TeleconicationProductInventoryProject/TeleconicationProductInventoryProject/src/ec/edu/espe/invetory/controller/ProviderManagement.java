@@ -5,7 +5,18 @@
  */
 package ec.edu.espe.invetory.controller;
 
+import ec.edu.espe.filemanagerlibrary.FileManager;
+
+import ec.edu.espe.invetory.model.Invoice;
+import ec.edu.espe.invetory.model.Provider;
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.Date;
+import java.util.Scanner;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 
 
 
@@ -47,7 +58,9 @@ public class ProviderManagement {
         invoiceJson.put("tax", invoice.getTax());
         invoiceJson.put("date", invoice.getDate());
         invoiceJson.put("total", invoice.getTotal());
-    
+       array.add(invoiceJson);
+
+        FileManager.writeRecord("data/Invoice.json", array.toJSONString());
     
     
     
