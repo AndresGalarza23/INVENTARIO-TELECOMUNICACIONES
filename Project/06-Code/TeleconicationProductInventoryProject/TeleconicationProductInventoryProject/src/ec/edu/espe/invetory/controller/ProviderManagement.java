@@ -32,6 +32,21 @@ public class ProviderManagement {
         String cedulaCustomer = sc.nextLine();
         invoice.setCedulaClient(cedulaCustomer);
         
+        System.out.println("Enter Tax");
+        double tax = sc.nextDouble();
+        invoice.setTax(tax);
+
+        double subTotal = (quantity * Double.parseDouble(object.get("salePrice").toString()));
+        double total = subTotal + subTotal*(tax / 100);
+
+        invoice.setTotal(total);
+        System.out.println("Total to pay: "+ total);
+        JSONObject invoiceJson = new JSONObject();
+        invoiceJson.put("id", invoice.getId());
+        invoiceJson.put("cedulaCustomer", invoice.getCedulaClient());
+        invoiceJson.put("tax", invoice.getTax());
+        invoiceJson.put("date", invoice.getDate());
+        invoiceJson.put("total", invoice.getTotal());
     
     
     
