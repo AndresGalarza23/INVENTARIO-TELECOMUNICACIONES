@@ -5,9 +5,15 @@
  */
 package ec.edu.espe.invetory.controller;
 
+import ec.edu.espe.filemanagerlibrary.FileManager;
 import ec.edu.espe.invetory.model.Inventory;
 import java.io.IOException;
 import java.util.Scanner;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 
 /**
  *
@@ -38,6 +44,30 @@ public class SaleManagement {
         System.out.println("Enter Id To sale:");
         String productId = sc.nextLine();
     
+         for (int i = 0; i < array.size(); i++) {
+            jsonObject = (JSONObject) array.get(i);
+            if (jsonObject.get("id").toString().equals(productId)) {
+                flag = true;
+            }
+        }
+        if (flag == true) {
+            System.out.println("Enter the quantity:");
+            int quant = sc.nextInt();
+            if (quant > Integer.parseInt(jsonObject.get("quantity").toString())) {
+                System.out.println("Available quantity exceeded");
+            } else {
+                array.remove(jsonObject);
+                int total = Integer.parseInt(jsonObject.get("quantity").toString()) - quant;
+                jsonObject.put("quantity", total);
+                array.add(jsonObject);
+                invoice.inputInvoice(jsonObject, quant);
+                FileManager.writeRecord("data/Inventory.json", array.toJSONString());
+            }
+        }else{
+            System.out.println("ID doesn't exist");
+        }
+
+    }
     
     
     
