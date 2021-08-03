@@ -5,10 +5,26 @@
  */
 package ec.edu.espe.invetory.controller;
 
+
+
 /**
  *
  * @author Stefany Guerrero AccentOnTheFuture ESPE-DCC0
  */
 public class ProviderManagement {
+    public void inputProvider() throws IOException, ParseException, org.json.simple.parser.ParseException {
     
+     String data = FileManager.read("data/Provider.json");
+        Provider provider = new Provider();
+        JSONArray array = (JSONArray) new JSONParser().parse(data);
+        Scanner sc = new Scanner(System.in);
+    
+    
+    
+    
+    
+    
+    
+    
+    }
 }
