@@ -25,7 +25,18 @@ public class SaleManagement {
         JSONObject jsonObject = new JSONObject();
         boolean flag = false;
         
-        
+           System.out.println("--Products availables--");
+        for (int i = 0; i < array.size(); i++) {
+            jsonObject = (JSONObject) array.get(i);
+            System.out.println("ID: " + jsonObject.get("id").toString());
+            System.out.println("Product Name: " + jsonObject.get("productName").toString());
+            System.out.println("Quantity: " + jsonObject.get("quantity").toString());
+            System.out.println("");
+        }
+        System.out.println("------------------------");
+
+        System.out.println("Enter Id To sale:");
+        String productId = sc.nextLine();
     
     
     
