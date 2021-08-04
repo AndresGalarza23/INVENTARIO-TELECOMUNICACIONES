@@ -64,5 +64,15 @@ public class FileManager {
         }
     }
      
+     public static void write(List<String> data, String fileName) throws IOException {
+        String tmp = data.toString();
+        BufferedWriter bw = openFileForWrite(fileName);
+        for (String item : data) {
+            bw.append(item);
+            bw.append("\n");
+        }
+        bw.close();
+    }
+     
      
 }
