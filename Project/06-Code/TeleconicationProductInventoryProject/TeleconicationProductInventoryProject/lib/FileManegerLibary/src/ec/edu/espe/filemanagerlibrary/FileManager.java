@@ -111,7 +111,19 @@ public class FileManager {
         }
     }
      
-     
-     
+        public static BufferedReader openFileForRead(String fileName) throws IOException {
+        fileInitializer(fileName);
+        return new BufferedReader(new FileReader(fileName));
+    }
+        
+        public static BufferedWriter openFileForWrite(String fileName) throws IOException {
+        //fileInitializer(fileName);
+        File file = new File(fileName);
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+        return new BufferedWriter(new FileWriter(fileName, true));
+    }
+        
      
 }
