@@ -53,6 +53,17 @@ public class ProviderController {
         return true;
     }
     
+    public boolean delete(Integer id){
+        document.put("ID",id);
+        collection.remove(document);
+        int input = JOptionPane.showConfirmDialog(null, "Delete Record", "OK", JOptionPane.DEFAULT_OPTION);
+        
+        System.out.println(input);
+        return true;
+               
+                
+    }
+    
     
     
     
