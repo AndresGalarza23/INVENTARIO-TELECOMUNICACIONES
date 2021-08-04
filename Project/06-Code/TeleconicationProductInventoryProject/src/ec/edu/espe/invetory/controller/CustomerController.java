@@ -8,6 +8,7 @@ package ec.edu.espe.invetory.controller;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
 import ec.edu.espe.invetory.model.Customer;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -70,4 +72,20 @@ public class CustomerController {
         System.out.println(input);
         return true;
     }
+      public void display(JTextArea txtArea){
+        
+        DBCursor cursor = collection.find();
+        
+        try{
+            while(cursor.hasNext()){
+                txtArea.setText(txtArea.getText()+"\n" + cursor.next().toString());
+                
+                
+            }
+        } finally{
+                 cursor.close();
+                    
+                    }
+        }
+    
 }
