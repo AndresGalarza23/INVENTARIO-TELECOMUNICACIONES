@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.invetory.model;
 
+import com.mongodb.BasicDBObject;
+
 /**
  *
  * @author Stefany Guerrero AccentOnTheFuture ESPE-DCC0
@@ -22,7 +24,27 @@ public class Provider {
         this.address = address;
     }
     
+      public Provider(BasicDBObject dBObjectInventory) {
+        this.id = dBObjectInventory.getInt("Id");
+        this.name =dBObjectInventory.getString("Name");
+        this.phoneNumber = dBObjectInventory.getInt("Phone Number");
+        this.address = dBObjectInventory.getString("Address");
+       
+    }
     
+    
+    public BasicDBObject dbProductObjectProvider(){
+        
+        BasicDBObject dbProduct0bjectProvider = new BasicDBObject();
+        
+        dbProduct0bjectProvider.append("ID", this.getId());
+        dbProduct0bjectProvider.append("Name", this.getName());
+        dbProduct0bjectProvider.append("Phone Number", this.getPhoneNumber());
+        dbProduct0bjectProvider.append("Address", this.getAddress());
+        
+        return dbProduct0bjectProvider;
+        
+    }
     
     
 
