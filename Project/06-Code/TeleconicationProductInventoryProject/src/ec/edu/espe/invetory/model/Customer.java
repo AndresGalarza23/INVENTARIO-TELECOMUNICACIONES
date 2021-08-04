@@ -72,7 +72,6 @@ public class Customer {
     public String toString() {
         return "Customer{" + "cedula=" + cedula + ", names=" + names + ", lastName=" + lastName + ", address=" + address + ", phone=" + phone + '}';
     }
+}
+ 
 
-}
-    
-}
