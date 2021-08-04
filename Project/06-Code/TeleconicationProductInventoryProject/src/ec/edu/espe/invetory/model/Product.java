@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ec.edu.espe.invetory.model;
+import com.mongodb.BasicDBObject;
 
 /**
  *
@@ -29,8 +30,34 @@ public class Product {
         this.idProvider = idProvider;
     }
     
+     public Product(BasicDBObject dBObjectInventory) {
+        this.id = dBObjectInventory.getInt("Id");
+        this.name =dBObjectInventory.getString("Name");
+        this.brand = dBObjectInventory.getString("Brand");
+        this.purchasePrice = dBObjectInventory.getDouble("Purchase Price");
+        this.salePrice = dBObjectInventory.getDouble("Sale Price");
+        this.quantity = dBObjectInventory.getInt("Quantity");
+        this.idProvider = dBObjectInventory.getInt("ID Provide");
+    }
     
     
+    public BasicDBObject dbProductObjectInventory(){
+        
+        BasicDBObject dbProduct0bjectInventory = new BasicDBObject();
+        
+        dbProduct0bjectInventory.append("ID", this.getId());
+        dbProduct0bjectInventory.append("Name", this.getName());
+        dbProduct0bjectInventory.append("Brand", this.getBrand());
+        dbProduct0bjectInventory.append("Purchase Price", this.getPurchasePrice());
+        dbProduct0bjectInventory.append("Sale Price", this.getSalePrice());
+        dbProduct0bjectInventory.append("Quantity", this.getQuantity());
+        dbProduct0bjectInventory.append("ID Provide", this.getIdProvider());
+        
+        return dbProduct0bjectInventory;
+        
+    }
+    
+   
 
     public Integer getId() {
         return id;
