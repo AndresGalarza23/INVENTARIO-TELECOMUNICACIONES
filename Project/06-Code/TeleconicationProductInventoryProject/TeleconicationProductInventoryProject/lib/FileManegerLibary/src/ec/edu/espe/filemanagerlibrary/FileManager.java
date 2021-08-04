@@ -58,5 +58,11 @@ public class FileManager {
         return fileReader;
     }
      
+     public static void writeRecord(String fileName, String record) throws IOException {
+        try (FileWriter fileWriter = new FileWriter(fileName)) {
+            fileWriter.write(record);
+        }
+    }
+     
      
 }
