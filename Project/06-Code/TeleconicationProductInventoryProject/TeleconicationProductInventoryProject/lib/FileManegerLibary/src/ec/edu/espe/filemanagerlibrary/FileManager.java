@@ -87,6 +87,15 @@ public class FileManager {
         }
     }
      
+     public static boolean createFile(String fileName) throws IOException {
+        File file = new File(fileName);
+        if (!file.exists()) {
+            file.createNewFile();
+            return true;
+        }
+        return false;
+    }
+     
      
      
      
