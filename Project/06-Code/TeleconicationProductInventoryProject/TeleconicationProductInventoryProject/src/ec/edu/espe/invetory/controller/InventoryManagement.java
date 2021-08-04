@@ -19,16 +19,17 @@ import org.json.simple.parser.JSONParser;
  * @author Andres Galarza AccentOnTheFuture ESPE-DCCO
  */
 public class InventoryManagement {
-    public void inputInventory() throws IOException, ParseException, org.json.simple.parser.ParseException { 
-        
-   boolean flag = false;
+
+    public void inputInventory() throws IOException, ParseException, org.json.simple.parser.ParseException {
+
+        boolean flag = false;
         String data = FileManager.read("data/Inventory.json");
         String dataProviders = FileManager.read("data/Provider.json");
         Inventory inventory = new Inventory();
         JSONArray array = (JSONArray) new JSONParser().parse(data);
         JSONArray arrayProviders = (JSONArray) new JSONParser().parse(dataProviders);
         JSONObject jsonObject = new JSONObject();
-    Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter Product ID");
         String id = sc.nextLine();
         inventory.setId(id);
@@ -56,8 +57,10 @@ public class InventoryManagement {
         System.out.println("Enter Quantity Minimum Stock");
         int quantityMinimumStock = sc.nextInt();
         inventory.setQuantityMinimumStock(quantityMinimumStock);
+        for (int i = 0; i < arrayProviders.size(); i++) {
+            jsonObject = (JSONObject) arrayProviders.get(i);
+            System.out.println(jsonObject.get("id").toString());
 
-    
-    
-}
+        }
+     }
 }
