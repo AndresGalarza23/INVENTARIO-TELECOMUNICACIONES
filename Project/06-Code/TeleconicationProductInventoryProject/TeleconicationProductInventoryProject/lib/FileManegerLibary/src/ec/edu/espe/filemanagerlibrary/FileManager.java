@@ -74,5 +74,20 @@ public class FileManager {
         bw.close();
     }
      
+     public static void rename(String oldName, String newName) throws IOException {
+        File file = new File(oldName);
+        File file2 = new File(newName);
+
+        if (file2.exists()) {
+            throw new java.io.IOException("File exists");
+        }
+        boolean success = file.renameTo(file2);
+        if (!success) {
+            System.out.println("File was not successfully renamed");
+        }
+    }
+     
+     
+     
      
 }
