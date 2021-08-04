@@ -60,7 +60,34 @@ public class InventoryManagement {
         for (int i = 0; i < arrayProviders.size(); i++) {
             jsonObject = (JSONObject) arrayProviders.get(i);
             System.out.println(jsonObject.get("id").toString());
+          }
+          System.out.println("------------------------");
+          do {
+            System.out.println("Enter a provider: ");
+            String idProvider = sc.next();
+            for (int i = 0; i < arrayProviders.size(); i++) {
+                jsonObject = (JSONObject) arrayProviders.get(i);
+                if (idProvider.equals(jsonObject.get("id").toString())) {
 
-        }
+                    JSONObject productInvetory = new JSONObject();
+                    productInvetory.put("id", inventory.getId());
+                    productInvetory.put("productName", inventory.getName());
+                    productInvetory.put("description", inventory.getDescription());
+                    productInvetory.put("purchasePrice", inventory.getPurchasePrice());
+                    productInvetory.put("salePrice", inventory.getSalePrice());
+                    productInvetory.put("quantity", inventory.getQuantity());
+                    productInvetory.put("quantityMinimumStock", inventory.getQuantityMinimumStock());
+                    productInvetory.put("idProvider", inventory.getIdProvider());
+
+                    array.add(productInvetory);
+                    FileManager.writeRecord("data/Inventory.json", array.toJSONString());
+                    flag = true;
+                } else {
+                    System.out.println("The provider doesn´t exist");
+                    flag = false;
+                }
+            }
+        } while (flag != true);
+
      }
 }
