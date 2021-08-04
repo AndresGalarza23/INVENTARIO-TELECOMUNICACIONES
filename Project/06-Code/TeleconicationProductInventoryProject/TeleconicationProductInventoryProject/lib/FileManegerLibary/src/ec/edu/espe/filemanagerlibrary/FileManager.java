@@ -53,5 +53,10 @@ public class FileManager {
         return list;
     }
      
+     public static FileReader readRecord(String fileName) throws IOException {
+        FileReader fileReader = new FileReader(fileName);
+        return fileReader;
+    }
+     
      
 }
