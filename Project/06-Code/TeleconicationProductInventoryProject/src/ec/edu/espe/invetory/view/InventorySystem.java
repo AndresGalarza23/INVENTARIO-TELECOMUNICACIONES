@@ -33,7 +33,7 @@ public class InventorySystem extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btmProduct = new javax.swing.JButton();
         btmProvider = new javax.swing.JButton();
-        btmSale = new javax.swing.JButton();
+        btmCustomer = new javax.swing.JButton();
         btmExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,7 +55,12 @@ public class InventorySystem extends javax.swing.JFrame {
             }
         });
 
-        btmSale.setText("SALE");
+        btmCustomer.setText("CUSTOMER");
+        btmCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmCustomerActionPerformed(evt);
+            }
+        });
 
         btmExit.setText("EXIT");
         btmExit.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +82,7 @@ public class InventorySystem extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btmProvider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btmSale, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btmCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btmExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btmProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(226, 226, 226))))
@@ -92,7 +97,7 @@ public class InventorySystem extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(btmProvider)
                 .addGap(36, 36, 36)
-                .addComponent(btmSale)
+                .addComponent(btmCustomer)
                 .addGap(29, 29, 29)
                 .addComponent(btmExit)
                 .addContainerGap(67, Short.MAX_VALUE))
@@ -135,6 +140,12 @@ public class InventorySystem extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btmExitActionPerformed
 
+    private void btmCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmCustomerActionPerformed
+        CustomerWindow cusW = new CustomerWindow();
+        cusW.setVisible(true);
+        
+    }//GEN-LAST:event_btmCustomerActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -172,10 +183,10 @@ public class InventorySystem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btmCustomer;
     private javax.swing.JButton btmExit;
     private javax.swing.JButton btmProduct;
     private javax.swing.JButton btmProvider;
-    private javax.swing.JButton btmSale;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
