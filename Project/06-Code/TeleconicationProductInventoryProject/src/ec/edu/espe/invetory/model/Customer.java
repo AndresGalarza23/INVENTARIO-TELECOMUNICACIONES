@@ -7,70 +7,72 @@ package ec.edu.espe.invetory.model;
 
 /**
  *
- * @author Luis Haro LAMESTech ESPE-DCC0
+ * @author Andres Galarza AccentOnTheFuture ESPE-DCCO
  */
 public class Customer {
-    
-    private String cedula;
+    private Integer cedula;
     private String names;
     private String lastName;
     private String address;
-    private String phone;
+    private Integer phone;
 
     public Customer() {
     }
-    
-    public Customer(String cedula, String names, String lastName, String address, String phone) {
+
+    public Customer(Integer cedula, String names, String lastName, String address, Integer phone) {
         this.cedula = cedula;
         this.names = names;
         this.lastName = lastName;
         this.address = address;
         this.phone = phone;
+      
     }
-    
-    public String getCedula() {
+ 
+    public Integer getCedula() {
         return cedula;
     }
-   
-    public void setCedula(String cedula) {
+
+    public void setCedula(Integer cedula) {
         this.cedula = cedula;
     }
-    
+
     public String getNames() {
         return names;
     }
-    
+
     public void setNames(String names) {
         this.names = names;
     }
-    
+
     public String getLastName() {
         return lastName;
     }
-    
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    
+
     public String getAddress() {
         return address;
     }
-    
+
     public void setAddress(String address) {
         this.address = address;
     }
-    
-     public String getPhone() {
+
+    public Integer getPhone() {
         return phone;
     }
-     
-     public void setPhone(String phone) {
+
+    public void setPhone(Integer phone) {
         this.phone = phone;
     }
-     
-     @Override
+
+    @Override
     public String toString() {
         return "Customer{" + "cedula=" + cedula + ", names=" + names + ", lastName=" + lastName + ", address=" + address + ", phone=" + phone + '}';
     }
+
+}
     
 }
