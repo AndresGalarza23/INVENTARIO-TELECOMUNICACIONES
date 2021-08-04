@@ -10,5 +10,15 @@ package ec.edu.espe.filemanagerlibrary;
  * @author Andres Galarza AccentOnTheFuture ESPE-DCCO
  */
 public class FileManager {
-  
+  public static FileManager fileManager;
+
+    public FileManager() {
+    }
+
+    public static FileManager getInstance() {
+        if (fileManager == null) {
+            fileManager = new FileManager();
+        }
+        return fileManager;
+    }
 }
