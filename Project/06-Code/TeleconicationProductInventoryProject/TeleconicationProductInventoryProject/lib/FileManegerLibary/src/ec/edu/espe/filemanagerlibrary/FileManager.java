@@ -42,4 +42,16 @@ public class FileManager {
         return find;
     }
      
+     
+     public static String read(String fileName) throws IOException {
+        String list = "";
+        BufferedReader reader = openFileForRead(fileName);
+        String currentLine;
+        while ((currentLine = reader.readLine()) != null) {
+            list = list + currentLine;
+        }
+        return list;
+    }
+     
+     
 }
