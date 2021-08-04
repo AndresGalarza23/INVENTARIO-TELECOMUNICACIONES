@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.invetory.model;
 
+import com.mongodb.BasicDBObject;
+
 /**
  *
  * @author Andres Galarza AccentOnTheFuture ESPE-DCCO
@@ -27,7 +29,30 @@ public class Customer {
         this.phone = phone;
       
     }
- 
+ public Customer(BasicDBObject dBObjectInventory) {
+        this.cedula= dBObjectInventory.getInt("Cedula");
+        this.names =dBObjectInventory.getString("Names");
+        this.lastName = dBObjectInventory.getString("Last Name");
+        this.address = dBObjectInventory.getString("Address");
+        this.phone = dBObjectInventory.getInt("Phone");
+       
+    }
+    
+    
+    public BasicDBObject dbProductObjectInventory(){
+        
+        BasicDBObject dbProduct0bjectInventory = new BasicDBObject();
+        
+        dbProduct0bjectInventory.append("Cedula", this.getCedula());
+        dbProduct0bjectInventory.append("Names", this.getNames());
+        dbProduct0bjectInventory.append("LastName", this.getLastName());
+        dbProduct0bjectInventory.append("Address", this.getAddress());
+        dbProduct0bjectInventory.append("Phone", this.getPhone());
+       
+        
+        return dbProduct0bjectInventory;
+        
+    }
     public Integer getCedula() {
         return cedula;
     }
