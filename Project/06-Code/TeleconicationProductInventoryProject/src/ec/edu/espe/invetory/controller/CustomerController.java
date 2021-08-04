@@ -8,6 +8,7 @@ package ec.edu.espe.invetory.controller;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
 import com.mongodb.Mongo;
 import ec.edu.espe.invetory.model.Customer;
 import java.net.UnknownHostException;
@@ -59,5 +60,14 @@ public class CustomerController {
         return true;
                
                 
+    }
+      public boolean update(Integer cedulas, String names){
+        DBObject find = new BasicDBObject("Cedula", new BasicDBObject("$eq", cedulas));
+        DBObject updated = new BasicDBObject().append("$set",new BasicDBObject().append("Names", names));
+        collection.update(find, updated,false,true);
+        int input = JOptionPane.showConfirmDialog(null, "Update Record", "OK", JOptionPane.DEFAULT_OPTION);
+        
+        System.out.println(input);
+        return true;
     }
 }
