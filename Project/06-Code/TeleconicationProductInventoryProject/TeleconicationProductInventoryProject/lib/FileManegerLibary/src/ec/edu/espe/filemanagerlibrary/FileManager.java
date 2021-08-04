@@ -96,6 +96,14 @@ public class FileManager {
         return false;
     }
      
+     public static boolean removeFile(String fileName) throws IOException {
+        File file = new File(fileName);
+        if (file.delete()) {
+            return true;
+        }
+        return false;
+    }
+     
      
      
      
