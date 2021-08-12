@@ -45,11 +45,11 @@ public class ProductWindow extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
-        txtBrand = new javax.swing.JTextField();
         txtPurchasePrice = new javax.swing.JTextField();
-        txtQuantity = new javax.swing.JTextField();
         txtIdProvider = new javax.swing.JTextField();
         txtSalePrice = new javax.swing.JTextField();
+        cmbBrand = new javax.swing.JComboBox<>();
+        spnQuantity = new javax.swing.JSpinner();
         PnlButtoms = new javax.swing.JPanel();
         BtmAdd = new javax.swing.JButton();
         BtmDelete = new javax.swing.JButton();
@@ -89,9 +89,10 @@ public class ProductWindow extends javax.swing.JFrame {
             }
         });
 
-        txtQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtQuantityKeyTyped(evt);
+        cmbBrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tecatel", "Xiamomi", "Cisco", "Raspberry", "Arduino ", "SiemensAG", "FNIRSI" }));
+        cmbBrand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbBrandActionPerformed(evt);
             }
         });
 
@@ -106,60 +107,57 @@ public class ProductWindow extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(PnlInputLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel5))
-                    .addGroup(PnlInputLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(PnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
                             .addGroup(PnlInputLayout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(146, 146, 146)
-                                .addComponent(jLabel7))
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cmbBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PnlInputLayout.createSequentialGroup()
                                 .addGroup(PnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3)
-                                    .addComponent(jLabel8))
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel5))
                                 .addGap(30, 30, 30)
                                 .addGroup(PnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtPurchasePrice)
-                                    .addComponent(txtBrand)
                                     .addComponent(txtId)
                                     .addComponent(txtName)
-                                    .addComponent(txtQuantity)
-                                    .addComponent(txtIdProvider, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
-                                .addGap(100, 100, 100)
-                                .addComponent(txtSalePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(46, 46, 46))
+                                    .addComponent(txtIdProvider, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                    .addComponent(txtSalePrice)
+                                    .addComponent(spnQuantity))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PnlInputLayout.setVerticalGroup(
             PnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlInputLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(jLabel1)
-                .addGap(38, 38, 38)
+                .addGap(35, 35, 35)
                 .addGroup(PnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(cmbBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(txtBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtSalePrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
                 .addGroup(PnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(txtPurchasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSalePrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPurchasePrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
                 .addGroup(PnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -239,7 +237,7 @@ public class ProductWindow extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(60, 60, 60)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 65, Short.MAX_VALUE))
+                        .addGap(0, 99, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel9)
@@ -267,10 +265,11 @@ public class ProductWindow extends javax.swing.JFrame {
      String name , brand;
      double purchasePrice, salePrice;
    
-    if (txtId.getText().length() ==0 || txtName.getText().length() == 0 ||
-            txtBrand.getText().length() == 0 || txtPurchasePrice.getText().length() == 0 
-            || txtSalePrice.getText().length() == 0 || txtQuantity.getText().length() == 0 
-            || txtIdProvider.getText().length() == 0 ){
+    if (txtId.getText().length() == 0 || txtName.getText().length() == 0 ||
+             txtPurchasePrice.getText().length() == 0 
+            || txtSalePrice.getText().length() == 0 
+            
+            || txtIdProvider.getText().length() == 0  || cmbBrand.getSelectedItem().toString()== null || spnQuantity.getValue().toString() == null){
         
      JOptionPane.showConfirmDialog(null, "Enter Information" , "OK", JOptionPane.DEFAULT_OPTION);
     BtmAdd.enable(false);
@@ -279,20 +278,20 @@ public class ProductWindow extends javax.swing.JFrame {
         BtmAdd.enable(true);
         id = Integer.parseInt(this.txtId.getText());
         name = this.txtName.getText();
-        brand = this.txtBrand.getText();
+        brand = this.cmbBrand.getSelectedItem().toString();
         purchasePrice = Double.valueOf(this.txtPurchasePrice.getText());
         salePrice = Double.valueOf(this.txtSalePrice.getText());
-        quantity = Integer.parseInt(this.txtQuantity.getText());
+        quantity = Integer.parseInt(this.spnQuantity.getValue().toString());
         idProvider = Integer.parseInt(this.txtIdProvider.getText());
         product.add(id, name, brand, purchasePrice, salePrice, quantity, idProvider);
       
     }
     txtId.setText("");
     txtName.setText(""); 
-    txtBrand.setText("");
+    cmbBrand.setSelectedItem("");
     txtPurchasePrice.setText("");
     txtSalePrice.setText("");
-    txtQuantity.setText("");
+    spnQuantity.getValue();
     txtIdProvider.setText("");
 
         
@@ -334,10 +333,9 @@ public class ProductWindow extends javax.swing.JFrame {
         
     }//GEN-LAST:event_txtIdKeyTyped
 
-    private void txtQuantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantityKeyTyped
-        char car = evt.getKeyChar();
-        if((car<'0' || car>'9')) evt.consume();
-    }//GEN-LAST:event_txtQuantityKeyTyped
+    private void cmbBrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBrandActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbBrandActionPerformed
 
     /**
      * @param args the command line arguments
@@ -384,6 +382,7 @@ public class ProductWindow extends javax.swing.JFrame {
     private javax.swing.JButton BtmUpdate;
     private javax.swing.JPanel PnlButtoms;
     private javax.swing.JPanel PnlInput;
+    private javax.swing.JComboBox<String> cmbBrand;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -394,13 +393,12 @@ public class ProductWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner spnQuantity;
     private javax.swing.JTextArea txtArea;
-    private javax.swing.JTextField txtBrand;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtIdProvider;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPurchasePrice;
-    private javax.swing.JTextField txtQuantity;
     private javax.swing.JTextField txtSalePrice;
     // End of variables declaration//GEN-END:variables
 }
