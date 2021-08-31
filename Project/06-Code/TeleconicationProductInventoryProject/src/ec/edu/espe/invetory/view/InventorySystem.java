@@ -35,6 +35,17 @@ public class InventorySystem extends javax.swing.JFrame {
         btmProvider = new javax.swing.JButton();
         btmCustomer = new javax.swing.JButton();
         btmExit = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mnProduct = new javax.swing.JMenu();
+        sbtnAdd = new javax.swing.JMenuItem();
+        sbtnDelete = new javax.swing.JMenuItem();
+        sbntEdit = new javax.swing.JMenuItem();
+        mnProvider = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        mnCustomer = new javax.swing.JMenu();
+        mnExit = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,9 +101,9 @@ public class InventorySystem extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(34, 34, 34)
                 .addComponent(jLabel1)
-                .addGap(49, 49, 49)
+                .addGap(27, 27, 27)
                 .addComponent(btmProduct)
                 .addGap(40, 40, 40)
                 .addComponent(btmProvider)
@@ -102,6 +113,61 @@ public class InventorySystem extends javax.swing.JFrame {
                 .addComponent(btmExit)
                 .addContainerGap(67, Short.MAX_VALUE))
         );
+
+        mnProduct.setText("Product");
+
+        sbtnAdd.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        sbtnAdd.setText("Add");
+        sbtnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sbtnAddActionPerformed(evt);
+            }
+        });
+        mnProduct.add(sbtnAdd);
+
+        sbtnDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        sbtnDelete.setText("Delete");
+        mnProduct.add(sbtnDelete);
+
+        sbntEdit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        sbntEdit.setText("Edit");
+        mnProduct.add(sbntEdit);
+
+        jMenuBar1.add(mnProduct);
+
+        mnProvider.setText("Provider");
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setText("Add");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        mnProvider.add(jMenuItem1);
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setText("Edit");
+        mnProvider.add(jMenuItem2);
+
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem3.setText("Delete");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        mnProvider.add(jMenuItem3);
+
+        jMenuBar1.add(mnProvider);
+
+        mnCustomer.setText("Customer");
+        jMenuBar1.add(mnCustomer);
+
+        mnExit.setText("Exit");
+        jMenuBar1.add(mnExit);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -146,6 +212,18 @@ public class InventorySystem extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btmCustomerActionPerformed
 
+    private void sbtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbtnAddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sbtnAddActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -188,6 +266,17 @@ public class InventorySystem extends javax.swing.JFrame {
     private javax.swing.JButton btmProduct;
     private javax.swing.JButton btmProvider;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu mnCustomer;
+    private javax.swing.JMenu mnExit;
+    private javax.swing.JMenu mnProduct;
+    private javax.swing.JMenu mnProvider;
+    private javax.swing.JMenuItem sbntEdit;
+    private javax.swing.JMenuItem sbtnAdd;
+    private javax.swing.JMenuItem sbtnDelete;
     // End of variables declaration//GEN-END:variables
 }
