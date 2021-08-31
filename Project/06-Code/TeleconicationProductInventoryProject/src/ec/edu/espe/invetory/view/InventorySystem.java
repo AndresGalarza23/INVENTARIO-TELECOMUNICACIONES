@@ -34,7 +34,6 @@ public class InventorySystem extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btmProduct = new javax.swing.JButton();
         btmProvider = new javax.swing.JButton();
         btmCustomer = new javax.swing.JButton();
         btmExit = new javax.swing.JButton();
@@ -54,13 +53,6 @@ public class InventorySystem extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("Inventory System");
-
-        btmProduct.setText("PRODUCT");
-        btmProduct.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btmProductActionPerformed(evt);
-            }
-        });
 
         btmProvider.setText("PROVIDER");
         btmProvider.addActionListener(new java.awt.event.ActionListener() {
@@ -97,8 +89,7 @@ public class InventorySystem extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btmProvider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btmCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btmExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btmProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btmExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(226, 226, 226))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -106,15 +97,13 @@ public class InventorySystem extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jLabel1)
-                .addGap(27, 27, 27)
-                .addComponent(btmProduct)
-                .addGap(40, 40, 40)
+                .addGap(26, 26, 26)
                 .addComponent(btmProvider)
-                .addGap(36, 36, 36)
+                .addGap(30, 30, 30)
                 .addComponent(btmCustomer)
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addComponent(btmExit)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         mnProduct.setText("Product");
@@ -196,14 +185,6 @@ public class InventorySystem extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btmProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmProductActionPerformed
-
-        ProductWindow prodW = new ProductWindow();
-        prodW.setVisible(true);
-
-
-    }//GEN-LAST:event_btmProductActionPerformed
-
     private void btmProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmProviderActionPerformed
 
         ProviderWindow provW = new ProviderWindow();
@@ -213,7 +194,7 @@ public class InventorySystem extends javax.swing.JFrame {
     }//GEN-LAST:event_btmProviderActionPerformed
 
     private void btmExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmExitActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_btmExitActionPerformed
 
     private void btmCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmCustomerActionPerformed
@@ -245,11 +226,11 @@ public class InventorySystem extends javax.swing.JFrame {
     }//GEN-LAST:event_sbtnDeleteActionPerformed
 
     private void sbntEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbntEditActionPerformed
-        
+
         Integer idU = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
         String nameU = JOptionPane.showInputDialog("Enter name of product to update");
         product.update(idU, nameU);
-       
+
     }//GEN-LAST:event_sbntEditActionPerformed
 
     /**
@@ -291,7 +272,6 @@ public class InventorySystem extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btmCustomer;
     private javax.swing.JButton btmExit;
-    private javax.swing.JButton btmProduct;
     private javax.swing.JButton btmProvider;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;

@@ -15,13 +15,12 @@ import javax.swing.JOptionPane;
 public class ProductWindow extends javax.swing.JFrame {
 
     ProductController product = new ProductController();
-    
+
     /**
      * Creates new form Product
      */
     public ProductWindow() {
-        
-        
+
         initComponents();
     }
 
@@ -52,9 +51,9 @@ public class ProductWindow extends javax.swing.JFrame {
         spnQuantity = new javax.swing.JSpinner();
         PnlButtoms = new javax.swing.JPanel();
         BtmAdd = new javax.swing.JButton();
-        BtmDelete = new javax.swing.JButton();
-        BtmUpdate = new javax.swing.JButton();
         BtmDisplay = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtArea = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
@@ -172,24 +171,24 @@ public class ProductWindow extends javax.swing.JFrame {
             }
         });
 
-        BtmDelete.setText("DELETE");
-        BtmDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtmDeleteActionPerformed(evt);
-            }
-        });
-
-        BtmUpdate.setText("UPDATE");
-        BtmUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtmUpdateActionPerformed(evt);
-            }
-        });
-
         BtmDisplay.setText("DISPLAY");
         BtmDisplay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtmDisplayActionPerformed(evt);
+            }
+        });
+
+        btnCancel.setText("CANCEL");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
+
+        btnExit.setText("EXIT");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
             }
         });
 
@@ -201,10 +200,10 @@ public class ProductWindow extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addComponent(BtmAdd)
                 .addGap(47, 47, 47)
-                .addComponent(BtmDelete)
-                .addGap(51, 51, 51)
-                .addComponent(BtmUpdate)
-                .addGap(51, 51, 51)
+                .addComponent(btnCancel)
+                .addGap(38, 38, 38)
+                .addComponent(btnExit)
+                .addGap(28, 28, 28)
                 .addComponent(BtmDisplay)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -214,9 +213,9 @@ public class ProductWindow extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(PnlButtomsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtmAdd)
-                    .addComponent(BtmDelete)
-                    .addComponent(BtmUpdate)
-                    .addComponent(BtmDisplay))
+                    .addComponent(BtmDisplay)
+                    .addComponent(btnCancel)
+                    .addComponent(btnExit))
                 .addContainerGap(76, Short.MAX_VALUE))
         );
 
@@ -233,15 +232,14 @@ public class ProductWindow extends javax.swing.JFrame {
             .addComponent(PnlButtoms, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(PnlInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 99, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel9)
-                        .addGap(208, 208, 208))))
+                        .addGap(208, 208, 208))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,82 +258,85 @@ public class ProductWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtmAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmAddActionPerformed
-       
-     Integer id,quantity , idProvider;
-     String name , brand;
-     double purchasePrice, salePrice;
-   
-    if (txtId.getText().length() == 0 || txtName.getText().length() == 0 ||
-             txtPurchasePrice.getText().length() == 0 
-            || txtSalePrice.getText().length() == 0 
-            
-            || txtIdProvider.getText().length() == 0  || cmbBrand.getSelectedItem().toString()== null || spnQuantity.getValue().toString() == null){
-        
-     JOptionPane.showConfirmDialog(null, "Enter Information" , "OK", JOptionPane.DEFAULT_OPTION);
-    BtmAdd.enable(false);
-    
-    } else{
-        BtmAdd.enable(true);
-        id = Integer.parseInt(this.txtId.getText());
-        name = this.txtName.getText();
-        brand = this.cmbBrand.getSelectedItem().toString();
-        purchasePrice = Double.valueOf(this.txtPurchasePrice.getText());
-        salePrice = Double.valueOf(this.txtSalePrice.getText());
-        quantity = Integer.parseInt(this.spnQuantity.getValue().toString());
-        idProvider = Integer.parseInt(this.txtIdProvider.getText());
-        product.add(id, name, brand, purchasePrice, salePrice, quantity, idProvider);
-      
-    }
-    txtId.setText("");
-    txtName.setText(""); 
-    cmbBrand.setSelectedItem("");
-    txtPurchasePrice.setText("");
-    txtSalePrice.setText("");
-    spnQuantity.getValue();
-    txtIdProvider.setText("");
 
-        
-        
-        
-        
-        
+        Integer id, quantity, idProvider;
+        String name, brand;
+        double purchasePrice, salePrice;
+
+        if (txtId.getText().length() == 0 || txtName.getText().length() == 0
+                || txtPurchasePrice.getText().length() == 0
+                || txtSalePrice.getText().length() == 0
+                || txtIdProvider.getText().length() == 0 || cmbBrand.getSelectedItem().toString() == null || spnQuantity.getValue().toString() == null) {
+
+            JOptionPane.showConfirmDialog(null, "Enter Information", "OK", JOptionPane.DEFAULT_OPTION);
+            BtmAdd.enable(false);
+
+        } else {
+            BtmAdd.enable(true);
+            id = Integer.parseInt(this.txtId.getText());
+            name = this.txtName.getText();
+            brand = this.cmbBrand.getSelectedItem().toString();
+            purchasePrice = Double.valueOf(this.txtPurchasePrice.getText());
+            salePrice = Double.valueOf(this.txtSalePrice.getText());
+            quantity = Integer.parseInt(this.spnQuantity.getValue().toString());
+            idProvider = Integer.parseInt(this.txtIdProvider.getText());
+            product.add(id, name, brand, purchasePrice, salePrice, quantity, idProvider);
+
+        }
+        txtId.setText("");
+        txtName.setText("");
+        cmbBrand.setSelectedItem("");
+        txtPurchasePrice.setText("");
+        txtSalePrice.setText("");
+        spnQuantity.setValue(0);
+        txtIdProvider.setText("");
+
+
     }//GEN-LAST:event_BtmAddActionPerformed
 
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
-    
-      
+
+
     }//GEN-LAST:event_txtIdActionPerformed
-
-    private void BtmDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmDeleteActionPerformed
-     
-        Integer idD = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to Delete"));
-        product.delete(idD); 
-    }//GEN-LAST:event_BtmDeleteActionPerformed
-
-    private void BtmUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmUpdateActionPerformed
-
-        Integer idU = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
-        String nameU = JOptionPane.showInputDialog("Enter name of product to update");
-        product.update(idU, nameU);
-        
-    }//GEN-LAST:event_BtmUpdateActionPerformed
 
     private void BtmDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmDisplayActionPerformed
 
-       product.display(txtArea);
-       
+        product.display(txtArea);
+
     }//GEN-LAST:event_BtmDisplayActionPerformed
 
     private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
-        
+
         char car = evt.getKeyChar();
-        if((car<'0' || car>'9')) evt.consume();
-        
+        if ((car < '0' || car > '9')) {
+            evt.consume();
+        }
+
     }//GEN-LAST:event_txtIdKeyTyped
 
     private void cmbBrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBrandActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbBrandActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+       
+        txtId.setText("");
+        txtName.setText("");
+        cmbBrand.setSelectedItem("");
+        txtPurchasePrice.setText("");
+        txtSalePrice.setText("");
+        spnQuantity.setValue(0);
+        txtIdProvider.setText("");        
+        
+    }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+       
+        this.hide();
+        InventorySystem inventorySystem = new InventorySystem();
+        inventorySystem.setVisible(true); 
+        
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -377,11 +378,11 @@ public class ProductWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtmAdd;
-    private javax.swing.JButton BtmDelete;
     private javax.swing.JButton BtmDisplay;
-    private javax.swing.JButton BtmUpdate;
     private javax.swing.JPanel PnlButtoms;
     private javax.swing.JPanel PnlInput;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnExit;
     private javax.swing.JComboBox<String> cmbBrand;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
