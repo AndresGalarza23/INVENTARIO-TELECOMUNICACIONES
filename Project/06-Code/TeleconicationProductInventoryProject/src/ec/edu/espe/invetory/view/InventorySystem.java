@@ -227,9 +227,13 @@ public class InventorySystem extends javax.swing.JFrame {
 
     private void sbntEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbntEditActionPerformed
 
-        Integer idU = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
-        String nameU = JOptionPane.showInputDialog("Enter name of product to update");
-        product.update(idU, nameU);
+        Integer idUpdate = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
+        String nameUpdate = JOptionPane.showInputDialog("Enter name of product to update");
+        String brandUpdate = JOptionPane.showInputDialog("Enter brand of product to update");
+        Double purchasePriceUpdate = Double.parseDouble(JOptionPane.showInputDialog("Enter Purchase Price of product to update"));
+        Double salePriceUpdate = Double.parseDouble(JOptionPane.showInputDialog("Enter Sale Price of product to update"));
+
+        product.update(idUpdate, nameUpdate, brandUpdate, purchasePriceUpdate, salePriceUpdate);
 
     }//GEN-LAST:event_sbntEditActionPerformed
 
