@@ -5,7 +5,8 @@
  */
 package ec.edu.espe.invetory.view;
 
-
+import ec.edu.espe.invetory.controller.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,6 +17,8 @@ public class InventorySystem extends javax.swing.JFrame {
     /**
      * Creates new form InventorySystem
      */
+    ProductController product = new ProductController();
+
     public InventorySystem() {
         initComponents();
     }
@@ -127,10 +130,20 @@ public class InventorySystem extends javax.swing.JFrame {
 
         sbtnDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         sbtnDelete.setText("Delete");
+        sbtnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sbtnDeleteActionPerformed(evt);
+            }
+        });
         mnProduct.add(sbtnDelete);
 
         sbntEdit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         sbntEdit.setText("Edit");
+        sbntEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sbntEditActionPerformed(evt);
+            }
+        });
         mnProduct.add(sbntEdit);
 
         jMenuBar1.add(mnProduct);
@@ -184,22 +197,19 @@ public class InventorySystem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btmProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmProductActionPerformed
-  
+
         ProductWindow prodW = new ProductWindow();
         prodW.setVisible(true);
-        
-       
-        
-        
-        
+
+
     }//GEN-LAST:event_btmProductActionPerformed
 
     private void btmProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmProviderActionPerformed
-      
-      ProviderWindow provW = new ProviderWindow();
-        provW.setVisible(true); 
-        
-        
+
+        ProviderWindow provW = new ProviderWindow();
+        provW.setVisible(true);
+
+
     }//GEN-LAST:event_btmProviderActionPerformed
 
     private void btmExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmExitActionPerformed
@@ -209,11 +219,14 @@ public class InventorySystem extends javax.swing.JFrame {
     private void btmCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmCustomerActionPerformed
         CustomerWindow cusW = new CustomerWindow();
         cusW.setVisible(true);
-        
+
     }//GEN-LAST:event_btmCustomerActionPerformed
 
     private void sbtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbtnAddActionPerformed
-        // TODO add your handling code here:
+        this.hide();
+        ProductWindow prodW = new ProductWindow();
+        prodW.setVisible(true);
+
     }//GEN-LAST:event_sbtnAddActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -223,6 +236,21 @@ public class InventorySystem extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void sbtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbtnDeleteActionPerformed
+
+        Integer idD = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to Delete"));
+        product.delete(idD);
+
+    }//GEN-LAST:event_sbtnDeleteActionPerformed
+
+    private void sbntEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbntEditActionPerformed
+        
+        Integer idU = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
+        String nameU = JOptionPane.showInputDialog("Enter name of product to update");
+        product.update(idU, nameU);
+       
+    }//GEN-LAST:event_sbntEditActionPerformed
 
     /**
      * @param args the command line arguments
