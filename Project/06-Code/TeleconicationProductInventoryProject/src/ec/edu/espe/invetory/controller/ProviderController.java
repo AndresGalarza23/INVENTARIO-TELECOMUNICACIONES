@@ -67,14 +67,17 @@ public class ProviderController {
                 
     }
     
-      public boolean update(Integer ids, String names){
+      public boolean update(Integer ids, String names, Integer phoneNumber,String address){
         DBObject find = new BasicDBObject("ID", new BasicDBObject("$eq", ids));
+       
         DBObject updated = new BasicDBObject().append("$set",new BasicDBObject().append("Name", names));
-        
-        
+        DBObject updatedPhoneNumber = new BasicDBObject().append("$set", new BasicDBObject().append("Phone Number", phoneNumber));
+        DBObject updatedAddress = new BasicDBObject().append("$set", new BasicDBObject().append("Address", address));
+         
        
         collection.update(find, updated,false,true);
-        
+        collection.update(find, updatedPhoneNumber, false, true);
+        collection.update(find, updatedAddress, false, true);
         int input = JOptionPane.showConfirmDialog(null, "Update Record", "OK", JOptionPane.DEFAULT_OPTION);
         
         System.out.println(input);
