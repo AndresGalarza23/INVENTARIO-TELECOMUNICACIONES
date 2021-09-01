@@ -50,8 +50,8 @@ public class ProductWindow extends javax.swing.JFrame {
         cmbBrand = new javax.swing.JComboBox<>();
         spnQuantity = new javax.swing.JSpinner();
         PnlButtoms = new javax.swing.JPanel();
-        BtmAdd = new javax.swing.JButton();
-        BtmDisplay = new javax.swing.JButton();
+        btmAdd = new javax.swing.JButton();
+        btmDisplay = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -164,17 +164,17 @@ public class ProductWindow extends javax.swing.JFrame {
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
-        BtmAdd.setText("ADD");
-        BtmAdd.addActionListener(new java.awt.event.ActionListener() {
+        btmAdd.setText("ADD");
+        btmAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtmAddActionPerformed(evt);
+                btmAddActionPerformed(evt);
             }
         });
 
-        BtmDisplay.setText("DISPLAY");
-        BtmDisplay.addActionListener(new java.awt.event.ActionListener() {
+        btmDisplay.setText("DISPLAY");
+        btmDisplay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtmDisplayActionPerformed(evt);
+                btmDisplayActionPerformed(evt);
             }
         });
 
@@ -198,13 +198,13 @@ public class ProductWindow extends javax.swing.JFrame {
             PnlButtomsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlButtomsLayout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addComponent(BtmAdd)
+                .addComponent(btmAdd)
                 .addGap(47, 47, 47)
                 .addComponent(btnCancel)
                 .addGap(38, 38, 38)
                 .addComponent(btnExit)
                 .addGap(28, 28, 28)
-                .addComponent(BtmDisplay)
+                .addComponent(btmDisplay)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PnlButtomsLayout.setVerticalGroup(
@@ -212,8 +212,8 @@ public class ProductWindow extends javax.swing.JFrame {
             .addGroup(PnlButtomsLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(PnlButtomsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtmAdd)
-                    .addComponent(BtmDisplay)
+                    .addComponent(btmAdd)
+                    .addComponent(btmDisplay)
                     .addComponent(btnCancel)
                     .addComponent(btnExit))
                 .addContainerGap(76, Short.MAX_VALUE))
@@ -257,7 +257,7 @@ public class ProductWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtmAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmAddActionPerformed
+    private void btmAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmAddActionPerformed
 
         Integer id, quantity, idProvider;
         String name, brand;
@@ -269,10 +269,10 @@ public class ProductWindow extends javax.swing.JFrame {
                 || txtIdProvider.getText().length() == 0 || cmbBrand.getSelectedItem().toString() == null || spnQuantity.getValue().toString() == null) {
 
             JOptionPane.showConfirmDialog(null, "Enter Information", "OK", JOptionPane.DEFAULT_OPTION);
-            BtmAdd.enable(false);
+            btmAdd.enable(false);
 
         } else {
-            BtmAdd.enable(true);
+            btmAdd.enable(true);
             id = Integer.parseInt(this.txtId.getText());
             name = this.txtName.getText();
             brand = this.cmbBrand.getSelectedItem().toString();
@@ -292,18 +292,18 @@ public class ProductWindow extends javax.swing.JFrame {
         txtIdProvider.setText("");
 
 
-    }//GEN-LAST:event_BtmAddActionPerformed
+    }//GEN-LAST:event_btmAddActionPerformed
 
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
 
 
     }//GEN-LAST:event_txtIdActionPerformed
 
-    private void BtmDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmDisplayActionPerformed
+    private void btmDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmDisplayActionPerformed
 
         product.display(txtArea);
 
-    }//GEN-LAST:event_BtmDisplayActionPerformed
+    }//GEN-LAST:event_btmDisplayActionPerformed
 
     private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
 
@@ -377,10 +377,10 @@ public class ProductWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtmAdd;
-    private javax.swing.JButton BtmDisplay;
     private javax.swing.JPanel PnlButtoms;
     private javax.swing.JPanel PnlInput;
+    private javax.swing.JButton btmAdd;
+    private javax.swing.JButton btmDisplay;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnExit;
     private javax.swing.JComboBox<String> cmbBrand;

@@ -46,8 +46,8 @@ public class ProviderWindow extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAreaProvider = new javax.swing.JTextArea();
         PnlButtomsProvider = new javax.swing.JPanel();
-        BtmAdd = new javax.swing.JButton();
-        BtmDisplay = new javax.swing.JButton();
+        btmAdd = new javax.swing.JButton();
+        btmDisplay = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
 
@@ -138,17 +138,17 @@ public class ProviderWindow extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        BtmAdd.setText("ADD");
-        BtmAdd.addActionListener(new java.awt.event.ActionListener() {
+        btmAdd.setText("ADD");
+        btmAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtmAddActionPerformed(evt);
+                btmAddActionPerformed(evt);
             }
         });
 
-        BtmDisplay.setText("DISPLAY");
-        BtmDisplay.addActionListener(new java.awt.event.ActionListener() {
+        btmDisplay.setText("DISPLAY");
+        btmDisplay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtmDisplayActionPerformed(evt);
+                btmDisplayActionPerformed(evt);
             }
         });
 
@@ -160,6 +160,11 @@ public class ProviderWindow extends javax.swing.JFrame {
         });
 
         btnExit.setText("EXIT");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PnlButtomsProviderLayout = new javax.swing.GroupLayout(PnlButtomsProvider);
         PnlButtomsProvider.setLayout(PnlButtomsProviderLayout);
@@ -167,11 +172,11 @@ public class ProviderWindow extends javax.swing.JFrame {
             PnlButtomsProviderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlButtomsProviderLayout.createSequentialGroup()
                 .addGap(57, 57, 57)
-                .addComponent(BtmAdd)
+                .addComponent(btmAdd)
                 .addGap(59, 59, 59)
                 .addComponent(btnCancel)
                 .addGap(102, 102, 102)
-                .addComponent(BtmDisplay)
+                .addComponent(btmDisplay)
                 .addGap(80, 80, 80)
                 .addComponent(btnExit)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -181,8 +186,8 @@ public class ProviderWindow extends javax.swing.JFrame {
             .addGroup(PnlButtomsProviderLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(PnlButtomsProviderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtmAdd)
-                    .addComponent(BtmDisplay)
+                    .addComponent(btmAdd)
+                    .addComponent(btmDisplay)
                     .addComponent(btnCancel)
                     .addComponent(btnExit))
                 .addContainerGap(33, Short.MAX_VALUE))
@@ -211,7 +216,7 @@ public class ProviderWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
 
-    private void BtmAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmAddActionPerformed
+    private void btmAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmAddActionPerformed
 
         Integer id, phoneNumber;
         String name, address;
@@ -219,9 +224,9 @@ public class ProviderWindow extends javax.swing.JFrame {
         if (txtId.getText().length() == 0 || txtName.getText().length() == 0
                 || txtAddress.getText().length() == 0 || txtPhone.getText().length() == 0) {
             JOptionPane.showConfirmDialog(null, "Enter Information", "OK", JOptionPane.DEFAULT_OPTION);
-            BtmAdd.enable(false);
+            btmAdd.enable(false);
         } else {
-            BtmAdd.enable(true);
+            btmAdd.enable(true);
             id = Integer.parseInt(this.txtId.getText());
             name = this.txtName.getText();
             address = this.txtAddress.getText();
@@ -235,11 +240,11 @@ public class ProviderWindow extends javax.swing.JFrame {
         txtAddress.setText("");
 
 
-    }//GEN-LAST:event_BtmAddActionPerformed
+    }//GEN-LAST:event_btmAddActionPerformed
 
-    private void BtmDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmDisplayActionPerformed
+    private void btmDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmDisplayActionPerformed
         provider.display(txtAreaProvider);
-    }//GEN-LAST:event_BtmDisplayActionPerformed
+    }//GEN-LAST:event_btmDisplayActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         txtId.setText("");
@@ -247,6 +252,13 @@ public class ProviderWindow extends javax.swing.JFrame {
         txtPhone.setText("");
         txtAddress.setText("");
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        this.hide();
+        InventorySystem inventorySystem= new InventorySystem();
+        inventorySystem.setVisible(true);
+        
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,9 +303,9 @@ public class ProviderWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtmAdd;
-    private javax.swing.JButton BtmDisplay;
     private javax.swing.JPanel PnlButtomsProvider;
+    private javax.swing.JButton btmAdd;
+    private javax.swing.JButton btmDisplay;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnExit;
     private javax.swing.JLabel jLabel1;
