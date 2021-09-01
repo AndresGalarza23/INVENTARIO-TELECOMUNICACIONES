@@ -283,7 +283,9 @@ public class InventorySystem extends javax.swing.JFrame {
     private void smnEditProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnEditProviderActionPerformed
         Integer idU = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
         String nameU = JOptionPane.showInputDialog("Enter name of product to update");
-        provider.update(idU, nameU);
+        Integer phoneNumberU = Integer.parseInt(JOptionPane.showInputDialog("Enter  phone Number to update "));
+        String addressU=  JOptionPane.showInputDialog("Enter address to update");
+        provider.update(idU, nameU,phoneNumberU, addressU);
     }//GEN-LAST:event_smnEditProviderActionPerformed
 
     /**
