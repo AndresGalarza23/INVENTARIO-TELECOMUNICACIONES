@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  * @author Luis Heredia Accent on the Future ESPE-DCC0
  */
 public class ProviderWindow extends javax.swing.JFrame {
+
     ProviderController provider = new ProviderController();
 
     /**
@@ -46,9 +47,9 @@ public class ProviderWindow extends javax.swing.JFrame {
         txtAreaProvider = new javax.swing.JTextArea();
         PnlButtomsProvider = new javax.swing.JPanel();
         BtmAdd = new javax.swing.JButton();
-        BtmDelete = new javax.swing.JButton();
-        BtmUpdate = new javax.swing.JButton();
         BtmDisplay = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,20 +145,6 @@ public class ProviderWindow extends javax.swing.JFrame {
             }
         });
 
-        BtmDelete.setText("DELETE");
-        BtmDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtmDeleteActionPerformed(evt);
-            }
-        });
-
-        BtmUpdate.setText("UPDATE");
-        BtmUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtmUpdateActionPerformed(evt);
-            }
-        });
-
         BtmDisplay.setText("DISPLAY");
         BtmDisplay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,19 +152,28 @@ public class ProviderWindow extends javax.swing.JFrame {
             }
         });
 
+        btnCancel.setText("CANCEL");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
+
+        btnExit.setText("EXIT");
+
         javax.swing.GroupLayout PnlButtomsProviderLayout = new javax.swing.GroupLayout(PnlButtomsProvider);
         PnlButtomsProvider.setLayout(PnlButtomsProviderLayout);
         PnlButtomsProviderLayout.setHorizontalGroup(
             PnlButtomsProviderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlButtomsProviderLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(57, 57, 57)
                 .addComponent(BtmAdd)
-                .addGap(64, 64, 64)
-                .addComponent(BtmDelete)
-                .addGap(68, 68, 68)
-                .addComponent(BtmUpdate)
-                .addGap(64, 64, 64)
+                .addGap(59, 59, 59)
+                .addComponent(btnCancel)
+                .addGap(102, 102, 102)
                 .addComponent(BtmDisplay)
+                .addGap(80, 80, 80)
+                .addComponent(btnExit)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PnlButtomsProviderLayout.setVerticalGroup(
@@ -186,9 +182,9 @@ public class ProviderWindow extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(PnlButtomsProviderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtmAdd)
-                    .addComponent(BtmDelete)
-                    .addComponent(BtmUpdate)
-                    .addComponent(BtmDisplay))
+                    .addComponent(BtmDisplay)
+                    .addComponent(btnCancel)
+                    .addComponent(btnExit))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
@@ -216,54 +212,41 @@ public class ProviderWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNameActionPerformed
 
     private void BtmAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmAddActionPerformed
-        
+
         Integer id, phoneNumber;
         String name, address;
-        
-        if (txtId.getText().length() == 0 || txtName.getText().length() == 0 || 
-                txtAddress.getText().length() == 0 || txtPhone.getText().length() == 0){
-           JOptionPane.showConfirmDialog(null, "Enter Information" , "OK", JOptionPane.DEFAULT_OPTION);
-           BtmAdd.enable(false);
-        } else{
+
+        if (txtId.getText().length() == 0 || txtName.getText().length() == 0
+                || txtAddress.getText().length() == 0 || txtPhone.getText().length() == 0) {
+            JOptionPane.showConfirmDialog(null, "Enter Information", "OK", JOptionPane.DEFAULT_OPTION);
+            BtmAdd.enable(false);
+        } else {
             BtmAdd.enable(true);
             id = Integer.parseInt(this.txtId.getText());
             name = this.txtName.getText();
             address = this.txtAddress.getText();
             phoneNumber = Integer.parseInt(this.txtPhone.getText());
-            provider.add(id, name ,phoneNumber, address);
-            
-            
+            provider.add(id, name, phoneNumber, address);
+
         }
         txtId.setText("");
         txtName.setText("");
         txtPhone.setText("");
         txtAddress.setText("");
-        
-                
-                
-                
+
+
     }//GEN-LAST:event_BtmAddActionPerformed
 
-    private void BtmDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmDeleteActionPerformed
-        
-         Integer idD = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to Delete"));
-        provider.delete(idD); 
-        
-        
-    }//GEN-LAST:event_BtmDeleteActionPerformed
-
-    private void BtmUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmUpdateActionPerformed
-        
-        
-         Integer idU = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
-        String nameU = JOptionPane.showInputDialog("Enter name of product to update");
-       provider.update(idU, nameU);
-        
-    }//GEN-LAST:event_BtmUpdateActionPerformed
-
     private void BtmDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmDisplayActionPerformed
-       provider.display(txtAreaProvider);
+        provider.display(txtAreaProvider);
     }//GEN-LAST:event_BtmDisplayActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        txtId.setText("");
+        txtName.setText("");
+        txtPhone.setText("");
+        txtAddress.setText("");
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -309,10 +292,10 @@ public class ProviderWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtmAdd;
-    private javax.swing.JButton BtmDelete;
     private javax.swing.JButton BtmDisplay;
-    private javax.swing.JButton BtmUpdate;
     private javax.swing.JPanel PnlButtomsProvider;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnExit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -328,4 +311,3 @@ public class ProviderWindow extends javax.swing.JFrame {
     private javax.swing.JTextField txtPhone;
     // End of variables declaration//GEN-END:variables
 }
-

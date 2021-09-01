@@ -18,6 +18,7 @@ public class InventorySystem extends javax.swing.JFrame {
      * Creates new form InventorySystem
      */
     ProductController product = new ProductController();
+    ProviderController provider = new ProviderController();
 
     public InventorySystem() {
         initComponents();
@@ -45,9 +46,9 @@ public class InventorySystem extends javax.swing.JFrame {
         sbntEdit = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         mnProvider = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        smnAddProvider = new javax.swing.JMenuItem();
+        smnEditProvider = new javax.swing.JMenuItem();
+        smnDeleteProvider = new javax.swing.JMenuItem();
         mnCustomer = new javax.swing.JMenu();
         mnExit = new javax.swing.JMenu();
 
@@ -161,27 +162,32 @@ public class InventorySystem extends javax.swing.JFrame {
 
         mnProvider.setText("Provider");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Add");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        smnAddProvider.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        smnAddProvider.setText("Add");
+        smnAddProvider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                smnAddProviderActionPerformed(evt);
             }
         });
-        mnProvider.add(jMenuItem1);
+        mnProvider.add(smnAddProvider);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("Edit");
-        mnProvider.add(jMenuItem2);
-
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("Delete");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        smnEditProvider.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        smnEditProvider.setText("Edit");
+        smnEditProvider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                smnEditProviderActionPerformed(evt);
             }
         });
-        mnProvider.add(jMenuItem3);
+        mnProvider.add(smnEditProvider);
+
+        smnDeleteProvider.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        smnDeleteProvider.setText("Delete");
+        smnDeleteProvider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smnDeleteProviderActionPerformed(evt);
+            }
+        });
+        mnProvider.add(smnDeleteProvider);
 
         jMenuBar1.add(mnProvider);
 
@@ -232,13 +238,20 @@ public class InventorySystem extends javax.swing.JFrame {
 
     }//GEN-LAST:event_sbtnAddActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void smnAddProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnAddProviderActionPerformed
+       this.hide();
+        ProviderWindow provW = new ProviderWindow();
+        provW.setVisible(true);
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    }//GEN-LAST:event_smnAddProviderActionPerformed
+
+    private void smnDeleteProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnDeleteProviderActionPerformed
+
+        Integer idD = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to Delete"));
+        provider.delete(idD);
+
+    }//GEN-LAST:event_smnDeleteProviderActionPerformed
 
     private void sbtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbtnDeleteActionPerformed
 
@@ -260,12 +273,18 @@ public class InventorySystem extends javax.swing.JFrame {
     }//GEN-LAST:event_sbntEditActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-       
+
         this.hide();
         SearchWindow searchW = new SearchWindow();
         searchW.setVisible(true);
-        
+
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void smnEditProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnEditProviderActionPerformed
+        Integer idU = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
+        String nameU = JOptionPane.showInputDialog("Enter name of product to update");
+        provider.update(idU, nameU);
+    }//GEN-LAST:event_smnEditProviderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -310,9 +329,6 @@ public class InventorySystem extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu mnCustomer;
@@ -322,5 +338,8 @@ public class InventorySystem extends javax.swing.JFrame {
     private javax.swing.JMenuItem sbntEdit;
     private javax.swing.JMenuItem sbtnAdd;
     private javax.swing.JMenuItem sbtnDelete;
+    private javax.swing.JMenuItem smnAddProvider;
+    private javax.swing.JMenuItem smnDeleteProvider;
+    private javax.swing.JMenuItem smnEditProvider;
     // End of variables declaration//GEN-END:variables
 }
