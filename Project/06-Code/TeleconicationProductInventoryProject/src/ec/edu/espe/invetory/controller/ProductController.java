@@ -83,6 +83,18 @@ public class ProductController {
         System.out.println(input);
         return true;
     }
+    
+    public void search(Integer ids,JTextArea txtaSearch){
+        
+        DBObject find = new BasicDBObject("ID", new BasicDBObject("$eq", ids));
+        try (DBCursor cursor = collection.find(find)) {
+            while (cursor.hasNext()) {
+                txtaSearch.setText(txtaSearch.getText() + "\n" + cursor.next().toString());
+
+            }
+        }
+        
+    }
 
     public void display(JTextArea txtArea) {
 
