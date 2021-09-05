@@ -95,6 +95,23 @@ public class ProductController {
         }
         
     }
+     public boolean sale(Integer idS, Integer quantityS, JTextArea txtaSearch) {
+        Integer quantity ;
+        DBObject find = new BasicDBObject("ID", new BasicDBObject("$eq", idS));
+
+        try (DBCursor cursor = collection.find(find)) {
+            while (cursor.hasNext()) {
+                txtaSearch.setText(txtaSearch.getText() + "\n" + cursor.next().toString());
+            }
+        }
+            quantity = 15;
+            Integer Sale = quantity - quantityS;
+
+            DBObject updatedSale = new BasicDBObject().append("$set", new BasicDBObject().append("Quantity", Sale));
+            collection.update(find, updatedSale, false, true);
+       
+          return true;
+    }
 
     public void display(JTextArea txtArea) {
 
