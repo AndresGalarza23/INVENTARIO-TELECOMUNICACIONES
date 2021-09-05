@@ -110,9 +110,9 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="mnCustomer">
+        <Menu class="javax.swing.JMenu" name="mnInvoice">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Customer"/>
+            <Property name="text" type="java.lang.String" value="Invoice"/>
           </Properties>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnExit">

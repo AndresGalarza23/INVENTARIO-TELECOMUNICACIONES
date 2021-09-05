@@ -48,7 +48,7 @@ public class InventorySystem extends javax.swing.JFrame {
         smnAddProvider = new javax.swing.JMenuItem();
         smnEditProvider = new javax.swing.JMenuItem();
         smnDeleteProvider = new javax.swing.JMenuItem();
-        mnCustomer = new javax.swing.JMenu();
+        mnInvoice = new javax.swing.JMenu();
         mnExit = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
@@ -180,8 +180,8 @@ public class InventorySystem extends javax.swing.JFrame {
 
         jMenuBar1.add(mnProvider);
 
-        mnCustomer.setText("Customer");
-        jMenuBar1.add(mnCustomer);
+        mnInvoice.setText("Invoice");
+        jMenuBar1.add(mnInvoice);
 
         mnExit.setText("Exit");
         jMenuBar1.add(mnExit);
@@ -313,8 +313,8 @@ public class InventorySystem extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JMenu mnCustomer;
     private javax.swing.JMenu mnExit;
+    private javax.swing.JMenu mnInvoice;
     private javax.swing.JMenu mnProduct;
     private javax.swing.JMenu mnProvider;
     private javax.swing.JMenuItem sbntEdit;
