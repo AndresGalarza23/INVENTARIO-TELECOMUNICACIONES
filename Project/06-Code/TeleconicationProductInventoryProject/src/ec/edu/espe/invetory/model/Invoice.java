@@ -11,21 +11,21 @@ import com.mongodb.BasicDBObject;
  *
  * @author Stefany Guerrero AccentOnTheFuture ESPE-DCC0
  */
-public class Sale {
+public class Invoice {
 
     private String date;
     private Integer id;
     private String name;
     private Integer quantity;
 
-    public Sale(String date, Integer id, String name, Integer quantity) {
+    public Invoice(String date, Integer id, String name, Integer quantity) {
         this.date = date;
         this.id = id;
         this.name = name;
         this.quantity = quantity;
     }
 
-    public Sale(BasicDBObject dBObjectInventory) {
+    public Invoice(BasicDBObject dBObjectInventory) {
         this.id = dBObjectInventory.getInt("Id");
         this.name = dBObjectInventory.getString("Name");
         this.date = dBObjectInventory.getString("Date");

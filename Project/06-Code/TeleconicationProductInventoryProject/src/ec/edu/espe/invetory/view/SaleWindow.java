@@ -5,15 +5,20 @@
  */
 package ec.edu.espe.invetory.view;
 
+import ec.edu.espe.invetory.controller.ProductController;
+
 /**
  *
  * @author Stefany Guerrero AccentOnTheFuture ESPE-DCC0
  */
+
+
 public class SaleWindow extends javax.swing.JFrame {
 
     /**
      * Creates new form Sale
      */
+    ProductController product = new ProductController();
     public SaleWindow() {
         initComponents();
     }
@@ -35,6 +40,8 @@ public class SaleWindow extends javax.swing.JFrame {
         txtSale = new javax.swing.JTextField();
         txtQuantitySale = new javax.swing.JTextField();
         txtIdSale = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtaSale = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -48,6 +55,10 @@ public class SaleWindow extends javax.swing.JFrame {
         jLabel3.setText("Quantity:");
 
         jLabel4.setText("Product ID:");
+
+        txtaSale.setColumns(20);
+        txtaSale.setRows(5);
+        jScrollPane2.setViewportView(txtaSale);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -68,7 +79,10 @@ public class SaleWindow extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtIdSale, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                             .addComponent(txtQuantitySale)
-                            .addComponent(txtSale))))
+                            .addComponent(txtSale)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -88,12 +102,24 @@ public class SaleWindow extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtIdSale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         jButton1.setText("SALE");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("CANCEL");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -102,7 +128,7 @@ public class SaleWindow extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 244, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(78, 78, 78))
         );
@@ -135,6 +161,22 @@ public class SaleWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+  Integer quantityS, idSale;
+
+        quantityS = Integer.parseInt(this.txtQuantitySale.getText());
+        idSale = Integer.parseInt(this.txtIdSale.getText());
+
+        product.sale(idSale, quantityS, txtaSale);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       this.hide();
+       InventorySystem inventorySystem = new InventorySystem();
+       
+       inventorySystem.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,8 +223,10 @@ public class SaleWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField txtIdSale;
     private javax.swing.JTextField txtQuantitySale;
     private javax.swing.JTextField txtSale;
+    private javax.swing.JTextArea txtaSale;
     // End of variables declaration//GEN-END:variables
 }
