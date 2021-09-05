@@ -291,7 +291,7 @@ public class CustomerWindow extends javax.swing.JFrame {
 
         Integer cedulaU = Integer.parseInt(JOptionPane.showInputDialog("Enter cedula to update"));
         String namesU = JOptionPane.showInputDialog("Enter names of product to update");
-        customer.update(cedulaU, namesU);
+       // customer.update(cedulaU, namesU);
         
     }//GEN-LAST:event_BtmUpdateActionPerformed
 

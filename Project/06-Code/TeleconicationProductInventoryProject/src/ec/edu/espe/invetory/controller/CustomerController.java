@@ -63,10 +63,16 @@ public class CustomerController {
                
                 
     }
-      public boolean update(Integer cedulas, String names){
+      public boolean update(Integer cedulas, String names, String lastNames, String address, Integer phone){
         DBObject find = new BasicDBObject("Cedula", new BasicDBObject("$eq", cedulas));
-        DBObject updated = new BasicDBObject().append("$set",new BasicDBObject().append("Names", names));
-        collection.update(find, updated,false,true);
+        DBObject updatedName = new BasicDBObject().append("$set",new BasicDBObject().append("Names", names));
+        DBObject updatedLastName = new BasicDBObject().append("$set",new BasicDBObject().append("LastName", lastNames));
+        DBObject updatedAddress = new BasicDBObject().append("$set",new BasicDBObject().append("Address", address));
+        DBObject updatedPhone = new BasicDBObject().append("$set",new BasicDBObject().append("Phone", phone));
+        collection.update(find, updatedName,false,true);
+        collection.update(find, updatedLastName,false,true);
+        collection.update(find, updatedAddress,false,true);
+        collection.update(find, updatedPhone,false,true);
         int input = JOptionPane.showConfirmDialog(null, "Update Record", "OK", JOptionPane.DEFAULT_OPTION);
         
         System.out.println(input);

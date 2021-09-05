@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.invetory.view;
 
-import ec.edu.espe.invetory.controller.CustomerController;
+import ec.edu.espe.invetory.controller.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,7 +13,10 @@ import javax.swing.JOptionPane;
  * @author Luis Heredia Accent on the Future ESPE-DCC0
  */
 public class InvoiceWindow extends javax.swing.JFrame {
-  CustomerController customer = new CustomerController();
+
+    CustomerController customer = new CustomerController();
+    ProductController product = new ProductController();
+
     /**
      * Creates new form InvoiceWindow
      */
@@ -62,9 +65,9 @@ public class InvoiceWindow extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         PnlButtoms6 = new javax.swing.JPanel();
         BtmAdd = new javax.swing.JButton();
-        BtmDelete6 = new javax.swing.JButton();
-        BtmUpdate6 = new javax.swing.JButton();
         BtmDisplay6 = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         txtArea1 = new javax.swing.JTextArea();
 
@@ -285,24 +288,10 @@ public class InvoiceWindow extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        BtmAdd.setText("ADD");
+        BtmAdd.setText("CONFIRM");
         BtmAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtmAddActionPerformed(evt);
-            }
-        });
-
-        BtmDelete6.setText("DELETE");
-        BtmDelete6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtmDelete6ActionPerformed(evt);
-            }
-        });
-
-        BtmUpdate6.setText("UPDATE");
-        BtmUpdate6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtmUpdate6ActionPerformed(evt);
             }
         });
 
@@ -313,6 +302,20 @@ public class InvoiceWindow extends javax.swing.JFrame {
             }
         });
 
+        btnCancel.setText("CANCEL");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("EXIT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PnlButtoms6Layout = new javax.swing.GroupLayout(PnlButtoms6);
         PnlButtoms6.setLayout(PnlButtoms6Layout);
         PnlButtoms6Layout.setHorizontalGroup(
@@ -320,13 +323,13 @@ public class InvoiceWindow extends javax.swing.JFrame {
             .addGroup(PnlButtoms6Layout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addComponent(BtmAdd)
-                .addGap(47, 47, 47)
-                .addComponent(BtmDelete6)
-                .addGap(70, 70, 70)
-                .addComponent(BtmUpdate6)
-                .addGap(60, 60, 60)
+                .addGap(63, 63, 63)
+                .addComponent(btnCancel)
+                .addGap(95, 95, 95)
+                .addComponent(jButton1)
+                .addGap(74, 74, 74)
                 .addComponent(BtmDisplay6)
-                .addContainerGap(564, Short.MAX_VALUE))
+                .addContainerGap(501, Short.MAX_VALUE))
         );
         PnlButtoms6Layout.setVerticalGroup(
             PnlButtoms6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,9 +337,9 @@ public class InvoiceWindow extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(PnlButtoms6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtmAdd)
-                    .addComponent(BtmDelete6)
-                    .addComponent(BtmUpdate6)
-                    .addComponent(BtmDisplay6))
+                    .addComponent(btnCancel)
+                    .addComponent(BtmDisplay6)
+                    .addComponent(jButton1))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
@@ -384,13 +387,17 @@ public class InvoiceWindow extends javax.swing.JFrame {
     private void txtCedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyTyped
 
         char car = evt.getKeyChar();
-        if((car<'0' || car>'9')) evt.consume();
+        if ((car < '0' || car > '9')) {
+            evt.consume();
+        }
 
     }//GEN-LAST:event_txtCedulaKeyTyped
 
     private void txtPhoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPhoneKeyTyped
         char car = evt.getKeyChar();
-        if((car<'0' || car>'9')) evt.consume();
+        if ((car < '0' || car > '9')) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtPhoneKeyTyped
 
     private void BtmAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmAdd1ActionPerformed
@@ -411,18 +418,23 @@ public class InvoiceWindow extends javax.swing.JFrame {
 
     private void BtmAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmAddActionPerformed
 
-        Integer cedula , phone;
-        String names,lastName,address;
+        Integer cedula, phone;
+        String names, lastName, address;
+        Integer quantityS, idSale;
 
-        if (txtCedula.getText().length()==0 || txtNames.getText().length() == 0 ||
-            txtLastName.getText().length() == 0
-            || txtAddress.getText().length() == 0
-            || txtPhone.getText().length() == 0 ){
+        if (txtCedula.getText().length() == 0 || txtNames.getText().length() == 0
+                || txtLastName.getText().length() == 0
+                || txtAddress.getText().length() == 0
+                || txtPhone.getText().length() == 0
+                || txtIdInvoice.getText().length() == 0
+                || txtQuantitySale3.getText().length() == 0
+                || txtDate.getText().length() == 0
+                || txtIdSale3.getText().length() == 0) {
 
-            JOptionPane.showConfirmDialog(null, "Enter Information" , "OK", JOptionPane.DEFAULT_OPTION);
+            JOptionPane.showConfirmDialog(null, "Enter Information", "OK", JOptionPane.DEFAULT_OPTION);
             BtmAdd.enable(false);
 
-        } else{
+        } else {
             BtmAdd.enable(true);
             cedula = Integer.parseInt(this.txtCedula.getText());
             names = this.txtNames.getText();
@@ -430,35 +442,48 @@ public class InvoiceWindow extends javax.swing.JFrame {
             address = this.txtAddress.getText();
             phone = Integer.parseInt(this.txtPhone.getText());
             customer.add(cedula, names, lastName, address, phone);
-
+            
+            quantityS = Integer.parseInt(this.txtQuantitySale3.getText());
+            idSale = Integer.parseInt(this.txtIdSale3.getText());
+            product.sale(idSale, quantityS, txtaSale3);
         }
         txtCedula.setText("");
         txtNames.setText("");
         txtLastName.setText("");
         txtAddress.setText("");
         txtPhone.setText("");
+        txtQuantitySale3.setText("");
+        txtIdSale3.setText("");
+        txtIdInvoice.setText("");
+        txtDate.setText("");
+        
+        
 
     }//GEN-LAST:event_BtmAddActionPerformed
-
-    private void BtmDelete6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmDelete6ActionPerformed
-
-        Integer cedulaD = Integer.parseInt(JOptionPane.showInputDialog("Enter Cedula to Delete"));
-        customer.delete(cedulaD);
-    }//GEN-LAST:event_BtmDelete6ActionPerformed
-
-    private void BtmUpdate6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmUpdate6ActionPerformed
-
-        Integer cedulaU = Integer.parseInt(JOptionPane.showInputDialog("Enter cedula to update"));
-        String namesU = JOptionPane.showInputDialog("Enter names of product to update");
-        customer.update(cedulaU, namesU);
-
-    }//GEN-LAST:event_BtmUpdate6ActionPerformed
 
     private void BtmDisplay6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmDisplay6ActionPerformed
 
         customer.display(txtArea);
 
     }//GEN-LAST:event_BtmDisplay6ActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        txtCedula.setText("");
+        txtNames.setText("");
+        txtLastName.setText("");
+        txtAddress.setText("");
+        txtPhone.setText("");
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        this.hide();
+        InventorySystem inventorySystem = new InventorySystem();
+        inventorySystem.setVisible(true);
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -507,7 +532,6 @@ public class InvoiceWindow extends javax.swing.JFrame {
     private javax.swing.JButton BtmDelete3;
     private javax.swing.JButton BtmDelete4;
     private javax.swing.JButton BtmDelete5;
-    private javax.swing.JButton BtmDelete6;
     private javax.swing.JButton BtmDisplay1;
     private javax.swing.JButton BtmDisplay2;
     private javax.swing.JButton BtmDisplay3;
@@ -519,7 +543,6 @@ public class InvoiceWindow extends javax.swing.JFrame {
     private javax.swing.JButton BtmUpdate3;
     private javax.swing.JButton BtmUpdate4;
     private javax.swing.JButton BtmUpdate5;
-    private javax.swing.JButton BtmUpdate6;
     private javax.swing.JPanel PnlButtoms1;
     private javax.swing.JPanel PnlButtoms2;
     private javax.swing.JPanel PnlButtoms3;
@@ -527,6 +550,8 @@ public class InvoiceWindow extends javax.swing.JFrame {
     private javax.swing.JPanel PnlButtoms5;
     private javax.swing.JPanel PnlButtoms6;
     private javax.swing.JPanel PnlInput;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -19,7 +19,8 @@ public class InventorySystem extends javax.swing.JFrame {
      */
     ProductController product = new ProductController();
     ProviderController provider = new ProviderController();
-
+    CustomerController customer = new CustomerController();
+    
     public InventorySystem() {
         initComponents();
     }
@@ -36,7 +37,6 @@ public class InventorySystem extends javax.swing.JFrame {
         jFrame1 = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btmCustomer = new javax.swing.JButton();
         btmExit = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnProduct = new javax.swing.JMenu();
@@ -49,7 +49,12 @@ public class InventorySystem extends javax.swing.JFrame {
         smnAddProvider = new javax.swing.JMenuItem();
         smnEditProvider = new javax.swing.JMenuItem();
         smnDeleteProvider = new javax.swing.JMenuItem();
+        mnCustomer = new javax.swing.JMenu();
+        smnDeleteCustomer = new javax.swing.JMenuItem();
+        smnEditCustomer = new javax.swing.JMenuItem();
         mnInvoice = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         mnExit = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
@@ -67,13 +72,6 @@ public class InventorySystem extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("Inventory System");
-
-        btmCustomer.setText("CUSTOMER");
-        btmCustomer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btmCustomerActionPerformed(evt);
-            }
-        });
 
         btmExit.setText("EXIT");
         btmExit.addActionListener(new java.awt.event.ActionListener() {
@@ -93,9 +91,7 @@ public class InventorySystem extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(197, 197, 197))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btmCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btmExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btmExit, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(226, 226, 226))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -103,9 +99,7 @@ public class InventorySystem extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jLabel1)
-                .addGap(34, 34, 34)
-                .addComponent(btmCustomer)
-                .addGap(65, 65, 65)
+                .addGap(124, 124, 124)
                 .addComponent(btmExit)
                 .addContainerGap(150, Short.MAX_VALUE))
         );
@@ -190,7 +184,43 @@ public class InventorySystem extends javax.swing.JFrame {
 
         jMenuBar1.add(mnProvider);
 
+        mnCustomer.setText("Customer");
+
+        smnDeleteCustomer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        smnDeleteCustomer.setText("Delete");
+        smnDeleteCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smnDeleteCustomerActionPerformed(evt);
+            }
+        });
+        mnCustomer.add(smnDeleteCustomer);
+
+        smnEditCustomer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        smnEditCustomer.setText("Edit");
+        smnEditCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smnEditCustomerActionPerformed(evt);
+            }
+        });
+        mnCustomer.add(smnEditCustomer);
+
+        jMenuBar1.add(mnCustomer);
+
         mnInvoice.setText("Invoice");
+
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem3.setText("New");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        mnInvoice.add(jMenuItem3);
+
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem5.setText("Delete");
+        mnInvoice.add(jMenuItem5);
+
         jMenuBar1.add(mnInvoice);
 
         mnExit.setText("Exit");
@@ -216,12 +246,6 @@ public class InventorySystem extends javax.swing.JFrame {
         System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_btmExitActionPerformed
 
-    private void btmCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmCustomerActionPerformed
-        CustomerWindow cusW = new CustomerWindow();
-        cusW.setVisible(true);
-
-    }//GEN-LAST:event_btmCustomerActionPerformed
-
     private void sbtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbtnAddActionPerformed
         this.hide();
         ProductWindow prodW = new ProductWindow();
@@ -230,41 +254,41 @@ public class InventorySystem extends javax.swing.JFrame {
     }//GEN-LAST:event_sbtnAddActionPerformed
 
     private void smnAddProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnAddProviderActionPerformed
-       this.hide();
+        this.hide();
         ProviderWindow provW = new ProviderWindow();
         provW.setVisible(true);
-
+        
 
     }//GEN-LAST:event_smnAddProviderActionPerformed
 
     private void smnDeleteProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnDeleteProviderActionPerformed
-
+        
         Integer idD = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to Delete"));
         provider.delete(idD);
 
     }//GEN-LAST:event_smnDeleteProviderActionPerformed
 
     private void sbtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbtnDeleteActionPerformed
-
+        
         Integer idD = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to Delete"));
         product.delete(idD);
 
     }//GEN-LAST:event_sbtnDeleteActionPerformed
 
     private void sbntEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbntEditActionPerformed
-
+        
         Integer idUpdate = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
         String nameUpdate = JOptionPane.showInputDialog("Enter name of product to update");
         String brandUpdate = JOptionPane.showInputDialog("Enter brand of product to update");
         Double purchasePriceUpdate = Double.parseDouble(JOptionPane.showInputDialog("Enter Purchase Price of product to update"));
         Double salePriceUpdate = Double.parseDouble(JOptionPane.showInputDialog("Enter Sale Price of product to update"));
-
+        
         product.update(idUpdate, nameUpdate, brandUpdate, purchasePriceUpdate, salePriceUpdate);
 
     }//GEN-LAST:event_sbntEditActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-
+        
         this.hide();
         SearchWindow searchW = new SearchWindow();
         searchW.setVisible(true);
@@ -275,17 +299,39 @@ public class InventorySystem extends javax.swing.JFrame {
         Integer idU = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
         String nameU = JOptionPane.showInputDialog("Enter name of product to update");
         Integer phoneNumberU = Integer.parseInt(JOptionPane.showInputDialog("Enter  phone Number to update "));
-        String addressU=  JOptionPane.showInputDialog("Enter address to update");
-        provider.update(idU, nameU,phoneNumberU, addressU);
+        String addressU = JOptionPane.showInputDialog("Enter address to update");
+        provider.update(idU, nameU, phoneNumberU, addressU);
     }//GEN-LAST:event_smnEditProviderActionPerformed
 
     private void smnSaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnSaleActionPerformed
-
+        
         this.hide();
-
+        
         SaleWindow saleWindow = new SaleWindow();
         saleWindow.setVisible(true);
     }//GEN-LAST:event_smnSaleActionPerformed
+
+    private void smnDeleteCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnDeleteCustomerActionPerformed
+        Integer cedulaD = Integer.parseInt(JOptionPane.showInputDialog("Enter Cedula to Delete"));
+        customer.delete(cedulaD);        // TODO add your handling code here:
+    }//GEN-LAST:event_smnDeleteCustomerActionPerformed
+
+    private void smnEditCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnEditCustomerActionPerformed
+        Integer cedulaU = Integer.parseInt(JOptionPane.showInputDialog("Enter cedula to update"));
+        String namesU = JOptionPane.showInputDialog("Enter names of Customer to update");
+        String lastNameU = JOptionPane.showInputDialog("Enter last name of Customer to update");
+        String addressU = JOptionPane.showInputDialog("Enter address of customer to update");
+        int phoneU = Integer.parseInt(JOptionPane.showInputDialog("Enter phone of customer to update"));
+        customer.update(cedulaU, namesU, lastNameU, addressU, phoneU);        
+    }//GEN-LAST:event_smnEditCustomerActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        this.hide();
+        InvoiceWindow invoiceWindow = new InvoiceWindow();
+        invoiceWindow.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,13 +370,15 @@ public class InventorySystem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btmCustomer;
     private javax.swing.JButton btmExit;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu mnCustomer;
     private javax.swing.JMenu mnExit;
     private javax.swing.JMenu mnInvoice;
     private javax.swing.JMenu mnProduct;
@@ -339,7 +387,9 @@ public class InventorySystem extends javax.swing.JFrame {
     private javax.swing.JMenuItem sbtnAdd;
     private javax.swing.JMenuItem sbtnDelete;
     private javax.swing.JMenuItem smnAddProvider;
+    private javax.swing.JMenuItem smnDeleteCustomer;
     private javax.swing.JMenuItem smnDeleteProvider;
+    private javax.swing.JMenuItem smnEditCustomer;
     private javax.swing.JMenuItem smnEditProvider;
     private javax.swing.JMenuItem smnSale;
     // End of variables declaration//GEN-END:variables
