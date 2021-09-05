@@ -44,7 +44,6 @@ public class InventorySystem extends javax.swing.JFrame {
         sbtnDelete = new javax.swing.JMenuItem();
         sbntEdit = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
-        smnSale = new javax.swing.JMenuItem();
         mnProvider = new javax.swing.JMenu();
         smnAddProvider = new javax.swing.JMenuItem();
         smnEditProvider = new javax.swing.JMenuItem();
@@ -141,15 +140,6 @@ public class InventorySystem extends javax.swing.JFrame {
             }
         });
         mnProduct.add(jMenuItem4);
-
-        smnSale.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        smnSale.setText("Sale");
-        smnSale.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                smnSaleActionPerformed(evt);
-            }
-        });
-        mnProduct.add(smnSale);
 
         jMenuBar1.add(mnProduct);
 
@@ -303,14 +293,6 @@ public class InventorySystem extends javax.swing.JFrame {
         provider.update(idU, nameU, phoneNumberU, addressU);
     }//GEN-LAST:event_smnEditProviderActionPerformed
 
-    private void smnSaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnSaleActionPerformed
-        
-        this.hide();
-        
-        SaleWindow saleWindow = new SaleWindow();
-        saleWindow.setVisible(true);
-    }//GEN-LAST:event_smnSaleActionPerformed
-
     private void smnDeleteCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnDeleteCustomerActionPerformed
         Integer cedulaD = Integer.parseInt(JOptionPane.showInputDialog("Enter Cedula to Delete"));
         customer.delete(cedulaD);        // TODO add your handling code here:
@@ -391,6 +373,5 @@ public class InventorySystem extends javax.swing.JFrame {
     private javax.swing.JMenuItem smnDeleteProvider;
     private javax.swing.JMenuItem smnEditCustomer;
     private javax.swing.JMenuItem smnEditProvider;
-    private javax.swing.JMenuItem smnSale;
     // End of variables declaration//GEN-END:variables
 }
