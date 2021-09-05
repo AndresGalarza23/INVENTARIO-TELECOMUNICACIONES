@@ -249,7 +249,9 @@ public class InvoiceWindow extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addComponent(jLabel5)))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PnlInputLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         PnlInputLayout.setVerticalGroup(
@@ -329,7 +331,7 @@ public class InvoiceWindow extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(74, 74, 74)
                 .addComponent(BtmDisplay6)
-                .addContainerGap(501, Short.MAX_VALUE))
+                .addContainerGap(560, Short.MAX_VALUE))
         );
         PnlButtoms6Layout.setVerticalGroup(
             PnlButtoms6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,7 +359,7 @@ public class InvoiceWindow extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(83, 83, 83)
-                .addComponent(PnlInput, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(PnlInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
