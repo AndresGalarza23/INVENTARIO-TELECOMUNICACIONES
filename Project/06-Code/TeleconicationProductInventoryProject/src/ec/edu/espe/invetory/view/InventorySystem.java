@@ -36,7 +36,6 @@ public class InventorySystem extends javax.swing.JFrame {
         jFrame1 = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btmProvider = new javax.swing.JButton();
         btmCustomer = new javax.swing.JButton();
         btmExit = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -68,13 +67,6 @@ public class InventorySystem extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("Inventory System");
 
-        btmProvider.setText("PROVIDER");
-        btmProvider.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btmProviderActionPerformed(evt);
-            }
-        });
-
         btmCustomer.setText("CUSTOMER");
         btmCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +93,6 @@ public class InventorySystem extends javax.swing.JFrame {
                         .addGap(197, 197, 197))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btmProvider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btmCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btmExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(226, 226, 226))))
@@ -111,11 +102,9 @@ public class InventorySystem extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jLabel1)
-                .addGap(26, 26, 26)
-                .addComponent(btmProvider)
-                .addGap(30, 30, 30)
+                .addGap(34, 34, 34)
                 .addComponent(btmCustomer)
-                .addGap(18, 18, 18)
+                .addGap(65, 65, 65)
                 .addComponent(btmExit)
                 .addContainerGap(150, Short.MAX_VALUE))
         );
@@ -212,14 +201,6 @@ public class InventorySystem extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btmProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmProviderActionPerformed
-
-        ProviderWindow provW = new ProviderWindow();
-        provW.setVisible(true);
-
-
-    }//GEN-LAST:event_btmProviderActionPerformed
 
     private void btmExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmExitActionPerformed
         System.exit(0);        // TODO add your handling code here:
@@ -327,7 +308,6 @@ public class InventorySystem extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btmCustomer;
     private javax.swing.JButton btmExit;
-    private javax.swing.JButton btmProvider;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;

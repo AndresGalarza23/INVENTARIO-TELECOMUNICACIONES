@@ -170,7 +170,6 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btmProvider" max="32767" attributes="0"/>
                               <Component id="btmCustomer" alignment="0" max="32767" attributes="0"/>
                               <Component id="btmExit" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -185,11 +184,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Component id="btmProvider" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="btmCustomer" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                   <Component id="btmExit" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="150" max="32767" attributes="0"/>
               </Group>
@@ -204,14 +201,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Inventory System"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btmProvider">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="PROVIDER"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btmProviderActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btmCustomer">
           <Properties>
