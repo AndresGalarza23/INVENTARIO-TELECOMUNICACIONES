@@ -35,6 +35,7 @@ public class InventorySystem extends javax.swing.JFrame {
     private void initComponents() {
 
         jFrame1 = new javax.swing.JFrame();
+        jMenu2 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btmExit = new javax.swing.JButton();
@@ -52,8 +53,10 @@ public class InventorySystem extends javax.swing.JFrame {
         smnDeleteCustomer = new javax.swing.JMenuItem();
         smnEditCustomer = new javax.swing.JMenuItem();
         mnInvoice = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        smnAddInvoice = new javax.swing.JMenuItem();
+        smnDeleteInvoice = new javax.swing.JMenu();
+        smnDeleteCedula = new javax.swing.JMenuItem();
+        smnDeleteId = new javax.swing.JMenuItem();
         mnExit = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
@@ -66,6 +69,8 @@ public class InventorySystem extends javax.swing.JFrame {
             jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
+
+        jMenu2.setText("jMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -198,18 +203,21 @@ public class InventorySystem extends javax.swing.JFrame {
 
         mnInvoice.setText("Invoice");
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("New");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        mnInvoice.add(jMenuItem3);
+        smnAddInvoice.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        smnAddInvoice.setText("New");
+        mnInvoice.add(smnAddInvoice);
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem5.setText("Delete");
-        mnInvoice.add(jMenuItem5);
+        smnDeleteInvoice.setText("Delete");
+
+        smnDeleteCedula.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, 0));
+        smnDeleteCedula.setText("Cedula");
+        smnDeleteInvoice.add(smnDeleteCedula);
+
+        smnDeleteId.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, 0));
+        smnDeleteId.setText("ID");
+        smnDeleteInvoice.add(smnDeleteId);
+
+        mnInvoice.add(smnDeleteInvoice);
 
         jMenuBar1.add(mnInvoice);
 
@@ -307,14 +315,6 @@ public class InventorySystem extends javax.swing.JFrame {
         customer.update(cedulaU, namesU, lastNameU, addressU, phoneU);        
     }//GEN-LAST:event_smnEditCustomerActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        this.hide();
-        InvoiceWindow invoiceWindow = new InvoiceWindow();
-        invoiceWindow.setVisible(true);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -355,10 +355,9 @@ public class InventorySystem extends javax.swing.JFrame {
     private javax.swing.JButton btmExit;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu mnCustomer;
     private javax.swing.JMenu mnExit;
@@ -368,8 +367,12 @@ public class InventorySystem extends javax.swing.JFrame {
     private javax.swing.JMenuItem sbntEdit;
     private javax.swing.JMenuItem sbtnAdd;
     private javax.swing.JMenuItem sbtnDelete;
+    private javax.swing.JMenuItem smnAddInvoice;
     private javax.swing.JMenuItem smnAddProvider;
+    private javax.swing.JMenuItem smnDeleteCedula;
     private javax.swing.JMenuItem smnDeleteCustomer;
+    private javax.swing.JMenuItem smnDeleteId;
+    private javax.swing.JMenu smnDeleteInvoice;
     private javax.swing.JMenuItem smnDeleteProvider;
     private javax.swing.JMenuItem smnEditCustomer;
     private javax.swing.JMenuItem smnEditProvider;
