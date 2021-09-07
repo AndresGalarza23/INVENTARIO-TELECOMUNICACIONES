@@ -162,7 +162,7 @@ public class InvoiceWindow extends javax.swing.JFrame {
             }
         });
 
-        jLavel.setText("Invoice N:");
+        jLavel.setText("ID");
 
         jLabel7.setText("Date:");
 
@@ -525,46 +525,16 @@ public class InvoiceWindow extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtmAdd;
     private javax.swing.JButton BtmAdd1;
-    private javax.swing.JButton BtmAdd2;
-    private javax.swing.JButton BtmAdd3;
-    private javax.swing.JButton BtmAdd4;
-    private javax.swing.JButton BtmAdd5;
     private javax.swing.JButton BtmDelete1;
-    private javax.swing.JButton BtmDelete2;
-    private javax.swing.JButton BtmDelete3;
-    private javax.swing.JButton BtmDelete4;
-    private javax.swing.JButton BtmDelete5;
     private javax.swing.JButton BtmDisplay1;
-    private javax.swing.JButton BtmDisplay2;
-    private javax.swing.JButton BtmDisplay3;
-    private javax.swing.JButton BtmDisplay4;
-    private javax.swing.JButton BtmDisplay5;
     private javax.swing.JButton BtmDisplay6;
     private javax.swing.JButton BtmUpdate1;
-    private javax.swing.JButton BtmUpdate2;
-    private javax.swing.JButton BtmUpdate3;
-    private javax.swing.JButton BtmUpdate4;
-    private javax.swing.JButton BtmUpdate5;
     private javax.swing.JPanel PnlButtoms1;
-    private javax.swing.JPanel PnlButtoms2;
-    private javax.swing.JPanel PnlButtoms3;
-    private javax.swing.JPanel PnlButtoms4;
-    private javax.swing.JPanel PnlButtoms5;
     private javax.swing.JPanel PnlButtoms6;
     private javax.swing.JPanel PnlInput;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -573,17 +543,9 @@ public class InvoiceWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLavel;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextField txtAddress;
@@ -592,23 +554,11 @@ public class InvoiceWindow extends javax.swing.JFrame {
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtDate;
     private javax.swing.JTextField txtIdInvoice;
-    private javax.swing.JTextField txtIdSale;
-    private javax.swing.JTextField txtIdSale1;
-    private javax.swing.JTextField txtIdSale2;
     private javax.swing.JTextField txtIdSale3;
     private javax.swing.JTextField txtLastName;
     private javax.swing.JTextField txtNames;
     private javax.swing.JTextField txtPhone;
-    private javax.swing.JTextField txtQuantitySale;
-    private javax.swing.JTextField txtQuantitySale1;
-    private javax.swing.JTextField txtQuantitySale2;
     private javax.swing.JTextField txtQuantitySale3;
-    private javax.swing.JTextField txtSale;
-    private javax.swing.JTextField txtSale1;
-    private javax.swing.JTextField txtSale2;
-    private javax.swing.JTextArea txtaSale;
-    private javax.swing.JTextArea txtaSale1;
-    private javax.swing.JTextArea txtaSale2;
     private javax.swing.JTextArea txtaSale3;
     // End of variables declaration//GEN-END:variables
 }

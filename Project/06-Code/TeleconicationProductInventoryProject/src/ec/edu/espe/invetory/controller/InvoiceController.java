@@ -55,7 +55,7 @@ public class InvoiceController {
     }
       
       
-         public boolean delete(Integer cedula) {
+         public boolean deleteCedula(Integer cedula) {
         document.put("Cedula", cedula);
         collection.remove(document);
         int input = JOptionPane.showConfirmDialog(null, "Delete Record", "OK", JOptionPane.DEFAULT_OPTION);
@@ -64,7 +64,16 @@ public class InvoiceController {
         return true;
 
     }
-         
+   
+               public boolean deleteId(Integer id) {
+        document.put("ID", id);
+        collection.remove(document);
+        int input = JOptionPane.showConfirmDialog(null, "Delete Record", "OK", JOptionPane.DEFAULT_OPTION);
+
+        System.out.println(input);
+        return true;
+
+    }
          
 }
             

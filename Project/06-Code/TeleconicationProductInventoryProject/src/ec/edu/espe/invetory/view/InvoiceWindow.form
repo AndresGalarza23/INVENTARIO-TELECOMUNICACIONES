@@ -300,7 +300,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLavel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Invoice N:"/>
+            <Property name="text" type="java.lang.String" value="ID"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtIdInvoice">
