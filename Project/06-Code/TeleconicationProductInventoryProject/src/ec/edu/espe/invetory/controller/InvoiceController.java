@@ -8,6 +8,8 @@ package ec.edu.espe.invetory.controller;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import com.mongodb.Mongo;
 import ec.edu.espe.invetory.model.Invoice;
 import ec.edu.espe.invetory.model.Product;
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -74,6 +77,31 @@ public class InvoiceController {
         return true;
 
     }
+               
+               public void searchId(Integer ids,JTextArea txtaSearch){
+        
+        DBObject find = new BasicDBObject("ID", new BasicDBObject("$eq", ids));
+        try (DBCursor cursor = collection.find(find)) {
+            while (cursor.hasNext()) {
+                txtaSearch.setText(txtaSearch.getText() + "\n" + cursor.next().toString());
+
+            }
+        }
+        
+    }
+ 
+                  public void searchCedula(Integer cedulas,JTextArea txtaSearch){
+        
+        DBObject find = new BasicDBObject("Cedula", new BasicDBObject("$eq", cedulas));
+        try (DBCursor cursor = collection.find(find)) {
+            while (cursor.hasNext()) {
+                txtaSearch.setText(txtaSearch.getText() + "\n" + cursor.next().toString());
+
+            }
+        }
+        
+    }
+    
          
 }
             
