@@ -9,9 +9,13 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
+import ec.edu.espe.invetory.model.Invoice;
+import ec.edu.espe.invetory.model.Product;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,7 +39,21 @@ public class InvoiceController {
         }
     }
     
-    
+      public boolean add(String date, Integer id, Integer cedula, String name, Integer quantity) {
+        ArrayList<Invoice> invoice = new ArrayList<>();
+        invoice.add(new Invoice(date,id,cedula,name,quantity));
+        for (Invoice pueC : invoice) {
+            collection.insert(pueC.dbProductObjectInvoice());
+
+        }
+
+        int input = JOptionPane.showConfirmDialog(null, "Successful Registration", "OK", JOptionPane.DEFAULT_OPTION);
+
+        System.out.println(input);
+        return true;
+
+    }
+      
 }
             
       

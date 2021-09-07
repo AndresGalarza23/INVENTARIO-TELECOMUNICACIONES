@@ -37,7 +37,7 @@ public class Invoice {
     }
     
 
-    public BasicDBObject dbProductObjectProvider() {
+    public BasicDBObject dbProductObjectInvoice() {
 
         BasicDBObject dbProduct0bjectInvioce = new BasicDBObject();
 
