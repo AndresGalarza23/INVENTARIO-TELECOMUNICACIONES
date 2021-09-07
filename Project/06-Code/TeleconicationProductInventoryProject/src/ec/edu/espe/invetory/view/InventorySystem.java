@@ -205,6 +205,11 @@ public class InventorySystem extends javax.swing.JFrame {
 
         smnAddInvoice.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         smnAddInvoice.setText("New");
+        smnAddInvoice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smnAddInvoiceActionPerformed(evt);
+            }
+        });
         mnInvoice.add(smnAddInvoice);
 
         smnDeleteInvoice.setText("Delete");
@@ -314,6 +319,15 @@ public class InventorySystem extends javax.swing.JFrame {
         int phoneU = Integer.parseInt(JOptionPane.showInputDialog("Enter phone of customer to update"));
         customer.update(cedulaU, namesU, lastNameU, addressU, phoneU);        
     }//GEN-LAST:event_smnEditCustomerActionPerformed
+
+    private void smnAddInvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnAddInvoiceActionPerformed
+     this.hide();
+     InvoiceWindow invoiceWindow =new InvoiceWindow();
+     invoiceWindow.setVisible(true);
+     
+        
+        
+    }//GEN-LAST:event_smnAddInvoiceActionPerformed
 
     /**
      * @param args the command line arguments
