@@ -176,6 +176,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cedula"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="smnDeleteCedulaActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="smnDeleteId">
                   <Properties>

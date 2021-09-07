@@ -19,6 +19,7 @@ public class InventorySystem extends javax.swing.JFrame {
      */
     ProductController product = new ProductController();
     ProviderController provider = new ProviderController();
+    InvoiceController invoice = new InvoiceController();
     CustomerController customer = new CustomerController();
     
     public InventorySystem() {
@@ -216,6 +217,11 @@ public class InventorySystem extends javax.swing.JFrame {
 
         smnDeleteCedula.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, 0));
         smnDeleteCedula.setText("Cedula");
+        smnDeleteCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smnDeleteCedulaActionPerformed(evt);
+            }
+        });
         smnDeleteInvoice.add(smnDeleteCedula);
 
         smnDeleteId.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, 0));
@@ -328,6 +334,11 @@ public class InventorySystem extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_smnAddInvoiceActionPerformed
+
+    private void smnDeleteCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnDeleteCedulaActionPerformed
+       Integer idD = Integer.parseInt(JOptionPane.showInputDialog("Enter Invoice Id to Delete"));
+        invoice.deleteId(idD);
+    }//GEN-LAST:event_smnDeleteCedulaActionPerformed
 
     /**
      * @param args the command line arguments
