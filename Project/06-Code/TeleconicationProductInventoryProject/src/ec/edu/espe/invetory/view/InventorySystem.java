@@ -226,6 +226,11 @@ public class InventorySystem extends javax.swing.JFrame {
 
         smnDeleteId.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, 0));
         smnDeleteId.setText("ID");
+        smnDeleteId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smnDeleteIdActionPerformed(evt);
+            }
+        });
         smnDeleteInvoice.add(smnDeleteId);
 
         mnInvoice.add(smnDeleteInvoice);
@@ -336,9 +341,16 @@ public class InventorySystem extends javax.swing.JFrame {
     }//GEN-LAST:event_smnAddInvoiceActionPerformed
 
     private void smnDeleteCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnDeleteCedulaActionPerformed
+       Integer cedulaD = Integer.parseInt(JOptionPane.showInputDialog("Enter Invoice Cedula to Delete"));
+        invoice.deleteCedula(cedulaD);
+    }//GEN-LAST:event_smnDeleteCedulaActionPerformed
+
+    private void smnDeleteIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnDeleteIdActionPerformed
+                                                 
        Integer idD = Integer.parseInt(JOptionPane.showInputDialog("Enter Invoice Id to Delete"));
         invoice.deleteId(idD);
-    }//GEN-LAST:event_smnDeleteCedulaActionPerformed
+      
+    }//GEN-LAST:event_smnDeleteIdActionPerformed
 
     /**
      * @param args the command line arguments
