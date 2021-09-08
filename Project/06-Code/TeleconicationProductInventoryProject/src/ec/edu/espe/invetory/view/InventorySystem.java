@@ -64,6 +64,7 @@ public class InventorySystem extends javax.swing.JFrame {
         smbShowProduct = new javax.swing.JMenuItem();
         smnShowCustomer = new javax.swing.JMenuItem();
         smnShowProvider = new javax.swing.JMenuItem();
+        smnDisplayInvoice = new javax.swing.JMenuItem();
         mnExit = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
@@ -285,6 +286,15 @@ public class InventorySystem extends javax.swing.JFrame {
         });
         mnShow.add(smnShowProvider);
 
+        smnDisplayInvoice.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.SHIFT_MASK));
+        smnDisplayInvoice.setText("Invoice");
+        smnDisplayInvoice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smnDisplayInvoiceActionPerformed(evt);
+            }
+        });
+        mnShow.add(smnDisplayInvoice);
+
         jMenuBar1.add(mnShow);
 
         mnExit.setText("Exit");
@@ -347,8 +357,9 @@ public class InventorySystem extends javax.swing.JFrame {
         String brandUpdate = JOptionPane.showInputDialog("Enter brand of product to update");
         Double purchasePriceUpdate = Double.parseDouble(JOptionPane.showInputDialog("Enter Purchase Price of product to update"));
         Double salePriceUpdate = Double.parseDouble(JOptionPane.showInputDialog("Enter Sale Price of product to update"));
-
-        product.update(idUpdate, nameUpdate, brandUpdate, purchasePriceUpdate, salePriceUpdate);
+        Integer quantityUpdate = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
+        Integer idProviderUpdate = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
+        product.update(idUpdate, nameUpdate, brandUpdate, purchasePriceUpdate, salePriceUpdate, quantityUpdate, idProviderUpdate);
 
     }//GEN-LAST:event_sbntEditActionPerformed
 
@@ -445,6 +456,12 @@ public class InventorySystem extends javax.swing.JFrame {
         displayProvider.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_smnShowProviderActionPerformed
 
+    private void smnDisplayInvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnDisplayInvoiceActionPerformed
+        this.hide();
+        DisplayInvoice displayInvoice = new DisplayInvoice();
+        displayInvoice.setVisible(true);
+    }//GEN-LAST:event_smnDisplayInvoiceActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -506,6 +523,7 @@ public class InventorySystem extends javax.swing.JFrame {
     private javax.swing.JMenuItem smnDeleteId;
     private javax.swing.JMenu smnDeleteInvoice;
     private javax.swing.JMenuItem smnDeleteProvider;
+    private javax.swing.JMenuItem smnDisplayInvoice;
     private javax.swing.JMenuItem smnEditCustomer;
     private javax.swing.JMenuItem smnEditProvider;
     private javax.swing.JMenuItem smnSearchInvoiceCedula;

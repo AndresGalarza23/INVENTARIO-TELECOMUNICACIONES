@@ -5,7 +5,6 @@
  */
 package ec.edu.espe.invetory.view;
 
-
 import ec.edu.espe.invetory.controller.*;
 import javax.swing.JOptionPane;
 
@@ -391,12 +390,11 @@ public class InvoiceWindow extends javax.swing.JFrame {
         String names, lastName, address, date;
         Integer quantityS, idSale;
 
-        if (txtIdInvoice.getText().length() == 0 
+        if (txtIdInvoice.getText().length() == 0
                 || txtCedula.getText().length() == 0 || txtNames.getText().length() == 0
                 || txtLastName.getText().length() == 0
                 || txtAddress.getText().length() == 0
                 || txtPhone.getText().length() == 0
-                || txtIdInvoice.getText().length() == 0
                 || txtQuantitySale3.getText().length() == 0
                 || txtDate.getText().length() == 0
                 || txtIdSale3.getText().length() == 0) {
@@ -413,13 +411,13 @@ public class InvoiceWindow extends javax.swing.JFrame {
             lastName = this.txtLastName.getText();
             address = this.txtAddress.getText();
             phone = Integer.parseInt(this.txtPhone.getText());
-            quantityS= Integer.parseInt(this.txtQuantitySale3.getText());
-            customer.add(cedula, names, lastName, address, phone);
-            invoices.add(date, id, cedula,names, quantityS);
-            
+            quantityS = Integer.parseInt(this.txtQuantitySale3.getText());
             quantityS = Integer.parseInt(this.txtQuantitySale3.getText());
             idSale = Integer.parseInt(this.txtIdSale3.getText());
             product.sale(idSale, quantityS);
+            customer.add(cedula, names, lastName, address, phone);
+            invoices.add(date, id, cedula, names, quantityS);
+           
         }
         txtCedula.setText("");
         txtNames.setText("");

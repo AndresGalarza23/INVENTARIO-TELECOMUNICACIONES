@@ -12,14 +12,13 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
 import ec.edu.espe.invetory.model.Invoice;
-import ec.edu.espe.invetory.model.Product;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -32,6 +31,7 @@ public class InvoiceController {
     DBCollection collection;
     BasicDBObject document = new BasicDBObject();
     DefaultTableModel model = new DefaultTableModel();
+    DBCursor cursor = null;
 
     public InvoiceController() {
         try {
@@ -44,9 +44,36 @@ public class InvoiceController {
         }
     }
 
+    public boolean sale(Integer idS, Integer quantityS) {
+
+        Double quantity;
+
+        DBObject find = new BasicDBObject("ID", new BasicDBObject("$eq", idS));
+
+        document.put("ID", idS);
+        cursor = collection.find(document);
+
+        while (cursor.hasNext()) {
+
+            DBObject obj = cursor.next();
+            quantity = (double) obj.get("Sale Price");
+
+            double Sale = quantity * quantityS;
+
+            DBObject updatedSale = new BasicDBObject().append("$set", new BasicDBObject().append("Price", Sale));
+            collection.update(find, updatedSale, false, true);
+
+        }
+
+        return true;
+    }
+
     public boolean add(String date, Integer id, Integer cedula, String name, Integer quantity) {
+        ;
         ArrayList<Invoice> invoice = new ArrayList<>();
-        invoice.add(new Invoice(date, id, cedula, name, quantity));
+        double totalPrice = 0;
+
+        invoice.add(new Invoice(date, id, cedula, name, quantity, totalPrice));
         for (Invoice pueC : invoice) {
             collection.insert(pueC.dbProductObjectInvoice());
 
@@ -117,7 +144,7 @@ public class InvoiceController {
             model.addColumn("Cedula");
             while (cursor.hasNext()) {
 
-                 model.addRow(new Object[]{cursor.next().get("ID"), cursor1.next().get("Name"),
+                model.addRow(new Object[]{cursor.next().get("ID"), cursor1.next().get("Name"),
                     cursor2.next().get("Date"), cursor3.next().get("Cedula")});
 
                 tblSearchInvoice.setModel(model);
@@ -125,6 +152,27 @@ public class InvoiceController {
             }
         }
 
+    }
+
+    public void display(JTable tblProducts) {
+
+        DBCursor cursor = collection.find();
+        DBCursor cursor1 = collection.find();
+        DBCursor cursor2 = collection.find();
+        DBCursor cursor3 = collection.find();
+
+        model.addColumn("ID");
+        model.addColumn("Name");
+        model.addColumn("Date");
+        model.addColumn("Cedula");
+
+        while (cursor.hasNext()) {
+
+            model.addRow(new Object[]{cursor.next().get("ID"), cursor1.next().get("Name"),
+                cursor2.next().get("Date"), cursor3.next().get("Cedula")});
+
+            tblProducts.setModel(model);
+        }
     }
 
 }

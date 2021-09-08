@@ -44,6 +44,7 @@ public class ProductController {
         } catch (UnknownHostException ex) {
             Logger.getLogger(ProductController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 
     public boolean add(Integer id, String name, String brand, double purchasePrice, double salePrice, Integer quantity, Integer idProvider) {
@@ -71,17 +72,21 @@ public class ProductController {
 
     }
 
-    public boolean update(Integer ids, String names, String brands, double purchasePrices, double salePrices) {
+    public boolean update(Integer ids, String names, String brands, double purchasePrices, double salePrices,Integer quantity, Integer idProvider) {
         DBObject find = new BasicDBObject("ID", new BasicDBObject("$eq", ids));
         DBObject updatedName = new BasicDBObject().append("$set", new BasicDBObject().append("Name", names));
         DBObject updatedBrand = new BasicDBObject().append("$set", new BasicDBObject().append("Brand", brands));
         DBObject updatedPurchasePrice = new BasicDBObject().append("$set", new BasicDBObject().append("Purchase Price", purchasePrices));
         DBObject updatedSalePrice = new BasicDBObject().append("$set", new BasicDBObject().append("Sale Price", salePrices));
+        DBObject updatedQuantity = new BasicDBObject().append("$set", new BasicDBObject().append("Quantity", quantity));
+        DBObject updatedIdProvider = new BasicDBObject().append("$set", new BasicDBObject().append("ID Provide", idProvider));
 
         collection.update(find, updatedName, false, true);
         collection.update(find, updatedBrand, false, true);
         collection.update(find, updatedPurchasePrice, false, true);
         collection.update(find, updatedSalePrice, false, true);
+        collection.update(find, updatedQuantity, false, true);
+        collection.update(find, updatedIdProvider, false, true);
 
         int input = JOptionPane.showConfirmDialog(null, "Update Record", "OK", JOptionPane.DEFAULT_OPTION);
 
@@ -127,12 +132,6 @@ public class ProductController {
 
         DBObject find = new BasicDBObject("ID", new BasicDBObject("$eq", idS));
 
-        try (DBCursor cursor = collection.find(find)) {
-            while (cursor.hasNext()) {
-
-            }
-        }
-
         document.put("ID", idS);
         cursor = collection.find(document);
 
@@ -146,6 +145,7 @@ public class ProductController {
             DBObject updatedSale = new BasicDBObject().append("$set", new BasicDBObject().append("Quantity", Sale));
             collection.update(find, updatedSale, false, true);
 
+                
         }
 
         return true;

@@ -18,15 +18,18 @@ public class Invoice {
     private Integer cedula;
     private String name;
     private Integer quantity;
+    private double totalPrice;
 
-    public Invoice(String date, Integer id, Integer cedula, String name, Integer quantity) {
+    public Invoice(String date, Integer id, Integer cedula, String name, Integer quantity, double totalPrice) {
         this.date = date;
         this.id = id;
         this.cedula = cedula;
         this.name = name;
         this.quantity = quantity;
+        this.totalPrice = totalPrice;
     }
 
+  
 
 
     public Invoice(BasicDBObject dBObjectInventory) {
@@ -34,6 +37,7 @@ public class Invoice {
         this.name = dBObjectInventory.getString("Name");
         this.date = dBObjectInventory.getString("Date");
         this.cedula = dBObjectInventory.getInt("Cedula");
+        this.totalPrice = dBObjectInventory.getDouble("Price");
     }
     
 
@@ -45,9 +49,19 @@ public class Invoice {
         dbProduct0bjectInvioce.append("Name", this.getName());
         dbProduct0bjectInvioce.append("Date", this.getDate());
         dbProduct0bjectInvioce.append("Cedula", this.getCedula());
+        dbProduct0bjectInvioce.append("Price", this.getPrice());
         return dbProduct0bjectInvioce;
     }
 
+    public Double getPrice() {
+        return totalPrice;
+    }
+
+    public void setPrice(Double price) {
+        this.totalPrice = price;
+    }
+
+    
     public Integer getCedula() {
         return cedula;
     }
