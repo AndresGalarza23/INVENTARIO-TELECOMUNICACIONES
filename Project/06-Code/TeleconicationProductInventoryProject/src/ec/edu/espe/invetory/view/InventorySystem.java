@@ -408,9 +408,7 @@ public class InventorySystem extends javax.swing.JFrame {
     }//GEN-LAST:event_mnExitMouseClicked
 
     private void mnShowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnShowMouseClicked
-        this.hide();
-        ShowWindow showWindow = new ShowWindow();
-        showWindow.setVisible(true);
+        
     }//GEN-LAST:event_mnShowMouseClicked
 
     /**

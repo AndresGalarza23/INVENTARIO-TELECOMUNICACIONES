@@ -62,16 +62,11 @@ public class InvoiceWindow extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         txtQuantitySale3 = new javax.swing.JTextField();
         txtIdSale3 = new javax.swing.JTextField();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        txtaSale3 = new javax.swing.JTextArea();
         jLabel23 = new javax.swing.JLabel();
         PnlButtoms6 = new javax.swing.JPanel();
         BtmAdd = new javax.swing.JButton();
-        BtmDisplay6 = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        txtArea1 = new javax.swing.JTextArea();
 
         BtmAdd1.setText("ADD");
         BtmAdd1.addActionListener(new java.awt.event.ActionListener() {
@@ -170,10 +165,6 @@ public class InvoiceWindow extends javax.swing.JFrame {
 
         jLabel22.setText("Quantity:");
 
-        txtaSale3.setColumns(20);
-        txtaSale3.setRows(5);
-        jScrollPane5.setViewportView(txtaSale3);
-
         jLabel23.setText("Product ID:");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -191,25 +182,20 @@ public class InvoiceWindow extends javax.swing.JFrame {
                         .addComponent(jLabel22)
                         .addGap(39, 39, 39)
                         .addComponent(txtQuantitySale3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtIdSale3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel23))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel22)
-                            .addComponent(txtQuantitySale3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtIdSale3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(txtQuantitySale3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PnlInputLayout = new javax.swing.GroupLayout(PnlInput);
@@ -299,13 +285,6 @@ public class InvoiceWindow extends javax.swing.JFrame {
             }
         });
 
-        BtmDisplay6.setText("DISPLAY");
-        BtmDisplay6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtmDisplay6ActionPerformed(evt);
-            }
-        });
-
         btnCancel.setText("CANCEL");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -331,9 +310,7 @@ public class InvoiceWindow extends javax.swing.JFrame {
                 .addComponent(btnCancel)
                 .addGap(95, 95, 95)
                 .addComponent(jButton1)
-                .addGap(74, 74, 74)
-                .addComponent(BtmDisplay6)
-                .addContainerGap(560, Short.MAX_VALUE))
+                .addContainerGap(239, Short.MAX_VALUE))
         );
         PnlButtoms6Layout.setVerticalGroup(
             PnlButtoms6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -342,14 +319,9 @@ public class InvoiceWindow extends javax.swing.JFrame {
                 .addGroup(PnlButtoms6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtmAdd)
                     .addComponent(btnCancel)
-                    .addComponent(BtmDisplay6)
                     .addComponent(jButton1))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
-
-        txtArea1.setColumns(20);
-        txtArea1.setRows(5);
-        jScrollPane6.setViewportView(txtArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -357,26 +329,19 @@ public class InvoiceWindow extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PnlButtoms6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(PnlButtoms6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(83, 83, 83)
                 .addComponent(PnlInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(PnlInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(PnlInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(PnlButtoms6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
@@ -454,7 +419,7 @@ public class InvoiceWindow extends javax.swing.JFrame {
             
             quantityS = Integer.parseInt(this.txtQuantitySale3.getText());
             idSale = Integer.parseInt(this.txtIdSale3.getText());
-            product.sale(idSale, quantityS, txtaSale3);
+            product.sale(idSale, quantityS);
         }
         txtCedula.setText("");
         txtNames.setText("");
@@ -468,12 +433,6 @@ public class InvoiceWindow extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_BtmAddActionPerformed
-
-    private void BtmDisplay6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmDisplay6ActionPerformed
-
-        customer.display(txtArea);
-
-    }//GEN-LAST:event_BtmDisplay6ActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         txtCedula.setText("");
@@ -533,7 +492,6 @@ public class InvoiceWindow extends javax.swing.JFrame {
     private javax.swing.JButton BtmAdd1;
     private javax.swing.JButton BtmDelete1;
     private javax.swing.JButton BtmDisplay1;
-    private javax.swing.JButton BtmDisplay6;
     private javax.swing.JButton BtmUpdate1;
     private javax.swing.JPanel PnlButtoms1;
     private javax.swing.JPanel PnlButtoms6;
@@ -552,11 +510,8 @@ public class InvoiceWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLavel;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextArea txtArea;
-    private javax.swing.JTextArea txtArea1;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtDate;
     private javax.swing.JTextField txtIdInvoice;
@@ -565,6 +520,5 @@ public class InvoiceWindow extends javax.swing.JFrame {
     private javax.swing.JTextField txtNames;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtQuantitySale3;
-    private javax.swing.JTextArea txtaSale3;
     // End of variables declaration//GEN-END:variables
 }

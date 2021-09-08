@@ -17,81 +17,93 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Andres Galarza AccentOnTheFuture ESPE-DCCO
  */
 public class CustomerController {
-      DB DataBase;
+
+    DB DataBase;
     DBCollection collection;
-    BasicDBObject document = new BasicDBObject(); 
-    
-    public CustomerController(){
-        try{
+    BasicDBObject document = new BasicDBObject();
+    DefaultTableModel model = new DefaultTableModel();
+
+    public CustomerController() {
+        try {
             Mongo mongo = new Mongo("localhost", 27017);
             DataBase = mongo.getDB("InventoryProduct");
             collection = DataBase.getCollection("Customer");
             System.out.println("successful connection");
-        }catch(UnknownHostException ex){
-            Logger.getLogger(ProductController.class.getName()).log(Level.SEVERE, null, ex);            
+        } catch (UnknownHostException ex) {
+            Logger.getLogger(ProductController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
-    public boolean add(Integer cedula, String names, String lastName, String address, Integer phone){
+
+    public boolean add(Integer cedula, String names, String lastName, String address, Integer phone) {
         ArrayList<Customer> customer = new ArrayList<>();
-        customer.add(new Customer(cedula, names, lastName, address,phone));
-        for (Customer pueC : customer){
+        customer.add(new Customer(cedula, names, lastName, address, phone));
+        for (Customer pueC : customer) {
             collection.insert(pueC.dbProductObjectInventory());
-            
+
         }
-        
-        int input = JOptionPane.showConfirmDialog(null, "Successful Registration","OK", JOptionPane.DEFAULT_OPTION);
-        
+
+        int input = JOptionPane.showConfirmDialog(null, "Successful Registration", "OK", JOptionPane.DEFAULT_OPTION);
+
         System.out.println(input);
         return true;
-    }  
-     public boolean delete(Integer cedula){
-        document.put("Cedula",cedula);
+    }
+
+    public boolean delete(Integer cedula) {
+        document.put("Cedula", cedula);
         collection.remove(document);
         int input = JOptionPane.showConfirmDialog(null, "Delete Record", "OK", JOptionPane.DEFAULT_OPTION);
-        
+
         System.out.println(input);
         return true;
-               
-                
+
     }
-      public boolean update(Integer cedulas, String names, String lastNames, String address, Integer phone){
+
+    public boolean update(Integer cedulas, String names, String lastNames, String address, Integer phone) {
         DBObject find = new BasicDBObject("Cedula", new BasicDBObject("$eq", cedulas));
-        DBObject updatedName = new BasicDBObject().append("$set",new BasicDBObject().append("Names", names));
-        DBObject updatedLastName = new BasicDBObject().append("$set",new BasicDBObject().append("LastName", lastNames));
-        DBObject updatedAddress = new BasicDBObject().append("$set",new BasicDBObject().append("Address", address));
-        DBObject updatedPhone = new BasicDBObject().append("$set",new BasicDBObject().append("Phone", phone));
-        collection.update(find, updatedName,false,true);
-        collection.update(find, updatedLastName,false,true);
-        collection.update(find, updatedAddress,false,true);
-        collection.update(find, updatedPhone,false,true);
+        DBObject updatedName = new BasicDBObject().append("$set", new BasicDBObject().append("Names", names));
+        DBObject updatedLastName = new BasicDBObject().append("$set", new BasicDBObject().append("LastName", lastNames));
+        DBObject updatedAddress = new BasicDBObject().append("$set", new BasicDBObject().append("Address", address));
+        DBObject updatedPhone = new BasicDBObject().append("$set", new BasicDBObject().append("Phone", phone));
+        collection.update(find, updatedName, false, true);
+        collection.update(find, updatedLastName, false, true);
+        collection.update(find, updatedAddress, false, true);
+        collection.update(find, updatedPhone, false, true);
         int input = JOptionPane.showConfirmDialog(null, "Update Record", "OK", JOptionPane.DEFAULT_OPTION);
-        
+
         System.out.println(input);
         return true;
     }
-      public void display(JTextArea txtArea){
-        
+
+    public void display(JTable tblCustomers) {
+
         DBCursor cursor = collection.find();
-        
-        try{
-            while(cursor.hasNext()){
-                txtArea.setText(txtArea.getText()+"\n" + cursor.next().toString());
-                
-                
-            }
-        } finally{
-                 cursor.close();
-                    
-                    }
+        DBCursor cursor1 = collection.find();
+        DBCursor cursor2 = collection.find();
+        DBCursor cursor3 = collection.find();
+        DBCursor cursor4 = collection.find();
+
+        model.addColumn("Cedula");
+        model.addColumn("Names");
+        model.addColumn("Last Names");
+        model.addColumn("Address");
+        model.addColumn("Phone");
+
+        while (cursor.hasNext()) {
+
+            model.addRow(new Object[]{cursor.next().get("ID"), cursor1.next().get("Name"),
+                cursor2.next().get("Brand"), cursor3.next().get("Purchase Price"),
+                cursor4.next().get("Sale Price")});
+
+           tblCustomers.setModel(model);
         }
-    
+    }
+
 }

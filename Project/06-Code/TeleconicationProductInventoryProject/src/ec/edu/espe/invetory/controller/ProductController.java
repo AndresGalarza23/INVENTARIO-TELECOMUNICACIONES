@@ -18,7 +18,9 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -29,7 +31,8 @@ public class ProductController {
     DB DataBase;
     DBCollection collection;
     BasicDBObject document = new BasicDBObject();
-     DBCursor cursor = null;
+    DBCursor cursor = null;
+    DefaultTableModel model = new DefaultTableModel();
 
     public ProductController() {
 
@@ -85,67 +88,95 @@ public class ProductController {
         System.out.println(input);
         return true;
     }
-    
-    public void search(Integer ids,JTextArea txtaSearch){
-        
+
+    public void search(Integer ids, JTable tblProduct) {
+
         DBObject find = new BasicDBObject("ID", new BasicDBObject("$eq", ids));
         try (DBCursor cursor = collection.find(find)) {
+
+            DBCursor cursor1 = collection.find();
+            DBCursor cursor2 = collection.find();
+            DBCursor cursor3 = collection.find();
+            DBCursor cursor4 = collection.find();
+            DBCursor cursor5 = collection.find();
+            DBCursor cursor6 = collection.find();
+
+            model.addColumn("ID");
+            model.addColumn("Name");
+            model.addColumn("Brand");
+            model.addColumn("Purchase Price");
+            model.addColumn("Sale Price");
+            model.addColumn("Quantity");
+            model.addColumn("ID Provider");
             while (cursor.hasNext()) {
-                txtaSearch.setText(txtaSearch.getText() + "\n" + cursor.next().toString());
+                model.addRow(new Object[]{cursor.next().get("ID"), cursor1.next().get("Name"),
+                    cursor2.next().get("Brand"), cursor3.next().get("Purchase Price"),
+                    cursor4.next().get("Sale Price"), cursor5.next().get("Quantity"),
+                    cursor6.next().get("ID Provide")});
+
+                tblProduct.setModel(model);
 
             }
         }
-        
+
     }
-     public boolean sale(Integer idS, Integer quantityS, JTextArea txtaSearch) {
- 
-       Integer quantity ;
+
+    public boolean sale(Integer idS, Integer quantityS) {
+
+        Integer quantity;
 
         DBObject find = new BasicDBObject("ID", new BasicDBObject("$eq", idS));
 
         try (DBCursor cursor = collection.find(find)) {
             while (cursor.hasNext()) {
-                
-                txtaSearch.setText(txtaSearch.getText() + "\n" + cursor.next().toString());
-                
+
             }
         }
-       
-        
-        document.put("ID",idS);
-        cursor = collection.find(document);
-        
-        while(cursor.hasNext()){
 
-        
-            DBObject obj =cursor.next();
-            quantity = (Integer)obj.get("Quantity");
+        document.put("ID", idS);
+        cursor = collection.find(document);
+
+        while (cursor.hasNext()) {
+
+            DBObject obj = cursor.next();
+            quantity = (Integer) obj.get("Quantity");
 
             Integer Sale = quantity - quantityS;
 
             DBObject updatedSale = new BasicDBObject().append("$set", new BasicDBObject().append("Quantity", Sale));
             collection.update(find, updatedSale, false, true);
-       
-          
-        
+
         }
-      
-        
-          return true;
+
+        return true;
     }
 
-    public void display(JTextArea txtArea) {
+    public void display(JTable tblProducts) {
 
         DBCursor cursor = collection.find();
+        DBCursor cursor1 = collection.find();
+        DBCursor cursor2 = collection.find();
+        DBCursor cursor3 = collection.find();
+        DBCursor cursor4 = collection.find();
+        DBCursor cursor5 = collection.find();
+        DBCursor cursor6 = collection.find();
 
-        try {
-            while (cursor.hasNext()) {
-                txtArea.setText(txtArea.getText() + "\n" + cursor.next().toString());
+        model.addColumn("ID");
+        model.addColumn("Name");
+        model.addColumn("Brand");
+        model.addColumn("Purchase Price");
+        model.addColumn("Sale Price");
+        model.addColumn("Quantity");
+        model.addColumn("ID Provider");
 
-            }
-        } finally {
-            cursor.close();
+        while (cursor.hasNext()) {
 
+            model.addRow(new Object[]{cursor.next().get("ID"), cursor1.next().get("Name"),
+                cursor2.next().get("Brand"), cursor3.next().get("Purchase Price"),
+                cursor4.next().get("Sale Price"), cursor5.next().get("Quantity"),
+                cursor6.next().get("ID Provide")});
+
+            tblProducts.setModel(model);
         }
     }
 }
