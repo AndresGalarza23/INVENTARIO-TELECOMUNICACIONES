@@ -5,11 +5,14 @@
  */
 package ec.edu.espe.invetory.view;
 
+import ec.edu.espe.invetory.controller.InvoiceController;
+
 /**
  *
  * @author Stefany Guerrero AccentOnTheFuture ESPE-DCC0
  */
 public class SearchInvoiceIdWindow extends javax.swing.JFrame {
+    InvoiceController invoice = new InvoiceController();
 
     /**
      * Creates new form SearchInvoiceWindow
@@ -33,16 +36,29 @@ public class SearchInvoiceIdWindow extends javax.swing.JFrame {
         btnSearchId = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtArea = new javax.swing.JTextArea();
+        btnReturn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Insert Id to search: ");
 
-        btnSearchId.setText("Search");
+        btnSearchId.setText("SEARCH");
+        btnSearchId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchIdActionPerformed(evt);
+            }
+        });
 
         txtArea.setColumns(20);
         txtArea.setRows(5);
         jScrollPane1.setViewportView(txtArea);
+
+        btnReturn.setText("RETURN");
+        btnReturn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReturnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -58,8 +74,12 @@ public class SearchInvoiceIdWindow extends javax.swing.JFrame {
                         .addComponent(txtIdSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnSearchId)
-                        .addGap(0, 6, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(btnReturn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,7 +91,9 @@ public class SearchInvoiceIdWindow extends javax.swing.JFrame {
                     .addComponent(btnSearchId))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnReturn)
+                .addContainerGap(104, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -87,6 +109,21 @@ public class SearchInvoiceIdWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSearchIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchIdActionPerformed
+     
+        
+   Integer idSearch = Integer.parseInt(this.txtIdSearch.getText());
+      
+      invoice.searchId(idSearch,txtArea);
+    }//GEN-LAST:event_btnSearchIdActionPerformed
+
+    private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
+      
+       this.hide();
+       InventorySystem inventorySystem = new InventorySystem();
+       inventorySystem.setVisible(true);
+    }//GEN-LAST:event_btnReturnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,6 +162,7 @@ public class SearchInvoiceIdWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReturn;
     private javax.swing.JButton btnSearchId;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
