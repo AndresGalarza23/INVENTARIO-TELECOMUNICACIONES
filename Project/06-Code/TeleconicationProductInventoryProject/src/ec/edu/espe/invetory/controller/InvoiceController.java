@@ -27,26 +27,26 @@ import javax.swing.table.DefaultTableModel;
  * @author Stefany Guerrero AccentOnTheFuture ESPE-DCC0
  */
 public class InvoiceController {
-    
-    
+
     DB DataBase;
     DBCollection collection;
-    BasicDBObject document = new BasicDBObject(); 
+    BasicDBObject document = new BasicDBObject();
     DefaultTableModel model = new DefaultTableModel();
-    public InvoiceController(){
-        try{
+
+    public InvoiceController() {
+        try {
             Mongo mongo = new Mongo("localhost", 27017);
             DataBase = mongo.getDB("InventoryProduct");
             collection = DataBase.getCollection("Invoice");
             System.out.println("successful connection");
-        }catch(UnknownHostException ex){
-            Logger.getLogger(ProductController.class.getName()).log(Level.SEVERE, null, ex);            
+        } catch (UnknownHostException ex) {
+            Logger.getLogger(ProductController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-      public boolean add(String date, Integer id, Integer cedula, String name, Integer quantity) {
+
+    public boolean add(String date, Integer id, Integer cedula, String name, Integer quantity) {
         ArrayList<Invoice> invoice = new ArrayList<>();
-        invoice.add(new Invoice(date,id,cedula,name,quantity));
+        invoice.add(new Invoice(date, id, cedula, name, quantity));
         for (Invoice pueC : invoice) {
             collection.insert(pueC.dbProductObjectInvoice());
 
@@ -58,9 +58,8 @@ public class InvoiceController {
         return true;
 
     }
-      
-      
-         public boolean deleteCedula(Integer cedula) {
+
+    public boolean deleteCedula(Integer cedula) {
         document.put("Cedula", cedula);
         collection.remove(document);
         int input = JOptionPane.showConfirmDialog(null, "Delete Record", "OK", JOptionPane.DEFAULT_OPTION);
@@ -69,8 +68,8 @@ public class InvoiceController {
         return true;
 
     }
-   
-               public boolean deleteId(Integer id) {
+
+    public boolean deleteId(Integer id) {
         document.put("ID", id);
         collection.remove(document);
         int input = JOptionPane.showConfirmDialog(null, "Delete Record", "OK", JOptionPane.DEFAULT_OPTION);
@@ -79,41 +78,53 @@ public class InvoiceController {
         return true;
 
     }
-               
-               public void searchId(Integer ids,JTable TblSearchInvoice){
-        
+
+    public void searchId(Integer ids, JTable TblSearchInvoice) {
+
         DBObject find = new BasicDBObject("ID", new BasicDBObject("$eq", ids));
         try (DBCursor cursor = collection.find(find)) {
-            
-        DBCursor cursor1 = collection.find(find);
-        DBCursor cursor2 = collection.find(find);
-        DBCursor cursor3 = collection.find(find);
-        
+
+            DBCursor cursor1 = collection.find(find);
+            DBCursor cursor2 = collection.find(find);
+            DBCursor cursor3 = collection.find(find);
+            model.addColumn("ID");
+            model.addColumn("Name");
+            model.addColumn("Date");
+            model.addColumn("Cedula");
+
             while (cursor.hasNext()) {
-                
-                model.addRow(new Object[] {cursor.next().get("ID"),cursor1.next().get("Name"),
-                cursor2.next().get("Date"),cursor3.next().get("Cedula")});
-            
-            TblSearchInvoice.setModel(model);
+
+                model.addRow(new Object[]{cursor.next().get("ID"), cursor1.next().get("Name"),
+                    cursor2.next().get("Date"), cursor3.next().get("Cedula")});
+
+                TblSearchInvoice.setModel(model);
 
             }
         }
-        
+
     }
- 
-                  public void searchCedula(Integer cedulas,JTextArea txtaSearch){
-        
+
+    public void searchCedula(Integer cedulas, JTable tblSearchInvoice) {
+
         DBObject find = new BasicDBObject("Cedula", new BasicDBObject("$eq", cedulas));
         try (DBCursor cursor = collection.find(find)) {
+            DBCursor cursor1 = collection.find(find);
+            DBCursor cursor2 = collection.find(find);
+            DBCursor cursor3 = collection.find(find);
+            model.addColumn("ID");
+            model.addColumn("Name");
+            model.addColumn("Date");
+            model.addColumn("Cedula");
             while (cursor.hasNext()) {
-                txtaSearch.setText(txtaSearch.getText() + "\n" + cursor.next().toString());
+
+                 model.addRow(new Object[]{cursor.next().get("ID"), cursor1.next().get("Name"),
+                    cursor2.next().get("Date"), cursor3.next().get("Cedula")});
+
+                tblSearchInvoice.setModel(model);
 
             }
         }
-        
+
     }
-    
-         
+
 }
-            
-      

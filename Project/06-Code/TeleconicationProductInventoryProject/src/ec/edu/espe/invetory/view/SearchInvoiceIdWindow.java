@@ -34,9 +34,9 @@ public class SearchInvoiceIdWindow extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtIdSearch = new javax.swing.JTextField();
         btnSearchId = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtArea = new javax.swing.JTextArea();
         btnReturn = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblSearchIdInvoice = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,10 +49,6 @@ public class SearchInvoiceIdWindow extends javax.swing.JFrame {
             }
         });
 
-        txtArea.setColumns(20);
-        txtArea.setRows(5);
-        jScrollPane1.setViewportView(txtArea);
-
         btnReturn.setText("RETURN");
         btnReturn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,25 +56,34 @@ public class SearchInvoiceIdWindow extends javax.swing.JFrame {
             }
         });
 
+        tblSearchIdInvoice.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                ""
+            }
+        ));
+        jScrollPane2.setViewportView(tblSearchIdInvoice);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(121, Short.MAX_VALUE)
+                .addComponent(btnReturn)
+                .addGap(386, 386, 386))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(29, 29, 29)
                         .addComponent(txtIdSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnSearchId)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addComponent(btnReturn)
+                        .addComponent(btnSearchId)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -90,10 +95,10 @@ public class SearchInvoiceIdWindow extends javax.swing.JFrame {
                     .addComponent(txtIdSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearchId))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
                 .addComponent(btnReturn)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addGap(45, 45, 45))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -115,7 +120,7 @@ public class SearchInvoiceIdWindow extends javax.swing.JFrame {
         
    Integer idSearch = Integer.parseInt(this.txtIdSearch.getText());
       
-      invoice.searchId(idSearch,txtArea);
+      invoice.searchId(idSearch,tblSearchIdInvoice);
     }//GEN-LAST:event_btnSearchIdActionPerformed
 
     private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
@@ -166,8 +171,8 @@ public class SearchInvoiceIdWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnSearchId;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea txtArea;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tblSearchIdInvoice;
     private javax.swing.JTextField txtIdSearch;
     // End of variables declaration//GEN-END:variables
 }
