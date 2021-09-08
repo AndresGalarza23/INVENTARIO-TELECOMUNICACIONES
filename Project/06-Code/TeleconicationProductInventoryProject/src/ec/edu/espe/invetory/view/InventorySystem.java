@@ -58,6 +58,9 @@ public class InventorySystem extends javax.swing.JFrame {
         smnDeleteInvoice = new javax.swing.JMenu();
         smnDeleteCedula = new javax.swing.JMenuItem();
         smnDeleteId = new javax.swing.JMenuItem();
+        smnCheckInvoice = new javax.swing.JMenu();
+        smnSearchInvoiceId = new javax.swing.JMenuItem();
+        smnSearchInvoiceCedula = new javax.swing.JMenuItem();
         mnExit = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
@@ -235,6 +238,23 @@ public class InventorySystem extends javax.swing.JFrame {
 
         mnInvoice.add(smnDeleteInvoice);
 
+        smnCheckInvoice.setText("Check");
+
+        smnSearchInvoiceId.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
+        smnSearchInvoiceId.setText("Id");
+        smnCheckInvoice.add(smnSearchInvoiceId);
+
+        smnSearchInvoiceCedula.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
+        smnSearchInvoiceCedula.setText("Cedula");
+        smnSearchInvoiceCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smnSearchInvoiceCedulaActionPerformed(evt);
+            }
+        });
+        smnCheckInvoice.add(smnSearchInvoiceCedula);
+
+        mnInvoice.add(smnCheckInvoice);
+
         jMenuBar1.add(mnInvoice);
 
         mnExit.setText("Exit");
@@ -352,6 +372,10 @@ public class InventorySystem extends javax.swing.JFrame {
       
     }//GEN-LAST:event_smnDeleteIdActionPerformed
 
+    private void smnSearchInvoiceCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnSearchInvoiceCedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_smnSearchInvoiceCedulaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -406,6 +430,7 @@ public class InventorySystem extends javax.swing.JFrame {
     private javax.swing.JMenuItem sbtnDelete;
     private javax.swing.JMenuItem smnAddInvoice;
     private javax.swing.JMenuItem smnAddProvider;
+    private javax.swing.JMenu smnCheckInvoice;
     private javax.swing.JMenuItem smnDeleteCedula;
     private javax.swing.JMenuItem smnDeleteCustomer;
     private javax.swing.JMenuItem smnDeleteId;
@@ -413,5 +438,7 @@ public class InventorySystem extends javax.swing.JFrame {
     private javax.swing.JMenuItem smnDeleteProvider;
     private javax.swing.JMenuItem smnEditCustomer;
     private javax.swing.JMenuItem smnEditProvider;
+    private javax.swing.JMenuItem smnSearchInvoiceCedula;
+    private javax.swing.JMenuItem smnSearchInvoiceId;
     // End of variables declaration//GEN-END:variables
 }
