@@ -21,7 +21,7 @@ public class InventorySystem extends javax.swing.JFrame {
     ProviderController provider = new ProviderController();
     InvoiceController invoice = new InvoiceController();
     CustomerController customer = new CustomerController();
-    
+
     public InventorySystem() {
         initComponents();
     }
@@ -39,7 +39,6 @@ public class InventorySystem extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btmExit = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnProduct = new javax.swing.JMenu();
         sbtnAdd = new javax.swing.JMenuItem();
@@ -81,35 +80,21 @@ public class InventorySystem extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("Inventory System");
 
-        btmExit.setText("EXIT");
-        btmExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btmExitActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(186, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(197, 197, 197))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btmExit, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(226, 226, 226))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(212, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(195, 195, 195))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel1)
-                .addGap(124, 124, 124)
-                .addComponent(btmExit)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addGap(146, 146, 146)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(170, Short.MAX_VALUE))
         );
 
         mnProduct.setText("Product");
@@ -218,7 +203,7 @@ public class InventorySystem extends javax.swing.JFrame {
 
         smnDeleteInvoice.setText("Delete");
 
-        smnDeleteCedula.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, 0));
+        smnDeleteCedula.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
         smnDeleteCedula.setText("Cedula");
         smnDeleteCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,7 +212,7 @@ public class InventorySystem extends javax.swing.JFrame {
         });
         smnDeleteInvoice.add(smnDeleteCedula);
 
-        smnDeleteId.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, 0));
+        smnDeleteId.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
         smnDeleteId.setText("ID");
         smnDeleteId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,6 +227,11 @@ public class InventorySystem extends javax.swing.JFrame {
 
         smnSearchInvoiceId.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
         smnSearchInvoiceId.setText("Id");
+        smnSearchInvoiceId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smnSearchInvoiceIdActionPerformed(evt);
+            }
+        });
         smnCheckInvoice.add(smnSearchInvoiceId);
 
         smnSearchInvoiceCedula.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
@@ -258,6 +248,11 @@ public class InventorySystem extends javax.swing.JFrame {
         jMenuBar1.add(mnInvoice);
 
         mnExit.setText("Exit");
+        mnExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mnExitMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(mnExit);
 
         setJMenuBar(jMenuBar1);
@@ -276,10 +271,6 @@ public class InventorySystem extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btmExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmExitActionPerformed
-        System.exit(0);        // TODO add your handling code here:
-    }//GEN-LAST:event_btmExitActionPerformed
-
     private void sbtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbtnAddActionPerformed
         this.hide();
         ProductWindow prodW = new ProductWindow();
@@ -291,38 +282,38 @@ public class InventorySystem extends javax.swing.JFrame {
         this.hide();
         ProviderWindow provW = new ProviderWindow();
         provW.setVisible(true);
-        
+
 
     }//GEN-LAST:event_smnAddProviderActionPerformed
 
     private void smnDeleteProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnDeleteProviderActionPerformed
-        
+
         Integer idD = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to Delete"));
         provider.delete(idD);
 
     }//GEN-LAST:event_smnDeleteProviderActionPerformed
 
     private void sbtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbtnDeleteActionPerformed
-        
+
         Integer idD = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to Delete"));
         product.delete(idD);
 
     }//GEN-LAST:event_sbtnDeleteActionPerformed
 
     private void sbntEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbntEditActionPerformed
-        
+
         Integer idUpdate = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
         String nameUpdate = JOptionPane.showInputDialog("Enter name of product to update");
         String brandUpdate = JOptionPane.showInputDialog("Enter brand of product to update");
         Double purchasePriceUpdate = Double.parseDouble(JOptionPane.showInputDialog("Enter Purchase Price of product to update"));
         Double salePriceUpdate = Double.parseDouble(JOptionPane.showInputDialog("Enter Sale Price of product to update"));
-        
+
         product.update(idUpdate, nameUpdate, brandUpdate, purchasePriceUpdate, salePriceUpdate);
 
     }//GEN-LAST:event_sbntEditActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        
+
         this.hide();
         SearchWindow searchW = new SearchWindow();
         searchW.setVisible(true);
@@ -348,33 +339,48 @@ public class InventorySystem extends javax.swing.JFrame {
         String lastNameU = JOptionPane.showInputDialog("Enter last name of Customer to update");
         String addressU = JOptionPane.showInputDialog("Enter address of customer to update");
         int phoneU = Integer.parseInt(JOptionPane.showInputDialog("Enter phone of customer to update"));
-        customer.update(cedulaU, namesU, lastNameU, addressU, phoneU);        
+        customer.update(cedulaU, namesU, lastNameU, addressU, phoneU);
     }//GEN-LAST:event_smnEditCustomerActionPerformed
 
     private void smnAddInvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnAddInvoiceActionPerformed
-     this.hide();
-     InvoiceWindow invoiceWindow =new InvoiceWindow();
-     invoiceWindow.setVisible(true);
-     
-        
-        
+        this.hide();
+        InvoiceWindow invoiceWindow = new InvoiceWindow();
+        invoiceWindow.setVisible(true);
+
+
     }//GEN-LAST:event_smnAddInvoiceActionPerformed
 
     private void smnDeleteCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnDeleteCedulaActionPerformed
-       Integer cedulaD = Integer.parseInt(JOptionPane.showInputDialog("Enter Invoice Cedula to Delete"));
+        Integer cedulaD = Integer.parseInt(JOptionPane.showInputDialog("Enter Invoice Cedula to Delete"));
         invoice.deleteCedula(cedulaD);
     }//GEN-LAST:event_smnDeleteCedulaActionPerformed
 
     private void smnDeleteIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnDeleteIdActionPerformed
-                                                 
-       Integer idD = Integer.parseInt(JOptionPane.showInputDialog("Enter Invoice Id to Delete"));
+
+        Integer idD = Integer.parseInt(JOptionPane.showInputDialog("Enter Invoice Id to Delete"));
         invoice.deleteId(idD);
-      
+
     }//GEN-LAST:event_smnDeleteIdActionPerformed
 
     private void smnSearchInvoiceCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnSearchInvoiceCedulaActionPerformed
-        // TODO add your handling code here:
+
+        this.hide();
+        SearchInvoiceCedulaWindow searchInvoiceCedula = new SearchInvoiceCedulaWindow();
+        searchInvoiceCedula.setVisible(true);
+
     }//GEN-LAST:event_smnSearchInvoiceCedulaActionPerformed
+
+    private void smnSearchInvoiceIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnSearchInvoiceIdActionPerformed
+        this.hide();
+        SearchInvoiceIdWindow searchInvoiceId = new SearchInvoiceIdWindow();
+        searchInvoiceId.setVisible(true);
+
+
+    }//GEN-LAST:event_smnSearchInvoiceIdActionPerformed
+
+    private void mnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnExitMouseClicked
+        System.exit(0);             // TODO add your handling code here:
+    }//GEN-LAST:event_mnExitMouseClicked
 
     /**
      * @param args the command line arguments
@@ -413,7 +419,6 @@ public class InventorySystem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btmExit;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu2;

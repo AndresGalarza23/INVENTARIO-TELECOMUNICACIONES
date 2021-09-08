@@ -172,7 +172,7 @@
                 <MenuItem class="javax.swing.JMenuItem" name="smnDeleteCedula">
                   <Properties>
                     <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                      <KeyStroke key="C"/>
+                      <KeyStroke key="Ctrl+U"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cedula"/>
                   </Properties>
@@ -183,7 +183,7 @@
                 <MenuItem class="javax.swing.JMenuItem" name="smnDeleteId">
                   <Properties>
                     <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                      <KeyStroke key="I"/>
+                      <KeyStroke key="Ctrl+F"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="ID"/>
                   </Properties>
@@ -205,6 +205,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Id"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="smnSearchInvoiceIdActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="smnSearchInvoiceCedula">
                   <Properties>
@@ -225,6 +228,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Exit"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnExitMouseClicked"/>
+          </Events>
         </Menu>
       </SubComponents>
     </Menu>
@@ -267,29 +273,19 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace pref="186" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="btmExit" min="-2" pref="90" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="212" max="32767" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="171" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
-                  <Component id="btmExit" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="150" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="41" max="-2" attributes="0"/>
+                  <EmptySpace pref="170" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -302,14 +298,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Inventory System"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btmExit">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="EXIT"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btmExitActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
