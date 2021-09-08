@@ -5,11 +5,15 @@
  */
 package ec.edu.espe.invetory.view;
 
+import ec.edu.espe.invetory.controller.InvoiceController;
+
 /**
  *
  * @author Stefany Guerrero AccentOnTheFuture ESPE-DCC0
  */
 public class SearchInvoiceCedulaWindow extends javax.swing.JFrame {
+
+    InvoiceController invoice = new InvoiceController();
 
     /**
      * Creates new form SearchInvoiceCedulaWindow
@@ -27,27 +31,52 @@ public class SearchInvoiceCedulaWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnReturn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtCedulaSearchInvoice = new javax.swing.JTextField();
         btnSearchCedulaInvoice = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtArea = new javax.swing.JTextArea();
+        btnReturn1 = new javax.swing.JButton();
+
+        btnReturn.setText("RETURN");
+        btnReturn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReturnActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Enter Cedula to Search:");
 
         btnSearchCedulaInvoice.setText("Search");
+        btnSearchCedulaInvoice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchCedulaInvoiceActionPerformed(evt);
+            }
+        });
 
         txtArea.setColumns(20);
         txtArea.setRows(5);
         jScrollPane1.setViewportView(txtArea);
 
+        btnReturn1.setText("RETURN");
+        btnReturn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReturn1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(169, 169, 169)
+                .addComponent(btnReturn1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -57,7 +86,9 @@ public class SearchInvoiceCedulaWindow extends javax.swing.JFrame {
                         .addComponent(txtCedulaSearchInvoice, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                         .addComponent(btnSearchCedulaInvoice))
-                    .addComponent(jScrollPane1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -70,7 +101,9 @@ public class SearchInvoiceCedulaWindow extends javax.swing.JFrame {
                     .addComponent(btnSearchCedulaInvoice))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnReturn1)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -86,6 +119,26 @@ public class SearchInvoiceCedulaWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSearchCedulaInvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCedulaInvoiceActionPerformed
+        Integer cedulaSearch = Integer.parseInt(this.txtCedulaSearchInvoice.getText());
+
+        invoice.searchCedula(cedulaSearch, txtArea);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSearchCedulaInvoiceActionPerformed
+
+    private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
+
+        this.hide();
+        InventorySystem inventorySystem = new InventorySystem();
+        inventorySystem.setVisible(true);
+    }//GEN-LAST:event_btnReturnActionPerformed
+
+    private void btnReturn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturn1ActionPerformed
+
+        this.hide();
+        InventorySystem inventorySystem = new InventorySystem();
+        inventorySystem.setVisible(true);
+    }//GEN-LAST:event_btnReturn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,6 +176,8 @@ public class SearchInvoiceCedulaWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReturn;
+    private javax.swing.JButton btnReturn1;
     private javax.swing.JButton btnSearchCedulaInvoice;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
