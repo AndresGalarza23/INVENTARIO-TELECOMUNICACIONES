@@ -6,12 +6,17 @@
 package ec.edu.espe.invetory.controller;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.ConnectionString;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
-import com.mongodb.ReadPreference;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import ec.edu.espe.invetory.model.Product;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -19,8 +24,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -35,16 +40,19 @@ public class ProductController {
     DefaultTableModel model = new DefaultTableModel();
 
     public ProductController() {
+        
+    
 
+        
         try {
             Mongo mongo = new Mongo("localhost", 27017);
             DataBase = mongo.getDB("InventoryProduct");
-            collection = DataBase.getCollection("Product");
+            // collection = DataBase.getCollection("Product");
             System.out.println("successful connection");
         } catch (UnknownHostException ex) {
             Logger.getLogger(ProductController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
     public boolean add(Integer id, String name, String brand, double purchasePrice, double salePrice, Integer quantity, Integer idProvider) {
@@ -72,7 +80,7 @@ public class ProductController {
 
     }
 
-    public boolean update(Integer ids, String names, String brands, double purchasePrices, double salePrices,Integer quantity, Integer idProvider) {
+    public boolean update(Integer ids, String names, String brands, double purchasePrices, double salePrices, Integer quantity, Integer idProvider) {
         DBObject find = new BasicDBObject("ID", new BasicDBObject("$eq", ids));
         DBObject updatedName = new BasicDBObject().append("$set", new BasicDBObject().append("Name", names));
         DBObject updatedBrand = new BasicDBObject().append("$set", new BasicDBObject().append("Brand", brands));
@@ -145,7 +153,6 @@ public class ProductController {
             DBObject updatedSale = new BasicDBObject().append("$set", new BasicDBObject().append("Quantity", Sale));
             collection.update(find, updatedSale, false, true);
 
-                
         }
 
         return true;

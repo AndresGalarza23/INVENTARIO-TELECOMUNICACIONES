@@ -357,8 +357,8 @@ public class InventorySystem extends javax.swing.JFrame {
         String brandUpdate = JOptionPane.showInputDialog("Enter brand of product to update");
         Double purchasePriceUpdate = Double.parseDouble(JOptionPane.showInputDialog("Enter Purchase Price of product to update"));
         Double salePriceUpdate = Double.parseDouble(JOptionPane.showInputDialog("Enter Sale Price of product to update"));
-        Integer quantityUpdate = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
-        Integer idProviderUpdate = Integer.parseInt(JOptionPane.showInputDialog("Enter ID to update"));
+        Integer quantityUpdate = Integer.parseInt(JOptionPane.showInputDialog("Enter Quantity to update"));
+        Integer idProviderUpdate = Integer.parseInt(JOptionPane.showInputDialog("Enter ID PROVIDER to update"));
         product.update(idUpdate, nameUpdate, brandUpdate, purchasePriceUpdate, salePriceUpdate, quantityUpdate, idProviderUpdate);
 
     }//GEN-LAST:event_sbntEditActionPerformed
