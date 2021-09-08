@@ -18,7 +18,9 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -30,7 +32,7 @@ public class InvoiceController {
     DB DataBase;
     DBCollection collection;
     BasicDBObject document = new BasicDBObject(); 
-    
+    DefaultTableModel model = new DefaultTableModel();
     public InvoiceController(){
         try{
             Mongo mongo = new Mongo("localhost", 27017);
@@ -78,12 +80,21 @@ public class InvoiceController {
 
     }
                
-               public void searchId(Integer ids,JTextArea txtaSearch){
+               public void searchId(Integer ids,JTable TblSearchInvoice){
         
         DBObject find = new BasicDBObject("ID", new BasicDBObject("$eq", ids));
         try (DBCursor cursor = collection.find(find)) {
+            
+        DBCursor cursor1 = collection.find(find);
+        DBCursor cursor2 = collection.find(find);
+        DBCursor cursor3 = collection.find(find);
+        
             while (cursor.hasNext()) {
-                txtaSearch.setText(txtaSearch.getText() + "\n" + cursor.next().toString());
+                
+                model.addRow(new Object[] {cursor.next().get("ID"),cursor1.next().get("Name"),
+                cursor2.next().get("Date"),cursor3.next().get("Cedula")});
+            
+            TblSearchInvoice.setModel(model);
 
             }
         }
