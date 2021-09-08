@@ -37,11 +37,14 @@ public class ShowWindow extends javax.swing.JFrame {
 
         btmShowProduct = new javax.swing.JToggleButton();
         btnShowProviders = new javax.swing.JButton();
+        btnShowCustomers = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAreaProduct = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtAreaProvider = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtAreaCustomer = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -61,6 +64,13 @@ public class ShowWindow extends javax.swing.JFrame {
             }
         });
 
+        btnShowCustomers.setText("SHOW CUSTOMERS");
+        btnShowCustomers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowCustomersActionPerformed(evt);
+            }
+        });
+
         txtAreaProduct.setColumns(20);
         txtAreaProduct.setRows(5);
         jScrollPane1.setViewportView(txtAreaProduct);
@@ -68,6 +78,10 @@ public class ShowWindow extends javax.swing.JFrame {
         txtAreaProvider.setColumns(20);
         txtAreaProvider.setRows(5);
         jScrollPane2.setViewportView(txtAreaProvider);
+
+        txtAreaCustomer.setColumns(20);
+        txtAreaCustomer.setRows(5);
+        jScrollPane3.setViewportView(txtAreaCustomer);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -78,7 +92,9 @@ public class ShowWindow extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +102,8 @@ public class ShowWindow extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -115,7 +132,9 @@ public class ShowWindow extends javax.swing.JFrame {
                         .addGap(48, 48, 48)
                         .addComponent(btmShowProduct)
                         .addGap(56, 56, 56)
-                        .addComponent(btnShowProviders))
+                        .addComponent(btnShowProviders)
+                        .addGap(48, 48, 48)
+                        .addComponent(btnShowCustomers))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(242, 242, 242)
                         .addComponent(jButton1)))
@@ -131,7 +150,8 @@ public class ShowWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btmShowProduct)
-                    .addComponent(btnShowProviders))
+                    .addComponent(btnShowProviders)
+                    .addComponent(btnShowCustomers))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(21, 21, 21))
@@ -153,6 +173,10 @@ public class ShowWindow extends javax.swing.JFrame {
     private void btnShowProvidersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowProvidersActionPerformed
         provider.display(txtAreaProvider);
     }//GEN-LAST:event_btnShowProvidersActionPerformed
+
+    private void btnShowCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowCustomersActionPerformed
+        customer.display(txtAreaCustomer);
+    }//GEN-LAST:event_btnShowCustomersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,12 +216,15 @@ public class ShowWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btmShowProduct;
+    private javax.swing.JButton btnShowCustomers;
     private javax.swing.JButton btnShowProviders;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea txtAreaCustomer;
     private javax.swing.JTextArea txtAreaProduct;
     private javax.swing.JTextArea txtAreaProvider;
     // End of variables declaration//GEN-END:variables
