@@ -226,7 +226,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnShow">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Show"/>
+            <Property name="text" type="java.lang.String" value="Display"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnShowMouseClicked"/>
@@ -239,6 +239,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Products"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="smbShowProductActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="smnShowCustomer">
               <Properties>
@@ -247,6 +250,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Customers"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="smnShowCustomerActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="smnShowProvider">
               <Properties>
@@ -255,6 +261,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Providers"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="smnShowProviderActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

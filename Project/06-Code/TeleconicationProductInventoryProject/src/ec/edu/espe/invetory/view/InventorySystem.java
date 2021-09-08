@@ -251,7 +251,7 @@ public class InventorySystem extends javax.swing.JFrame {
 
         jMenuBar1.add(mnInvoice);
 
-        mnShow.setText("Show");
+        mnShow.setText("Display");
         mnShow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mnShowMouseClicked(evt);
@@ -260,14 +260,29 @@ public class InventorySystem extends javax.swing.JFrame {
 
         smbShowProduct.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK));
         smbShowProduct.setText("Products");
+        smbShowProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smbShowProductActionPerformed(evt);
+            }
+        });
         mnShow.add(smbShowProduct);
 
         smnShowCustomer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
         smnShowCustomer.setText("Customers");
+        smnShowCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smnShowCustomerActionPerformed(evt);
+            }
+        });
         mnShow.add(smnShowCustomer);
 
         smnShowProvider.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.SHIFT_MASK));
         smnShowProvider.setText("Providers");
+        smnShowProvider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smnShowProviderActionPerformed(evt);
+            }
+        });
         mnShow.add(smnShowProvider);
 
         jMenuBar1.add(mnShow);
@@ -408,8 +423,27 @@ public class InventorySystem extends javax.swing.JFrame {
     }//GEN-LAST:event_mnExitMouseClicked
 
     private void mnShowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnShowMouseClicked
-        
+
     }//GEN-LAST:event_mnShowMouseClicked
+
+    private void smbShowProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smbShowProductActionPerformed
+
+        this.hide();
+        DisplayProduct displayProduct = new DisplayProduct();
+        displayProduct.setVisible(true);
+    }//GEN-LAST:event_smbShowProductActionPerformed
+
+    private void smnShowCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnShowCustomerActionPerformed
+        this.hide();
+        DisplayCustomer displayCustomer = new DisplayCustomer();
+        displayCustomer.setVisible(true);
+    }//GEN-LAST:event_smnShowCustomerActionPerformed
+
+    private void smnShowProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnShowProviderActionPerformed
+        this.hide();
+        DisplayProvider displayProvider = new DisplayProvider();
+        displayProvider.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_smnShowProviderActionPerformed
 
     /**
      * @param args the command line arguments

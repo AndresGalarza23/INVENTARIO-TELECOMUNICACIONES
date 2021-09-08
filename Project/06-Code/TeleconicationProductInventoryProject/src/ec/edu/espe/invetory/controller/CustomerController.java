@@ -98,9 +98,9 @@ public class CustomerController {
 
         while (cursor.hasNext()) {
 
-            model.addRow(new Object[]{cursor.next().get("ID"), cursor1.next().get("Name"),
-                cursor2.next().get("Brand"), cursor3.next().get("Purchase Price"),
-                cursor4.next().get("Sale Price")});
+            model.addRow(new Object[]{cursor.next().get("Cedula"), cursor1.next().get("Names"),
+                cursor2.next().get("Last Names"), cursor3.next().get("Address"),
+                cursor4.next().get("Phone")});
 
            tblCustomers.setModel(model);
         }
