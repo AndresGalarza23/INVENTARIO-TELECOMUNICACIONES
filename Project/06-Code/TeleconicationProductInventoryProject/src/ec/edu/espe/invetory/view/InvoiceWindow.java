@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.invetory.view;
 
+
 import ec.edu.espe.invetory.controller.*;
 import javax.swing.JOptionPane;
 
@@ -16,6 +17,7 @@ public class InvoiceWindow extends javax.swing.JFrame {
 
     CustomerController customer = new CustomerController();
     ProductController product = new ProductController();
+    InvoiceController invoices = new InvoiceController();
 
     /**
      * Creates new form InvoiceWindow
@@ -420,11 +422,12 @@ public class InvoiceWindow extends javax.swing.JFrame {
 
     private void BtmAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmAddActionPerformed
 
-        Integer cedula, phone;
-        String names, lastName, address;
+        Integer cedula, phone, id;
+        String names, lastName, address, date;
         Integer quantityS, idSale;
 
-        if (txtCedula.getText().length() == 0 || txtNames.getText().length() == 0
+        if (txtIdInvoice.getText().length() == 0 
+                || txtCedula.getText().length() == 0 || txtNames.getText().length() == 0
                 || txtLastName.getText().length() == 0
                 || txtAddress.getText().length() == 0
                 || txtPhone.getText().length() == 0
@@ -438,12 +441,16 @@ public class InvoiceWindow extends javax.swing.JFrame {
 
         } else {
             BtmAdd.enable(true);
+            id = Integer.parseInt(this.txtIdInvoice.getText());
+            date = this.txtDate.getText();
             cedula = Integer.parseInt(this.txtCedula.getText());
             names = this.txtNames.getText();
             lastName = this.txtLastName.getText();
             address = this.txtAddress.getText();
             phone = Integer.parseInt(this.txtPhone.getText());
+            quantityS= Integer.parseInt(this.txtQuantitySale3.getText());
             customer.add(cedula, names, lastName, address, phone);
+            invoices.add(date, id, cedula,names, quantityS);
             
             quantityS = Integer.parseInt(this.txtQuantitySale3.getText());
             idSale = Integer.parseInt(this.txtIdSale3.getText());
@@ -458,8 +465,7 @@ public class InvoiceWindow extends javax.swing.JFrame {
         txtIdSale3.setText("");
         txtIdInvoice.setText("");
         txtDate.setText("");
-        
-        
+
 
     }//GEN-LAST:event_BtmAddActionPerformed
 
