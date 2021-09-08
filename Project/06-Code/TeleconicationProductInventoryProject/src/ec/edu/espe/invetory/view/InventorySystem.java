@@ -60,6 +60,7 @@ public class InventorySystem extends javax.swing.JFrame {
         smnCheckInvoice = new javax.swing.JMenu();
         smnSearchInvoiceId = new javax.swing.JMenuItem();
         smnSearchInvoiceCedula = new javax.swing.JMenuItem();
+        mnShow = new javax.swing.JMenu();
         mnExit = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
@@ -99,7 +100,7 @@ public class InventorySystem extends javax.swing.JFrame {
 
         mnProduct.setText("Product");
 
-        sbtnAdd.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        sbtnAdd.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         sbtnAdd.setText("Add");
         sbtnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +109,7 @@ public class InventorySystem extends javax.swing.JFrame {
         });
         mnProduct.add(sbtnAdd);
 
-        sbtnDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        sbtnDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         sbtnDelete.setText("Delete");
         sbtnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +118,7 @@ public class InventorySystem extends javax.swing.JFrame {
         });
         mnProduct.add(sbtnDelete);
 
-        sbntEdit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        sbntEdit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         sbntEdit.setText("Edit");
         sbntEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +127,7 @@ public class InventorySystem extends javax.swing.JFrame {
         });
         mnProduct.add(sbntEdit);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem4.setText("Search");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,7 +140,7 @@ public class InventorySystem extends javax.swing.JFrame {
 
         mnProvider.setText("Provider");
 
-        smnAddProvider.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        smnAddProvider.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         smnAddProvider.setText("Add");
         smnAddProvider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,7 +149,7 @@ public class InventorySystem extends javax.swing.JFrame {
         });
         mnProvider.add(smnAddProvider);
 
-        smnEditProvider.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        smnEditProvider.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         smnEditProvider.setText("Edit");
         smnEditProvider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +158,7 @@ public class InventorySystem extends javax.swing.JFrame {
         });
         mnProvider.add(smnEditProvider);
 
-        smnDeleteProvider.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        smnDeleteProvider.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         smnDeleteProvider.setText("Delete");
         smnDeleteProvider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,7 +171,7 @@ public class InventorySystem extends javax.swing.JFrame {
 
         mnCustomer.setText("Customer");
 
-        smnDeleteCustomer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        smnDeleteCustomer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         smnDeleteCustomer.setText("Delete");
         smnDeleteCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,7 +180,7 @@ public class InventorySystem extends javax.swing.JFrame {
         });
         mnCustomer.add(smnDeleteCustomer);
 
-        smnEditCustomer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        smnEditCustomer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         smnEditCustomer.setText("Edit");
         smnEditCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +193,7 @@ public class InventorySystem extends javax.swing.JFrame {
 
         mnInvoice.setText("Invoice");
 
-        smnAddInvoice.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        smnAddInvoice.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         smnAddInvoice.setText("New");
         smnAddInvoice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,7 +204,7 @@ public class InventorySystem extends javax.swing.JFrame {
 
         smnDeleteInvoice.setText("Delete");
 
-        smnDeleteCedula.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
+        smnDeleteCedula.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         smnDeleteCedula.setText("Cedula");
         smnDeleteCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,7 +213,7 @@ public class InventorySystem extends javax.swing.JFrame {
         });
         smnDeleteInvoice.add(smnDeleteCedula);
 
-        smnDeleteId.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
+        smnDeleteId.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         smnDeleteId.setText("ID");
         smnDeleteId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,7 +226,7 @@ public class InventorySystem extends javax.swing.JFrame {
 
         smnCheckInvoice.setText("Check");
 
-        smnSearchInvoiceId.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
+        smnSearchInvoiceId.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         smnSearchInvoiceId.setText("Id");
         smnSearchInvoiceId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -234,7 +235,7 @@ public class InventorySystem extends javax.swing.JFrame {
         });
         smnCheckInvoice.add(smnSearchInvoiceId);
 
-        smnSearchInvoiceCedula.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
+        smnSearchInvoiceCedula.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         smnSearchInvoiceCedula.setText("Cedula");
         smnSearchInvoiceCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,6 +247,14 @@ public class InventorySystem extends javax.swing.JFrame {
         mnInvoice.add(smnCheckInvoice);
 
         jMenuBar1.add(mnInvoice);
+
+        mnShow.setText("Show");
+        mnShow.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mnShowMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(mnShow);
 
         mnExit.setText("Exit");
         mnExit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -382,6 +391,12 @@ public class InventorySystem extends javax.swing.JFrame {
         System.exit(0);             // TODO add your handling code here:
     }//GEN-LAST:event_mnExitMouseClicked
 
+    private void mnShowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnShowMouseClicked
+        this.hide();
+        ShowWindow showWindow = new ShowWindow();
+        showWindow.setVisible(true);
+    }//GEN-LAST:event_mnShowMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -430,6 +445,7 @@ public class InventorySystem extends javax.swing.JFrame {
     private javax.swing.JMenu mnInvoice;
     private javax.swing.JMenu mnProduct;
     private javax.swing.JMenu mnProvider;
+    private javax.swing.JMenu mnShow;
     private javax.swing.JMenuItem sbntEdit;
     private javax.swing.JMenuItem sbtnAdd;
     private javax.swing.JMenuItem sbtnDelete;
