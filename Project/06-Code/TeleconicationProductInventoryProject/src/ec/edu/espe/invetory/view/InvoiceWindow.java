@@ -59,8 +59,8 @@ public class InvoiceWindow extends javax.swing.JFrame {
         txtDate = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
-        txtQuantitySale3 = new javax.swing.JTextField();
-        txtIdSale3 = new javax.swing.JTextField();
+        txtQuantitySale = new javax.swing.JTextField();
+        txtIdSale = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         PnlButtoms6 = new javax.swing.JPanel();
         BtmAdd = new javax.swing.JButton();
@@ -152,6 +152,18 @@ public class InvoiceWindow extends javax.swing.JFrame {
             }
         });
 
+        txtNames.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNamesKeyTyped(evt);
+            }
+        });
+
+        txtLastName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLastNameKeyTyped(evt);
+            }
+        });
+
         txtPhone.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPhoneKeyTyped(evt);
@@ -160,9 +172,38 @@ public class InvoiceWindow extends javax.swing.JFrame {
 
         jLavel.setText("ID");
 
+        txtIdInvoice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdInvoiceActionPerformed(evt);
+            }
+        });
+        txtIdInvoice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdInvoiceKeyTyped(evt);
+            }
+        });
+
         jLabel7.setText("Date:");
 
+        txtDate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDateKeyTyped(evt);
+            }
+        });
+
         jLabel22.setText("Quantity:");
+
+        txtQuantitySale.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtQuantitySaleKeyTyped(evt);
+            }
+        });
+
+        txtIdSale.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdSaleKeyTyped(evt);
+            }
+        });
 
         jLabel23.setText("Product ID:");
 
@@ -176,11 +217,11 @@ public class InvoiceWindow extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel23)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtIdSale3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtIdSale, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel22)
                         .addGap(39, 39, 39)
-                        .addComponent(txtQuantitySale3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtQuantitySale, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -188,12 +229,12 @@ public class InvoiceWindow extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtIdSale3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdSale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(txtQuantitySale3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtQuantitySale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
 
@@ -354,18 +395,31 @@ public class InvoiceWindow extends javax.swing.JFrame {
 
     private void txtCedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyTyped
 
-        char car = evt.getKeyChar();
-        if ((car < '0' || car > '9')) {
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            txtIdInvoice.setText("");
+            evt.consume();
+
+        }
+        if (txtIdInvoice.getText().length() >= 10) {
             evt.consume();
         }
 
     }//GEN-LAST:event_txtCedulaKeyTyped
 
     private void txtPhoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPhoneKeyTyped
-        char car = evt.getKeyChar();
-        if ((car < '0' || car > '9')) {
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            txtIdInvoice.setText("");
+            evt.consume();
+
+        }
+        if (txtIdInvoice.getText().length() >= 10) {
             evt.consume();
         }
+
     }//GEN-LAST:event_txtPhoneKeyTyped
 
     private void BtmAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmAdd1ActionPerformed
@@ -395,9 +449,9 @@ public class InvoiceWindow extends javax.swing.JFrame {
                 || txtLastName.getText().length() == 0
                 || txtAddress.getText().length() == 0
                 || txtPhone.getText().length() == 0
-                || txtQuantitySale3.getText().length() == 0
+                || txtQuantitySale.getText().length() == 0
                 || txtDate.getText().length() == 0
-                || txtIdSale3.getText().length() == 0) {
+                || txtIdSale.getText().length() == 0) {
 
             JOptionPane.showConfirmDialog(null, "Enter Information", "OK", JOptionPane.DEFAULT_OPTION);
             BtmAdd.enable(false);
@@ -411,21 +465,21 @@ public class InvoiceWindow extends javax.swing.JFrame {
             lastName = this.txtLastName.getText();
             address = this.txtAddress.getText();
             phone = Integer.parseInt(this.txtPhone.getText());
-            quantityS = Integer.parseInt(this.txtQuantitySale3.getText());
-            quantityS = Integer.parseInt(this.txtQuantitySale3.getText());
-            idSale = Integer.parseInt(this.txtIdSale3.getText());
+            quantityS = Integer.parseInt(this.txtQuantitySale.getText());
+            quantityS = Integer.parseInt(this.txtQuantitySale.getText());
+            idSale = Integer.parseInt(this.txtIdSale.getText());
             product.sale(idSale, quantityS);
             customer.add(cedula, names, lastName, address, phone);
             invoices.add(date, id, cedula, names, quantityS);
-           
+
         }
         txtCedula.setText("");
         txtNames.setText("");
         txtLastName.setText("");
         txtAddress.setText("");
         txtPhone.setText("");
-        txtQuantitySale3.setText("");
-        txtIdSale3.setText("");
+        txtQuantitySale.setText("");
+        txtIdSale.setText("");
         txtIdInvoice.setText("");
         txtDate.setText("");
 
@@ -449,6 +503,83 @@ public class InvoiceWindow extends javax.swing.JFrame {
         inventorySystem.setVisible(true);
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtIdInvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdInvoiceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdInvoiceActionPerformed
+
+    private void txtIdInvoiceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdInvoiceKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            evt.consume();
+            txtIdInvoice.setText("");
+        }
+        if (txtIdInvoice.getText().length() >= 4) {
+            evt.consume();
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdInvoiceKeyTyped
+
+    private void txtDateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDateKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 47 || c > 47) && (c < 8 || c > 8)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            txtIdInvoice.setText("");
+            evt.consume();
+
+        }
+        if (txtDate.getText().length() >= 10) {
+            evt.consume();
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDateKeyTyped
+
+    private void txtNamesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNamesKeyTyped
+        char c = evt.getKeyChar();
+
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c < 32 || c > 32) && (c < 8 || c > 8)) {
+
+            JOptionPane.showMessageDialog(null, "Only Letters");
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNamesKeyTyped
+
+    private void txtLastNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLastNameKeyTyped
+        char c = evt.getKeyChar();
+
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c < 32 || c > 32) && (c < 8 || c > 8)) {
+
+            JOptionPane.showMessageDialog(null, "Only Letters");
+            evt.consume();
+
+        }           // TODO add your handling code here:
+    }//GEN-LAST:event_txtLastNameKeyTyped
+
+    private void txtIdSaleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdSaleKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            evt.consume();
+
+        }
+        if (txtIdSale.getText().length() >= 4) {
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdSaleKeyTyped
+
+    private void txtQuantitySaleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantitySaleKeyTyped
+         char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            evt.consume();
+
+        }
+        if (txtQuantitySale.getText().length() >= 4) {
+            evt.consume();
+        }  // TODO add your handling code here:
+    }//GEN-LAST:event_txtQuantitySaleKeyTyped
 
     /**
      * @param args the command line arguments
@@ -513,10 +644,10 @@ public class InvoiceWindow extends javax.swing.JFrame {
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtDate;
     private javax.swing.JTextField txtIdInvoice;
-    private javax.swing.JTextField txtIdSale3;
+    private javax.swing.JTextField txtIdSale;
     private javax.swing.JTextField txtLastName;
     private javax.swing.JTextField txtNames;
     private javax.swing.JTextField txtPhone;
-    private javax.swing.JTextField txtQuantitySale3;
+    private javax.swing.JTextField txtQuantitySale;
     // End of variables declaration//GEN-END:variables
 }

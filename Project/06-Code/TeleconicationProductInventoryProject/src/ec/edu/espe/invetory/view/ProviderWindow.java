@@ -60,9 +60,37 @@ public class ProviderWindow extends javax.swing.JFrame {
 
         jLabel5.setText("Phone:");
 
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
+            }
+        });
+        txtId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdKeyTyped(evt);
+            }
+        });
+
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
+            }
+        });
+        txtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNameKeyTyped(evt);
+            }
+        });
+
+        txtAddress.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAddressKeyTyped(evt);
+            }
+        });
+
+        txtPhone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPhoneKeyTyped(evt);
             }
         });
 
@@ -222,10 +250,59 @@ public class ProviderWindow extends javax.swing.JFrame {
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         this.hide();
-        InventorySystem inventorySystem= new InventorySystem();
+        InventorySystem inventorySystem = new InventorySystem();
         inventorySystem.setVisible(true);
-        
+
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdActionPerformed
+
+    private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
+
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            evt.consume();
+        }
+        if (txtId.getText().length() >= 4) {
+            evt.consume();
+        }
+
+
+    }//GEN-LAST:event_txtIdKeyTyped
+
+    private void txtPhoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPhoneKeyTyped
+
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            evt.consume();
+        }
+        if (txtPhone.getText().length() >= 10) {
+            evt.consume();
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneKeyTyped
+
+    private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
+        char c = evt.getKeyChar();
+
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c < 32 || c > 32) && (c < 8 || c > 8)) {
+
+            JOptionPane.showMessageDialog(null, "Only Letters");
+            evt.consume();
+
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameKeyTyped
+
+    private void txtAddressKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAddressKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAddressKeyTyped
 
     /**
      * @param args the command line arguments

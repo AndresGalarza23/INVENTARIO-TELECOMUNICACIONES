@@ -51,7 +51,6 @@ public class ProductWindow extends javax.swing.JFrame {
         spnQuantity = new javax.swing.JSpinner();
         PnlButtoms = new javax.swing.JPanel();
         btmAdd = new javax.swing.JButton();
-        btmDisplay = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
 
@@ -85,10 +84,40 @@ public class ProductWindow extends javax.swing.JFrame {
             }
         });
 
+        txtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNameKeyTyped(evt);
+            }
+        });
+
+        txtPurchasePrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPurchasePriceKeyTyped(evt);
+            }
+        });
+
+        txtIdProvider.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdProviderKeyTyped(evt);
+            }
+        });
+
+        txtSalePrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSalePriceKeyTyped(evt);
+            }
+        });
+
         cmbBrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tecatel", "Xiamomi", "Cisco", "Raspberry", "Arduino ", "SiemensAG", "FNIRSI" }));
         cmbBrand.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbBrandActionPerformed(evt);
+            }
+        });
+
+        spnQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                spnQuantityKeyTyped(evt);
             }
         });
 
@@ -168,13 +197,6 @@ public class ProductWindow extends javax.swing.JFrame {
             }
         });
 
-        btmDisplay.setText("DISPLAY");
-        btmDisplay.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btmDisplayActionPerformed(evt);
-            }
-        });
-
         btnCancel.setText("CANCEL");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,8 +222,6 @@ public class ProductWindow extends javax.swing.JFrame {
                 .addComponent(btnCancel)
                 .addGap(38, 38, 38)
                 .addComponent(btnExit)
-                .addGap(28, 28, 28)
-                .addComponent(btmDisplay)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PnlButtomsLayout.setVerticalGroup(
@@ -210,7 +230,6 @@ public class ProductWindow extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(PnlButtomsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btmAdd)
-                    .addComponent(btmDisplay)
                     .addComponent(btnCancel)
                     .addComponent(btnExit))
                 .addContainerGap(76, Short.MAX_VALUE))
@@ -278,18 +297,17 @@ public class ProductWindow extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtIdActionPerformed
 
-    private void btmDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmDisplayActionPerformed
-
-
-    }//GEN-LAST:event_btmDisplayActionPerformed
-
     private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
 
-        char car = evt.getKeyChar();
-        if ((car < '0' || car > '9')) {
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            evt.consume();
+
+        }
+        if (txtId.getText().length() >= 4) {
             evt.consume();
         }
-
     }//GEN-LAST:event_txtIdKeyTyped
 
     private void cmbBrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBrandActionPerformed
@@ -297,24 +315,83 @@ public class ProductWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbBrandActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-       
+
         txtId.setText("");
         txtName.setText("");
         cmbBrand.setSelectedItem("");
         txtPurchasePrice.setText("");
         txtSalePrice.setText("");
         spnQuantity.setValue(0);
-        txtIdProvider.setText("");        
-        
+        txtIdProvider.setText("");
+
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-       
+
         this.hide();
         InventorySystem inventorySystem = new InventorySystem();
-        inventorySystem.setVisible(true); 
-        
+        inventorySystem.setVisible(true);
+
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
+        char c = evt.getKeyChar();
+
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c < 32 || c > 32) && (c < 8 || c > 8)) {
+
+            JOptionPane.showMessageDialog(null, "Only Letters");
+            evt.consume();
+            txtName.setText("");
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_txtNameKeyTyped
+
+    private void txtSalePriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalePriceKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8) && (c < 46 || c > 46)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            evt.consume();
+
+        }
+        if (txtSalePrice.getText().length() >= 6) {
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSalePriceKeyTyped
+
+    private void txtPurchasePriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPurchasePriceKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8) && (c < 46 || c > 46)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            evt.consume();
+
+        }
+        if (txtPurchasePrice.getText().length() >= 6) {
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPurchasePriceKeyTyped
+
+    private void spnQuantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_spnQuantityKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            evt.consume();
+
+        }
+        if (txtSalePrice.getText().length() >= 6) {
+            evt.consume();
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_spnQuantityKeyTyped
+
+    private void txtIdProviderKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdProviderKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            evt.consume();
+
+        }
+        if (txtIdProvider.getText().length() >= 4) {
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdProviderKeyTyped
 
     /**
      * @param args the command line arguments
@@ -358,7 +435,6 @@ public class ProductWindow extends javax.swing.JFrame {
     private javax.swing.JPanel PnlButtoms;
     private javax.swing.JPanel PnlInput;
     private javax.swing.JButton btmAdd;
-    private javax.swing.JButton btmDisplay;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnExit;
     private javax.swing.JComboBox<String> cmbBrand;

@@ -6,6 +6,7 @@
 package ec.edu.espe.invetory.view;
 
 import ec.edu.espe.invetory.controller.InvoiceController;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -41,6 +42,12 @@ public class SearchInvoiceIdWindow extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Insert Id to search: ");
+
+        txtIdSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdSearchKeyTyped(evt);
+            }
+        });
 
         btnSearchId.setText("SEARCH");
         btnSearchId.addActionListener(new java.awt.event.ActionListener() {
@@ -129,6 +136,18 @@ public class SearchInvoiceIdWindow extends javax.swing.JFrame {
        InventorySystem inventorySystem = new InventorySystem();
        inventorySystem.setVisible(true);
     }//GEN-LAST:event_btnReturnActionPerformed
+
+    private void txtIdSearchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdSearchKeyTyped
+char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            evt.consume();
+
+        }
+        if (txtIdSearch.getText().length() >= 4) {
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdSearchKeyTyped
 
     /**
      * @param args the command line arguments

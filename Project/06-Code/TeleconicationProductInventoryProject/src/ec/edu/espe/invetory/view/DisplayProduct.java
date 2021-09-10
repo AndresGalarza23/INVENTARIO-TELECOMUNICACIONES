@@ -83,6 +83,11 @@ public class DisplayProduct extends javax.swing.JFrame {
                 btnDisplayProductsActionPerformed(evt);
             }
         });
+        btnDisplayProducts.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                btnDisplayProductsKeyTyped(evt);
+            }
+        });
 
         btnReturn.setText("RETURN");
         btnReturn.addActionListener(new java.awt.event.ActionListener() {
@@ -148,6 +153,10 @@ public class DisplayProduct extends javax.swing.JFrame {
         InventorySystem inventorySystem = new InventorySystem();
         inventorySystem.setVisible(true);
     }//GEN-LAST:event_btnReturnActionPerformed
+
+    private void btnDisplayProductsKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnDisplayProductsKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDisplayProductsKeyTyped
 
     /**
      * @param args the command line arguments

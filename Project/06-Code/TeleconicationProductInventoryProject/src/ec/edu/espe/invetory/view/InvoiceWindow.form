@@ -278,8 +278,14 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNames">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNamesKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtLastName">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtLastNameKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtAddress">
         </Component>
@@ -294,6 +300,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtIdInvoice">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdInvoiceActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtIdInvoiceKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
@@ -301,6 +311,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtDate">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDateKeyTyped"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel4">
 
@@ -313,12 +326,12 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="txtIdSale3" min="-2" pref="135" max="-2" attributes="0"/>
+                              <Component id="txtIdSale" min="-2" pref="135" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                              <Component id="txtQuantitySale3" min="-2" pref="135" max="-2" attributes="0"/>
+                              <Component id="txtQuantitySale" min="-2" pref="135" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -330,13 +343,13 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="txtIdSale3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtIdSale" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtQuantitySale3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtQuantitySale" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="74" max="32767" attributes="0"/>
                   </Group>
@@ -349,9 +362,15 @@
                 <Property name="text" type="java.lang.String" value="Quantity:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtQuantitySale3">
+            <Component class="javax.swing.JTextField" name="txtQuantitySale">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtQuantitySaleKeyTyped"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtIdSale3">
+            <Component class="javax.swing.JTextField" name="txtIdSale">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtIdSaleKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel23">
               <Properties>

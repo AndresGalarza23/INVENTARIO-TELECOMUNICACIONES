@@ -366,7 +366,7 @@ public class InventorySystem extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
 
         this.hide();
-        SearchWindow searchW = new SearchWindow();
+        SearchProductWindow searchW = new SearchProductWindow();
         searchW.setVisible(true);
 
     }//GEN-LAST:event_jMenuItem4ActionPerformed

@@ -6,6 +6,7 @@
 package ec.edu.espe.invetory.view;
 
 import ec.edu.espe.invetory.controller.InvoiceController;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -50,6 +51,12 @@ public class SearchInvoiceCedulaWindow extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Enter Cedula to Search:");
+
+        txtCedulaSearchInvoice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCedulaSearchInvoiceKeyTyped(evt);
+            }
+        });
 
         btnSearchCedulaInvoice.setText("Search");
         btnSearchCedulaInvoice.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +154,18 @@ public class SearchInvoiceCedulaWindow extends javax.swing.JFrame {
         InventorySystem inventorySystem = new InventorySystem();
         inventorySystem.setVisible(true);
     }//GEN-LAST:event_btnReturn1ActionPerformed
+
+    private void txtCedulaSearchInvoiceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaSearchInvoiceKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            evt.consume();
+
+        }
+        if (txtCedulaSearchInvoice.getText().length() >= 10) {
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCedulaSearchInvoiceKeyTyped
 
     /**
      * @param args the command line arguments

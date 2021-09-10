@@ -6,19 +6,20 @@
 package ec.edu.espe.invetory.view;
 
 import ec.edu.espe.invetory.controller.ProductController;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Luis Heredia Accent on the Future ESPE-DCC0
  */
-public class SearchWindow extends javax.swing.JFrame {
+public class SearchProductWindow extends javax.swing.JFrame {
     
     
     ProductController product =new ProductController();
     /**
      * Creates new form SearchWindow
      */
-    public SearchWindow() {
+    public SearchProductWindow() {
         initComponents();
     }
 
@@ -49,6 +50,12 @@ public class SearchWindow extends javax.swing.JFrame {
         });
 
         lblSearch.setText("Enter Id :");
+
+        txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSearchKeyTyped(evt);
+            }
+        });
 
         btnCancel.setText("CANCEL");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -131,6 +138,18 @@ public class SearchWindow extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnCancelActionPerformed
 
+    private void txtSearchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyTyped
+char c = evt.getKeyChar();
+        if ((c < '0' || c > '9') && (c < 8 || c > 8)) {
+            JOptionPane.showMessageDialog(null, "Only Numers");
+            evt.consume();
+
+        }
+        if (txtSearch.getText().length() >= 4) {
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -148,20 +167,21 @@ public class SearchWindow extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SearchWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SearchProductWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SearchWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SearchProductWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SearchWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SearchProductWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SearchWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SearchProductWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SearchWindow().setVisible(true);
+                new SearchProductWindow().setVisible(true);
             }
         });
     }

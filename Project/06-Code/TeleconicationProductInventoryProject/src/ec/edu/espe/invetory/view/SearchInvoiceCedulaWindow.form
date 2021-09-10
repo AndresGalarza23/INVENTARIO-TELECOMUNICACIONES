@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.JButton" name="btnReturn">
       <Properties>
@@ -98,6 +98,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCedulaSearchInvoice">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCedulaSearchInvoiceKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnSearchCedulaInvoice">
           <Properties>
