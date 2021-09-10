@@ -6,17 +6,11 @@
 package ec.edu.espe.invetory.controller;
 
 import com.mongodb.BasicDBObject;
-import com.mongodb.ConnectionString;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientSettings;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 import ec.edu.espe.invetory.model.Product;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -47,7 +41,7 @@ public class ProductController {
         try {
             Mongo mongo = new Mongo("localhost", 27017);
             DataBase = mongo.getDB("InventoryProduct");
-            // collection = DataBase.getCollection("Product");
+            collection = DataBase.getCollection("Product");
             System.out.println("successful connection");
         } catch (UnknownHostException ex) {
             Logger.getLogger(ProductController.class.getName()).log(Level.SEVERE, null, ex);
